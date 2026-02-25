@@ -1,0 +1,51 @@
+mobile-navigation-bar {
+  backdrop-filter: blur(10px) !important;
+  background: #ffffffcf !important;
+  transition: opacity 0.3s, transform 0.3s !important;
+  opacity: 1 !important;
+  transform: translateY(0px) !important;
+  padding: 8px !important;
+}
+mobile-navigation-bar > span {
+  font-size: 12px !important;
+}
+mobile-navigation-bar > svg {
+  transform: scale(0.8) !important;
+  transform-origin: center !important;
+  transition: transform 0.3s ease !important;
+}
+
+
+.viewcart {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .header {
+    --section-pt: 3 !important;
+    --section-pb: 3 !important;
+  }
+}
+
+.calculoFrete button {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.calculoFrete {
+  padding-bottom: 3rem !important;
+  padding-top: 2rem !important;
+}
+
+.calculoFrete .container-btn {
+  flex-direction: row !important;
+}
+
+
+.drawer-bottom {
+  padding: 10px !important;
+}
+
+.minicart__header {
+  padding: 10px;
+}

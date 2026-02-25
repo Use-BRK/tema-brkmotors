@@ -1,0 +1,50 @@
+{%- comment -%}
+  Snippet: async-css.liquid (v3)
+
+  Preferência (para passar no Theme Check):
+  1) Use "asset: 'arquivo.css'" para assets do tema → Shopify gera preload nativo.
+  2) Use "href: 'https://.../widget.css'" SOMENTE se não houver como hospedar o arquivo no tema
+     (gera aviso RemoteAsset; você pode silenciar com o bloco theme-check-disable abaixo).
+
+  Exemplos:
+    {% render 'async-css', asset: 'shipping.css', id: 'shipping-css' %}
+    {% render 'async-css', href: 'https://cdn.exemplo.com/widget.css', id: 'widget-css' %}
+
+  Parâmetros:
+    - asset (opcional): nome do arquivo no /assets (ex.: 'shipping.css').
+    - href  (opcional): URL absoluta (ex.: 'https://.../widget.css').
+    - media (opcional): 'all' (default) ou outro.
+    - id    (opcional): id único para evitar duplicidade.
+{%- endcomment -%}
+
+{%- assign asset_name = asset | default: '' -%}
+{%- assign href_url   = href  | default: '' -%}
+{%- assign asset_len  = asset_name | size -%}
+{%- assign href_len   = href_url   | size -%}
+{%- assign media_val  = media | default: 'all' -%}
+
+{%- if asset_len > 0 -%}
+  {%- comment -%}
+    ✓ Recomendado: usa filtros nativos → passa em AssetPreload/RemoteAsset
+  {%- endcomment -%}
+  {{ asset_name | asset_url | stylesheet_tag: preload: true, media: media_val, id: id }}
+
+{%- elsif href_len > 0 -%}
+  {%- comment -%}
+    URL remota (pode gerar aviso RemoteAsset).
+    Se possível, baixe esse CSS para /assets e chame via "asset:" (melhor).
+  {%- endcomment -%}
+  {% # theme-check-disable RemoteAsset %}
+  <link
+    rel="stylesheet"
+    href="{{ href_url }}"
+    media="print"
+    onload="this.media='{{ media_val }}'"
+    {% if id %}id="{{ id }}"{% endif %}
+  >
+  <noscript>
+    <link rel="stylesheet" href="{{ href_url }}" media="{{ media_val }}" {% if id %}id="{{ id }}-noscript"{% endif %}>
+  </noscript>
+  {% # theme-check-enable RemoteAsset %}
+
+{%- endif -%}

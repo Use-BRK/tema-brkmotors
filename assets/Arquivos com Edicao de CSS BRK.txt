@@ -1,0 +1,2 @@
+critical.css (linha 3292)
+collection-page.css (linha 4)

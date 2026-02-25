@@ -1,0 +1,193 @@
+{% doc %}
+  @prompt
+    Create a collapsible row called "Collection Description". In that section will have a text field that I can write rich text or HTML, I need this section to be extremely optimized, so It can't have any javascript or extreme stylizations
+    
+    Just a field to title the collapsible row and the field to put the rich text or HTML
+    
+    I need a way in that description field to call for collection description too
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-collection-description-{{ ai_gen_id }} {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+
+  .ai-collection-description-toggle-{{ ai_gen_id }} {
+    display: none;
+  }
+
+  .ai-collection-description-label-{{ ai_gen_id }} {
+    display: block;
+    padding: 16px 20px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    border: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .ai-collection-description-label-{{ ai_gen_id }}:after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-collection-description-toggle-{{ ai_gen_id }}:checked + .ai-collection-description-label-{{ ai_gen_id }}:after {
+    content: '−';
+  }
+
+  .ai-collection-description-content-{{ ai_gen_id }} {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #ffffff;
+  }
+
+  .ai-collection-description-toggle-{{ ai_gen_id }}:checked ~ .ai-collection-description-content-{{ ai_gen_id }} {
+    max-height: 1000px;
+    padding: 20px;
+  }
+
+  .ai-collection-description-text-{{ ai_gen_id }} {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-collection-description-text-{{ ai_gen_id }} h1,
+  .ai-collection-description-text-{{ ai_gen_id }} h2,
+  .ai-collection-description-text-{{ ai_gen_id }} h3,
+  .ai-collection-description-text-{{ ai_gen_id }} h4,
+  .ai-collection-description-text-{{ ai_gen_id }} h5,
+  .ai-collection-description-text-{{ ai_gen_id }} h6 {
+    color: #333333;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .ai-collection-description-text-{{ ai_gen_id }} p {
+    margin-bottom: 15px;
+  }
+
+  .ai-collection-description-text-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-collection-description-text-{{ ai_gen_id }} a {
+    color: #fc5106;
+    text-decoration: underline;
+  }
+
+  .ai-collection-description-text-{{ ai_gen_id }} ul,
+  .ai-collection-description-text-{{ ai_gen_id }} ol {
+    margin-bottom: 15px;
+    padding-left: 20px;
+  }
+
+  .ai-collection-description-text-{{ ai_gen_id }} li {
+    margin-bottom: 5px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-collection-description-label-{{ ai_gen_id }} {
+      padding: 14px 16px;
+      font-size: 16px;
+    }
+
+    .ai-collection-description-toggle-{{ ai_gen_id }}:checked ~ .ai-collection-description-content-{{ ai_gen_id }} {
+      padding: 16px;
+    }
+
+    .ai-collection-description-text-{{ ai_gen_id }} {
+      font-size: 13px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-collection-description-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <input 
+    type="checkbox" 
+    id="ai-collection-description-toggle-{{ ai_gen_id }}" 
+    class="ai-collection-description-toggle-{{ ai_gen_id }}"
+    {% if block.settings.default_expanded %}checked{% endif %}
+  >
+  <label 
+    for="ai-collection-description-toggle-{{ ai_gen_id }}" 
+    class="ai-collection-description-label-{{ ai_gen_id }}"
+  >
+    {{ block.settings.title }}
+  </label>
+  <div class="ai-collection-description-content-{{ ai_gen_id }}">
+    {% if block.settings.description != blank %}
+      <div class="ai-collection-description-text-{{ ai_gen_id }}">
+        {% if block.settings.include_collection_description and collection.description != blank %}
+          {{ collection.description }}
+          {% if block.settings.description != blank %}
+            <br><br>
+          {% endif %}
+        {% endif %}
+        {{ block.settings.description }}
+      </div>
+    {% elsif block.settings.include_collection_description and collection.description != blank %}
+      <div class="ai-collection-description-text-{{ ai_gen_id }}">
+        {{ collection.description }}
+      </div>
+    {% else %}
+      <div class="ai-collection-description-text-{{ ai_gen_id }}">
+        <p style="color: #999; font-style: italic;">Adicione uma descrição aqui.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Description",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Collection Description"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "include_collection_description",
+      "label": "Include collection description",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "default_expanded",
+      "label": "Expanded by default",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Description"
+    }
+  ]
+}
+{% endschema %}

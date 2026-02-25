@@ -26,7 +26,7 @@ jobs:
 
       - name: Deploy to Shopify
         env:
-          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_API_TOKEN }}
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
         run: |
           shopify theme push \
           --store ${{ secrets.SHOPIFY_STORE_DOMAIN }} \

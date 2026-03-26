@@ -118,7 +118,7 @@
             novalidate
           >
             {%- if cart.items.size > 0 -%}
-              <div class="minicart-body flex-1 grow pt-30 px-30 overflow-x-hidden{% if action_after_add_cart == 'open_drawer' %} pb-30{% endif %}">
+              <div class="minicart-body flex-1 grow pt-15 px-20 overflow-x-hidden{% if action_after_add_cart == 'open_drawer' %} pb-15{% endif %}">
                 <div class="items">
                   {% for item in cart.items %}
                     {%- render 'cart-item', item: item -%}

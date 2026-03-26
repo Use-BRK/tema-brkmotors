@@ -12,11 +12,5 @@
     "market": "br"
   },
   "parent": "product.json",
-  "sections": {
-    "scrolling_text_yFWFAa": {
-      "disabled": true,
-      "settings": {},
-      "blocks": {}
-    }
-  }
+  "sections": {}
 }

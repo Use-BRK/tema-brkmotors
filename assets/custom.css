@@ -49,3 +49,44 @@ mobile-navigation-bar > svg {
 .minicart__header {
   padding: 10px;
 }
+
+/* Compact cart item styles */
+.cart-item .minicart__product-name {
+  line-height: 1.3;
+  font-weight: 600;
+}
+.cart-item .minicart__product-name a {
+  font-size: 13px;
+}
+.cart-item .minicart__item-variant .product-option {
+  font-size: 12px;
+}
+.cart-item .minicart__item-prices {
+  margin-top: 2px;
+}
+.cart-item .minicart__item-price,
+.cart-item .minicart__item-regular-price {
+  font-size: 14px;
+}
+.cart-item .minicart__item-original-price {
+  font-size: 12px;
+}
+.cart-item .minicart__actions {
+  margin-top: 4px;
+}
+.cart-item .quantity--compact {
+  height: 28px;
+  font-size: 12px;
+}
+.cart-item .quantity--compact .quantity__button svg {
+  width: 8px;
+  height: 8px;
+}
+.cart-item .minicart__bottom {
+  gap: 6px;
+}
+.cart-item .minicart__bottom a svg,
+.cart-item .minicart__bottom minicart-item-edit svg {
+  width: 12px;
+  height: 12px;
+}

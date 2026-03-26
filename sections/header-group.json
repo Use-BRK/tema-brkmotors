@@ -18,7 +18,7 @@
           "type": "text_slider",
           "settings": {
             "text1": "<a href=\"https://lp.usebrk.com.br/expedicao\" title=\"https://lp.usebrk.com.br/expedicao\"><strong>CLIQUE E PERSONALIZE PARA SEU GRUPO!</strong></a>",
-            "text2": "",
+            "text2": "CUPOM 1ª COMPRA: <strong>BEMVINDO</strong>",
             "text3": "",
             "change_every": 5,
             "hidden_on_mobile": false

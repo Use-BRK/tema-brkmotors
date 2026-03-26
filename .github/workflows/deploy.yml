@@ -27,5 +27,5 @@ jobs:
         run: |
           npx @shopify/cli@latest theme push \
           --store ${{ secrets.SHOPIFY_STORE_DOMAIN }} \
-          --theme 183862755623 \
+          --theme ${{ secrets.SHOPIFY_DEVELOPMENT_THEME_ID}} \
           --allow-live

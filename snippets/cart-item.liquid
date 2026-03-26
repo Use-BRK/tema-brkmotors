@@ -21,9 +21,9 @@
 <div data-hulkapps-lineitem 
   id="minicart__product-{{ item.key }}"
   product-handle="{{ item.product.handle }}"
-  class="cart-item flex mb-20 pb-20 gap-15 border-bottom-dashed"
+  class="cart-item flex mb-12 pb-12 gap-10 border-bottom-dashed"
 >
-  <div class="minicart__product__image global-media-settings w-custom fs-0 relative" style="--custom-width: 9rem">
+  <div class="minicart__product__image global-media-settings w-custom fs-0 relative" style="--custom-width: 6.4rem">
     <a href="{{- item.url -}}" class="rounded-5 fs-0 " aria-label="{{ item.product.title | escape }}">
       {%- if item.image != blank -%}
         {%- assign image_alt = item.image.alt | default: item.product.title | escape -%}
@@ -41,7 +41,7 @@
     </a>
   </div>
   <div class="minicart__product-info flex-1 relative flex flex-column">
-    <h3 class="minicart__product-name my-0 text-size">
+    <h3 class="minicart__product-name my-0 fs-small">
       <a class="no-underline heading-color" href="{{- item.url -}}" aria-label="{{ item.product.title | escape }}">
         {{- item.product.title | escape -}}
       </a>
@@ -167,13 +167,13 @@
         </div>
         {% if show_add_cart == true and theme_st.enable_catalog_mode == false and show_quantity %}
           <div class="minicart__actions mt-6 flex grow-1 bottom-left w-full">
-            <quantity-input class="quantity rounded-3 border inline-flex text-center grey-bg">
+            <quantity-input class="quantity quantity--compact rounded-3 border inline-flex text-center grey-bg">
               <button
-                class="quantity__button pointer border-0 no-js-hidden w-custom grey-bg inline-flex content-center ps-15 pe-5"
+                class="quantity__button pointer border-0 no-js-hidden w-custom grey-bg inline-flex content-center ps-10 pe-5"
                 name="minus"
                 type="button"
                 data-id="{{- item.key -}}"
-                style="--custom-width: 3rem"
+                style="--custom-width: 2.4rem"
                 arial-label="minus"
               >
                 <svg width="9" height="1" fill="none">
@@ -192,14 +192,14 @@
                 value="{{- item.quantity -}}"
                 data-value="{{- item.quantity -}}"
                 min="0"
-                style="--input-padding: 0;--inputs-border-width: 0;--input-height: 33px;--custom-width: 3.8rem;--input-border-radius: 0;--input-bg: transparent"
+                style="--input-padding: 0;--inputs-border-width: 0;--input-height: 28px;--custom-width: 2.8rem;--input-border-radius: 0;--input-bg: transparent;font-size: 12px"
               >
               <button
-                class="quantity__button pointer border-0 no-js-hidden w-custom grey-bg pe-12"
+                class="quantity__button pointer border-0 no-js-hidden w-custom grey-bg pe-10"
                 name="plus"
                 type="button"
                 data-id="{{- item.key -}}"
-                style="--custom-width: 3rem"
+                style="--custom-width: 2.4rem"
                 arial-label="plus"
               >
                 <svg width="9" height="9" fill="none">

@@ -1,4 +1,4 @@
-name: Deploy para Shopify - main
+name: Deploy para Shopify Production Theme
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Deploy to Shopify
+      - name: Deploy to Shopify Production Theme
         env:
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
         run: |

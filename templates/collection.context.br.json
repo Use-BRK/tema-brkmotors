@@ -12,5 +12,77 @@
     "market": "br"
   },
   "parent": "collection.json",
-  "sections": {}
+  "sections": {
+    "subcollection": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "scrolling_text_3pPeC": {
+      "type": "scrolling-text",
+      "disabled": false,
+      "settings": {
+        "section_width": "full_width",
+        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
+        "header-b370985e25b79090589f3926051bf422": null,
+        "direction": "left",
+        "icon_between_item": "unset",
+        "speed": 10,
+        "space_between_text": 45,
+        "header-de056fa0f5e2db91be681a58378619c3": null,
+        "font_size": 14,
+        "font_weight": "body_weight",
+        "uppercase": false,
+        "use_heading_font": false,
+        "header-adee28b22cba96700c49cdd9af1d504f": null,
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "reset_spacing": false
+      },
+      "blocks": {
+        "scrolling_text_HdWXX": {
+          "type": "scrolling_text",
+          "disabled": false,
+          "settings": {
+            "image": null,
+            "content": "<strong>FRETE FIXO R$9,90</strong>"
+          }
+        },
+        "scrolling_text_4R8TF": {
+          "type": "scrolling_text",
+          "disabled": false,
+          "settings": {
+            "image": null,
+            "content": "<strong>PARA TODO BRASIL</strong>"
+          }
+        }
+      },
+      "block_order": [
+        "scrolling_text_HdWXX",
+        "scrolling_text_4R8TF"
+      ],
+      "name": "t:sections.scrolling_text.name"
+    },
+    "main": {
+      "settings": {
+        "pagination": "load_more_button"
+      },
+      "blocks": {}
+    },
+    "banner": {
+      "settings": {},
+      "blocks": {
+        "breadcrumb_MJHLQb": {
+          "disabled": true,
+          "settings": {}
+        }
+      }
+    }
+  },
+  "order": [
+    "scrolling_text_3pPeC",
+    "banner",
+    "subcollection",
+    "main"
+  ]
 }

@@ -12,20 +12,5 @@
     "market": "br"
   },
   "parent": "header-group.json",
-  "sections": {
-    "top_bar_CbXNYj": {
-      "settings": {},
-      "blocks": {
-        "text_slider_LFaC38": {
-          "settings": {
-            "coupon2_enabled": true,
-            "coupon2": "COPIAR"
-          }
-        }
-      },
-      "block_order": [
-        "text_slider_LFaC38"
-      ]
-    }
-  }
+  "sections": {}
 }

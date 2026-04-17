@@ -90,3 +90,11 @@ mobile-navigation-bar > svg {
   width: 12px;
   height: 12px;
 }
+
+/* Badges */
+
+.product__badges-custom {
+  padding-block: 0.7px !important;
+  padding-inline: 5px !important;
+  font-size: 11px !important;
+}

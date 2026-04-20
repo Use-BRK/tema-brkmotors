@@ -9,139 +9,39 @@
  */
 {
   "sections": {
-    "slideshow_mWxPRH": {
-      "settings": {},
-      "blocks": {
-        "slider_item_c6p76M": {
-          "type": "slider_item",
-          "disabled": true,
-          "name": "CAMPANHA",
-          "settings": {
-            "header-f3227180d3ef8979b497e3c5aa32c5c1": null,
-            "image": "shopify://shop_images/BANNER-PROMO-DESK_cc1b47f1-cdc2-4dce-9135-d4ebbfaf748e.webp",
-            "image_mobile": "shopify://shop_images/BANER-PROMO-MOB_93987557-95f5-4385-82b6-057e77fc8b16.webp",
-            "local_video": null,
-            "image_link": "shopify://collections/mais-vendidos",
-            "overlay_opacity": 0,
-            "header-4d69c5ee7188151d9ba6237936e97773": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_style": false,
-            "header-2f59bebb90be77103a4f9359b4aa001d": null,
-            "content_alignment": "center",
-            "content_position": "top-center",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 60,
-            "content_padding_inline": 60,
-            "header-8bacd40e37040f1bbf401e97f1c6935b": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-3d77df8f81f0d1a0099990c71cd884ce": null,
-            "content_alignment_mobile": "center"
-          }
-        },
-        "slider_item_ecKeq9": {
-          "type": "slider_item",
-          "name": "Kit Casal",
-          "disabled": false,
-          "settings": {
-            "header-cb021ce9015c57b73ddda913958df75a": null,
-            "image": "shopify://shop_images/Prancheta_2.png",
-            "image_mobile": "shopify://shop_images/Mobv3.png",
-            "local_video": null,
-            "image_link": "shopify://collections/kits-casal",
-            "overlay_opacity": 0,
-            "header-953a9463175bfe697ef3948e7a875278": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_style": false,
-            "header-506d98c4821f768a760d174870cf9783": null,
-            "content_alignment": "center",
-            "content_position": "top-center",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 60,
-            "content_padding_inline": 60,
-            "header-f93d2d9de02412addfd894c874e4cb0d": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-9c4eb8527615549590cc8b590089c0e8": null,
-            "content_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slider_item_NB9EFB",
-        "slider_item_c6p76M",
-        "slider_item_ecKeq9",
-        "slider_item_jpBBzf"
-      ]
-    },
-    "scrolling_text_U3mttg": {
-      "settings": {},
-      "blocks": {
-        "scrolling_text_WxLKhn": {
-          "settings": {
-            "content": "FRETE FIXO R$9,90"
-          }
-        },
-        "scrolling_text_4PzYLH": {
-          "settings": {
-            "content": "PARA TODO BRASIL"
-          }
-        }
-      }
-    },
     "collection_tab_nKDAh": {
       "type": "collection-tab",
       "disabled": false,
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-246933b0016d9d42dc7ea4445d34082e": null,
+        "header-1cfe73133dc33a0b74c39fcb31934cb1": null,
         "heading": "",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-72e4f383e45706bdcf06e02ab2ff40ff": null,
+        "header-92c27106698f6f9c3b193b90eb784f71": null,
         "tab_header_style": "horizontal",
         "horizontal_tab_style": "underline",
         "display_mode": "grid",
         "items_to_show": 24,
         "items_per_row": 5,
         "column_gap": 30,
-        "header-1cccc97890599ebeb5558307cebde0cf": null,
+        "header-fdf9ea8bbb6fb55555cd315ab6707c88": null,
         "show_arrow": false,
         "carousel_pagination": "disable",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-c18ff9cdcf07cea36fb21e722cb873f2": null,
+        "header-f459d9cbd10a634a33e57cf557d6122c": null,
         "rows": 2,
         "show_load_more_button": false,
         "button_label": "Load more",
-        "header-e9f5f10a41ead8ad88bd7bcbaa057272": null,
+        "header-ee60dac6003be624f30658c0a6bbd205": null,
         "carousel_on_mobile": true,
         "items_per_row_mobile": 1.5,
-        "header-fcc328b48ba86598937f6f981d9024d9": null,
+        "header-c32d2a8df06ef411382858c39b1116a5": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -169,6 +69,106 @@
         "collection_m39rh"
       ],
       "name": "t:sections.collection-tab.name"
+    },
+    "slideshow_mWxPRH": {
+      "settings": {},
+      "blocks": {
+        "slider_item_ErVix4": {
+          "type": "slider_item",
+          "name": "Abril de Vantagens",
+          "disabled": false,
+          "settings": {
+            "header-d7b1f5bb89ee0a7f1dfaf491a97ff279": null,
+            "image": "shopify://shop_images/BANNER-DESK.jpg",
+            "image_mobile": "shopify://shop_images/BANNER-MOB.webp",
+            "local_video": null,
+            "image_link": "shopify://collections/explorer-raglan",
+            "overlay_opacity": 0,
+            "header-c71c59599416bbedc138096445af14c2": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
+            "header-5e43385b0623711ea74b780785407be7": null,
+            "content_alignment": "center",
+            "content_position": "top-center",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "header-042687cace11f4c8392fba20f72588b7": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-75cdd96462e6b1f1e6cc9e678a94321f": null,
+            "content_alignment_mobile": "center"
+          }
+        },
+        "slider_item_ecKeq9": {
+          "type": "slider_item",
+          "name": "Kit Casal",
+          "disabled": false,
+          "settings": {
+            "header-695cceba5f88b24e0d40417cd9944bae": null,
+            "image": "shopify://shop_images/Prancheta_2.png",
+            "image_mobile": "shopify://shop_images/Mobv3.png",
+            "local_video": null,
+            "image_link": "shopify://collections/kits-casal",
+            "overlay_opacity": 0,
+            "header-70aef27c734c085bebac5c1147440f20": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
+            "header-29a3d2d760c242dd3c30753cf41da082": null,
+            "content_alignment": "center",
+            "content_position": "top-center",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "header-54d0c41d24f39566cc724c7c4f05ffc6": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-61099d0493e2487d9d69264558506f9a": null,
+            "content_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slider_item_ErVix4",
+        "slider_item_NB9EFB",
+        "slider_item_ecKeq9",
+        "slider_item_jpBBzf"
+      ]
+    },
+    "scrolling_text_U3mttg": {
+      "settings": {},
+      "blocks": {
+        "scrolling_text_WxLKhn": {
+          "settings": {
+            "content": "FRETE FIXO R$9,90"
+          }
+        },
+        "scrolling_text_4PzYLH": {
+          "settings": {
+            "content": "PARA TODO BRASIL"
+          }
+        }
+      }
     },
     "products_deal_4xQK7g": {
       "disabled": true,

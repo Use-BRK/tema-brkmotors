@@ -18,8 +18,12 @@
       "blocks": {
         "text_slider_LFaC38": {
           "settings": {
-            "coupon2": "BEMVINDO",
-            "coupon2_enabled": true
+            "coupon2": "",
+            "coupon2_enabled": false,
+            "text1": "CUPOM 1ª COMPRA: <strong>BEMVINDO</strong>",
+            "text2": "",
+            "coupon1": "BEMVINDO",
+            "coupon1_enabled": true
           }
         }
       }

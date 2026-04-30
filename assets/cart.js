@@ -174,6 +174,10 @@ class CartItems extends HTMLElement {
           if (cart_free_ship) {
             cart_free_ship.init(parsedState.items_subtotal_price);
           }
+          const cart_gift_bar_update = document.querySelector("gift-progress-bar");
+          if (cart_gift_bar_update) {
+            cart_gift_bar_update.init(parsedState.items_subtotal_price);
+          }
           this.updateLiveRegions(line, key, parsedState.item_count);
         }
         // let gift_card_product = this.querySelector(`cart-remove-button#${gift_form_minicart.dataset.variantId}`);
@@ -276,6 +280,10 @@ class CartItems extends HTMLElement {
               );
               if (cart_free_ship) {
                 cart_free_ship.init(cart.items_subtotal_price);
+              }
+              const cart_gift_bar = document.querySelector("gift-progress-bar");
+              if (cart_gift_bar) {
+                cart_gift_bar.init(cart.items_subtotal_price);
               }
             }
           })
@@ -423,6 +431,10 @@ class CartItems extends HTMLElement {
               );
               if (cart_free_ship) {
                 cart_free_ship.init(cart.items_subtotal_price);
+              }
+              const cart_gift_bar = document.querySelector("gift-progress-bar");
+              if (cart_gift_bar) {
+                cart_gift_bar.init(cart.items_subtotal_price);
               }
             }
           })
@@ -794,6 +806,10 @@ class CartDiscount extends HTMLElement {
     const cart_free_ship = document.querySelector("free-ship-progress-bar");
     if (cart_free_ship) {
       cart_free_ship.init(data.items_subtotal_price);
+    }
+    const cart_gift_bar = document.querySelector("gift-progress-bar");
+    if (cart_gift_bar) {
+      cart_gift_bar.init(data.items_subtotal_price);
     }
   }
 

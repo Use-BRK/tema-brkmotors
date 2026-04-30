@@ -11,5 +11,51 @@
   "context": {
     "market": "br"
   },
-  "current": {}
+  "current": {
+    "show_on_minicart_cart_page": false,
+    "show_gift_bar": true,
+    "gift_threshold_1": "240",
+    "gift_product_1": "bolsa-termica-deyu-5-7-litros",
+    "color_schemes": {
+      "default": {
+        "settings": {}
+      },
+      "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9": {
+        "settings": {}
+      },
+      "scheme-e6eb46f3-2f9c-4508-b6fd-d7b50d025920": {
+        "settings": {}
+      },
+      "scheme-c4fa9b2e-e94e-477a-a1f0-ab1da4f2a676": {
+        "settings": {}
+      },
+      "scheme-c254a3f5-5a8a-4824-9170-9ef879e40f3d": {
+        "settings": {}
+      },
+      "scheme-23b545ec-54f0-49b1-9299-b0e9b31eaa60": {
+        "settings": {}
+      },
+      "scheme-932f8f2f-59ce-46a0-a014-5becdf8ef5ce": {
+        "settings": {}
+      },
+      "scheme-3d45e13e-fb95-4c3e-b8a1-d2d1427ec3ba": {
+        "settings": {}
+      },
+      "scheme-232d5a7e-74ef-4ba3-877d-01ca30ae8b1f": {
+        "settings": {}
+      },
+      "scheme-4507e574-cb7f-409c-b6cd-05082e5a8f1a": {
+        "settings": {}
+      },
+      "scheme-cb9533c3-a111-4f21-89f1-ab7c254fe728": {
+        "settings": {}
+      },
+      "scheme-395805cb-f653-4b3c-8b8a-e5581211b4c0": {
+        "settings": {}
+      },
+      "scheme-d69edefb-38da-47d9-9431-87f591681493": {
+        "settings": {}
+      }
+    }
+  }
 }

@@ -2062,6 +2062,7 @@ class CartNotification extends HTMLElement {
               if (cart_free_ship) {
                 cart_free_ship.init(cart.items_subtotal_price);
               }
+              GiftProgressBar.scheduleSync();
             }
           })
           .catch((error) => {
@@ -2192,6 +2193,7 @@ class CartNotification extends HTMLElement {
             if (cart_free_ship) {
               cart_free_ship.init(parsedState.items_subtotal_price);
             }
+            GiftProgressBar.scheduleSync();
           });
         }
         this.cartAction();
@@ -5222,6 +5224,7 @@ class ButtonSubmitBundle extends HTMLElement {
           if (cartFreeShip) {
             cartFreeShip.init(cart.items_subtotal_price);
           }
+          GiftProgressBar.scheduleSync();
         }
       })
       .catch(error => {
@@ -5455,6 +5458,7 @@ if (!customElements.get('product-form-quick-edit')) {
                   if (cart_free_ship) {
                     cart_free_ship.init(cart.items_subtotal_price);
                   }
+                  GiftProgressBar.scheduleSync();
                 }
               })
               .catch((error) => {
@@ -8155,6 +8159,7 @@ if (!customElements.get('product-form')) {
                   if (cart_free_ship) {
                     cart_free_ship.init(cart.items_subtotal_price);
                   }
+                  GiftProgressBar.scheduleSync();
                 }
               })
               .catch((error) => {

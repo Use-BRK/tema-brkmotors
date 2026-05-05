@@ -13,28 +13,23 @@
   },
   "parent": "collection.json",
   "sections": {
-    "subcollection": {
-      "disabled": true,
-      "settings": {},
-      "blocks": {}
-    },
     "scrolling_text_3pPeC": {
       "type": "scrolling-text",
       "disabled": false,
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-b370985e25b79090589f3926051bf422": null,
-        "direction": "left",
+        "header-11827ef58ef1435ad56979be474179cb": null,
+        "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 45,
-        "header-de056fa0f5e2db91be681a58378619c3": null,
+        "header-52f7bd77b8dd3f81825564a7c10b6fce": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-adee28b22cba96700c49cdd9af1d504f": null,
+        "header-8da159a0fcb338ffb15aa369b6670c75": null,
         "padding_top": 10,
         "padding_bottom": 10,
         "reset_spacing": false
@@ -45,7 +40,7 @@
           "disabled": false,
           "settings": {
             "image": null,
-            "content": "<strong>FRETE FIXO R$9,90</strong>"
+            "content": "<strong>FRETE GRÁTIS</strong>"
           }
         },
         "scrolling_text_4R8TF": {
@@ -53,7 +48,7 @@
           "disabled": false,
           "settings": {
             "image": null,
-            "content": "<strong>PARA TODO BRASIL</strong>"
+            "content": "<strong>5.5 SÓ HOJE</strong>"
           }
         }
       },
@@ -63,12 +58,6 @@
       ],
       "name": "t:sections.scrolling_text.name"
     },
-    "main": {
-      "settings": {
-        "pagination": "load_more_button"
-      },
-      "blocks": {}
-    },
     "banner": {
       "settings": {},
       "blocks": {
@@ -77,6 +66,17 @@
           "settings": {}
         }
       }
+    },
+    "subcollection": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "main": {
+      "settings": {
+        "pagination": "load_more_button"
+      },
+      "blocks": {}
     }
   },
   "order": [

@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-11827ef58ef1435ad56979be474179cb": null,
+        "header-172eeb9a6e86c5481d3e6203ec977279": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 45,
-        "header-52f7bd77b8dd3f81825564a7c10b6fce": null,
+        "header-9d7110b7510a58a750565fe14926d47c": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-8da159a0fcb338ffb15aa369b6670c75": null,
+        "header-282f6b103a06697a64afaa42396be200": null,
         "padding_top": 10,
         "padding_bottom": 10,
         "reset_spacing": false
@@ -40,7 +40,7 @@
           "disabled": false,
           "settings": {
             "image": null,
-            "content": "<strong>FRETE GRÁTIS</strong>"
+            "content": "<strong>FRETE FIXO R$9,90</strong>"
           }
         },
         "scrolling_text_4R8TF": {
@@ -48,7 +48,7 @@
           "disabled": false,
           "settings": {
             "image": null,
-            "content": "<strong>5.5 SÓ HOJE</strong>"
+            "content": "<strong>ENVIO RÁPIDO</strong>"
           }
         }
       },

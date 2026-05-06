@@ -15,33 +15,33 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-dfa91e803682f77e40592babeaaab573": null,
+        "header-c84f112fa75eddf18ac180a23486a0e7": null,
         "heading": "",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-4bebe4c6385b66054ed50048679a8c16": null,
+        "header-de3c8d83f98424f5c367ff61e6ea8829": null,
         "tab_header_style": "horizontal",
         "horizontal_tab_style": "underline",
         "display_mode": "grid",
         "items_to_show": 24,
         "items_per_row": 5,
         "column_gap": 30,
-        "header-af4f2348cb74e2cac47add772ae46347": null,
+        "header-8c22ff3eaa59ace5c0cd7b577ce29d8b": null,
         "show_arrow": false,
         "carousel_pagination": "disable",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-9a99b5678591b7170ba139b02f22581f": null,
+        "header-c84d2bbeddc11ed04b88c27265ecc24e": null,
         "rows": 2,
         "show_load_more_button": false,
         "button_label": "Load more",
-        "header-2315d687693804034f843fdc97704c9c": null,
+        "header-4597b55c94af60f1f37f4519996147fe": null,
         "carousel_on_mobile": true,
         "items_per_row_mobile": 1.5,
-        "header-f6b1a1b61439582a7daa090d533565c4": null,
+        "header-a8aedf1f2df3f0c384ad109a5ecf1b76": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -77,55 +77,18 @@
         "content_below_image": false
       },
       "blocks": {
-        "slider_item_LMpGg": {
-          "type": "slider_item",
-          "name": "Campanha Dia do Trabalho",
-          "disabled": false,
-          "settings": {
-            "header-2f43322197cccaf73e2a77486e0893e3": null,
-            "image": "shopify://shop_images/DESK_MOTORS.webp",
-            "image_mobile": "shopify://shop_images/MOTORS_MOB.webp",
-            "local_video": null,
-            "image_link": "shopify://collections/explorer-raglan",
-            "overlay_opacity": 0,
-            "header-ab3521ab78932bd7b5599a57b4c4332b": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_style": false,
-            "header-a998ca09e986546ce380b212d8677939": null,
-            "content_alignment": "center",
-            "content_position": "top-center",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 60,
-            "content_padding_inline": 60,
-            "header-9b4ad4c3f93624d62a835f0907319f19": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-b7b051702388e86b977a77cb9ef06057": null,
-            "content_alignment_mobile": "center"
-          }
-        },
         "slider_item_ErVix4": {
           "type": "slider_item",
           "disabled": true,
           "name": "Abril de Vantagens",
           "settings": {
-            "header-8793751d41f077be797583a553785b15": null,
+            "header-fa2225f0d1b346fed8346cb9ea7e9154": null,
             "image": "shopify://shop_images/BANNER-DESK.jpg",
             "image_mobile": "shopify://shop_images/BANNER-MOB.webp",
             "local_video": null,
             "image_link": "shopify://collections/explorer-raglan",
             "overlay_opacity": 0,
-            "header-9aaf0a1e7c61577d570757b5e5acdde4": null,
+            "header-50b15b8bf29f3a39089da95d3b41981d": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -136,18 +99,18 @@
             "second_button_label": "",
             "second_button_link": "",
             "second_button_style": false,
-            "header-6c04db1ac9d39e2f12b7a75e8e1684e9": null,
+            "header-d3ce440a683d98876b84dfefa49b101c": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
-            "header-aed8ce382a2a37aa9fa7c51331588a91": null,
+            "header-cb9b9f35da9aac1fba1ad3377e96033d": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-6fc09e139187b2bbfe9540243389c1f5": null,
+            "header-a78d1071f0df110e1aa6c8153e883ab5": null,
             "content_alignment_mobile": "center"
           }
         },
@@ -156,13 +119,13 @@
           "name": "Kit Casal",
           "disabled": false,
           "settings": {
-            "header-3c28ac6f8bf068a91279fa4f58ababec": null,
+            "header-2ded4a847b6db61eac2745bf1f039707": null,
             "image": "shopify://shop_images/Prancheta_2.png",
             "image_mobile": "shopify://shop_images/Mobv3.png",
             "local_video": null,
             "image_link": "shopify://collections/kits-casal",
             "overlay_opacity": 0,
-            "header-9ab4551e5dea930062c832036340fcec": null,
+            "header-033a022cc34bb50a1162cadd3baa469d": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -173,24 +136,23 @@
             "second_button_label": "",
             "second_button_link": "",
             "second_button_style": false,
-            "header-37482cf4de807a24a3dbb04887087350": null,
+            "header-f9489522febd77057ebb37575af3e6e2": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
-            "header-393d594da60a158bb658c503baed18b8": null,
+            "header-ae835e9874e5147842ac08317f2238c8": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-1d39791db4e21f7c00095ad6f67d62f8": null,
+            "header-d7ea00e32fe3add93590394c4cd3c220": null,
             "content_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
-        "slider_item_LMpGg",
         "slider_item_ErVix4",
         "slider_item_NB9EFB",
         "slider_item_ecKeq9",
@@ -202,12 +164,12 @@
       "blocks": {
         "scrolling_text_WxLKhn": {
           "settings": {
-            "content": "<strong>FRETE GRÁTIS</strong>"
+            "content": "<strong>FRETE FIXO R$9,90</strong>"
           }
         },
         "scrolling_text_4PzYLH": {
           "settings": {
-            "content": "SÓ HOJE"
+            "content": "ENVIO RÁPIDO"
           }
         }
       }

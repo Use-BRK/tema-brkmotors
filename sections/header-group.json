@@ -18,8 +18,14 @@
           "type": "text_slider",
           "settings": {
             "text1": "<a href=\"https://lp.usebrk.com.br/expedicao\" title=\"https://lp.usebrk.com.br/expedicao\"><strong>CLIQUE E PERSONALIZE PARA SEU GRUPO!</strong></a>",
+            "coupon1": "",
+            "coupon1_enabled": false,
             "text2": "CUPOM 1ª COMPRA: <strong>BEMVINDO</strong>",
+            "coupon2": "",
+            "coupon2_enabled": false,
             "text3": "",
+            "coupon3": "",
+            "coupon3_enabled": false,
             "change_every": 5,
             "hidden_on_mobile": false
           }
@@ -158,7 +164,7 @@
         "menu_collection_JbLDyz": {
           "type": "menu_collection",
           "settings": {
-            "text": "⚡ ENVIO FULL ⚡",
+            "text": "MOTOCICLISMO",
             "open-link-newtab": false,
             "item_label": "hot",
             "collection_menu_column": 4,

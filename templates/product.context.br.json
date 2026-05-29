@@ -13,23 +13,18 @@
   },
   "parent": "product.json",
   "sections": {
-    "scrolling_text_yFWFAa": {
-      "disabled": true,
-      "settings": {},
-      "blocks": {}
-    },
     "faq_UNchg": {
       "type": "faq",
       "disabled": false,
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-aa744fcb9d8c5a28721b5efe98efc581": null,
+        "header-0b2995ac70d3cc8213d67bda665ada7b": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-73a287aa61c27383f95bb3dd4733a017": null,
+        "header-4daa40215db33250f5b4916a80d195c5": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -77,7 +72,7 @@
           "disabled": false,
           "settings": {
             "faq_title": "Quais são as formas de pagamento e prazos de entrega?",
-            "faq_content": "Aceitamos as principais bandeiras de cartão de crédito (com parcelamento), boleto bancário e PIX. O prazo de entrega varia de acordo com a sua região e a modalidade de frete escolhida no carrinho."
+            "faq_content": "Aceitamos as principais bandeiras de cartão de crédito (com parcelamento) e PIX. O prazo de entrega varia de acordo com a sua região e a modalidade de frete escolhida no carrinho."
           }
         },
         "faq_items_9iRQn": {
@@ -98,6 +93,11 @@
         "faq_items_9iRQn"
       ],
       "name": "t:sections.faq.presets.name"
+    },
+    "scrolling_text_yFWFAa": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
     }
   },
   "order": [

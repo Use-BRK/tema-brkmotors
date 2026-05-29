@@ -19,12 +19,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-0b2995ac70d3cc8213d67bda665ada7b": null,
+        "header-0d745e07a5e25344bbf350cef5a6d730": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-4daa40215db33250f5b4916a80d195c5": null,
+        "header-ef8d0ae2a75bb5181d4f4b6d39438a23": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -98,6 +98,158 @@
       "disabled": true,
       "settings": {},
       "blocks": {}
+    },
+    "collection_list_HHVyFp": {
+      "type": "collection-list",
+      "disabled": false,
+      "settings": {
+        "section_width": "fluid_container",
+        "color_scheme": "",
+        "header-e23c64290ded1f0cab4a2bf40bf736ae": null,
+        "heading": "Mais Coleções",
+        "description": "",
+        "show_view_all_button": true,
+        "header_size": "medium",
+        "header_alignment": "center",
+        "header-334e8a2256cb806cceb7c7fb9c8ddb6e": null,
+        "display_mode": "carousel",
+        "image_ratio": "adapt",
+        "custom_ratio": "",
+        "items_per_row": 4,
+        "column_gap": 30,
+        "header-29dd4da6c63bec05c7663ac3624d4018": null,
+        "collection_information_position": "below_image",
+        "design": "default",
+        "text_alignment": "center",
+        "show_product_count": false,
+        "show_icon": false,
+        "show_description": false,
+        "paragraph-fcd55db483d7f9fa963efd15c43bdc93": null,
+        "font_size": 16,
+        "font_weight": "heading_weight",
+        "header-cb15e3646b39e3d5cd27dd72c4016d21": null,
+        "information_spacing": 12,
+        "rounded_image": false,
+        "image_custom_width": false,
+        "image_width": 200,
+        "header-dd5c33723ff2712f67017be7cfad7603": null,
+        "show_arrow": true,
+        "carousel_pagination": "show_dots_on_mobile",
+        "infinite": false,
+        "autoplay": false,
+        "autorotate_speed": 5,
+        "reveal": false,
+        "header-e9d7e488c4fe1a577ae145b9f30f107d": null,
+        "items_per_row_mobile": 1.5,
+        "header-c43fa75b265d931979c97687f049f1ad": null,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "reset_spacing": true
+      },
+      "blocks": {
+        "collection_MWWhGz": {
+          "type": "collection",
+          "name": "Brasil",
+          "disabled": false,
+          "settings": {
+            "collection": "camisas-do-brasil",
+            "collection_image": "shopify://shop_images/BRASIL.webp",
+            "collection_title": "Brasil"
+          }
+        },
+        "collection_3qcDWe": {
+          "type": "collection",
+          "name": "BMW GS",
+          "disabled": false,
+          "settings": {
+            "collection": "bmw-gs",
+            "collection_image": "shopify://shop_images/GS.webp",
+            "collection_title": "GS BMW"
+          }
+        },
+        "collection_t7wL3x": {
+          "type": "collection",
+          "name": "Militar",
+          "disabled": false,
+          "settings": {
+            "collection": "caveira-e-militar",
+            "collection_image": "shopify://shop_images/MILITAR.webp",
+            "collection_title": "Militar"
+          }
+        },
+        "collection_pRfBnQ": {
+          "type": "collection",
+          "name": "Triumph",
+          "disabled": false,
+          "settings": {
+            "collection": "triumph-tiger",
+            "collection_image": "shopify://shop_images/TRIUMPH.webp",
+            "collection_title": ""
+          }
+        },
+        "collection_BQ3bNK": {
+          "type": "collection",
+          "name": "Big Trail",
+          "disabled": false,
+          "settings": {
+            "collection": "big-trail",
+            "collection_image": "shopify://shop_images/BIG_TRAIL.webp",
+            "collection_title": ""
+          }
+        },
+        "collection_iVF7Tj": {
+          "type": "collection",
+          "name": "Kawasaki",
+          "disabled": false,
+          "settings": {
+            "collection": "kawasaki",
+            "collection_image": "shopify://shop_images/KAWASAKI.webp",
+            "collection_title": ""
+          }
+        },
+        "collection_x6fh4U": {
+          "type": "collection",
+          "name": "Tiger",
+          "disabled": false,
+          "settings": {
+            "collection": "tiger",
+            "collection_image": "shopify://shop_images/TIGER.webp",
+            "collection_title": ""
+          }
+        },
+        "collection_MHkBPK": {
+          "type": "collection",
+          "name": "Suzuki",
+          "disabled": false,
+          "settings": {
+            "collection": "suzuki",
+            "collection_image": "shopify://shop_images/SUZUKI.webp",
+            "collection_title": ""
+          }
+        },
+        "collection_hfa8FK": {
+          "type": "collection",
+          "name": "Africa Twin",
+          "disabled": false,
+          "settings": {
+            "collection": "africa-twin",
+            "collection_image": "shopify://shop_images/AFRICA_TWIN.webp",
+            "collection_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_MWWhGz",
+        "collection_3qcDWe",
+        "collection_t7wL3x",
+        "collection_pRfBnQ",
+        "collection_BQ3bNK",
+        "collection_iVF7Tj",
+        "collection_x6fh4U",
+        "collection_MHkBPK",
+        "collection_hfa8FK"
+      ],
+      "name": "Minibanners"
     }
   },
   "order": [
@@ -107,6 +259,7 @@
     "divider_tjfNx6",
     "17609883485ad8d257",
     "custom_liquid_ncFfAE",
+    "collection_list_HHVyFp",
     "17587473181093c5a4",
     "divider_KGC8Br",
     "product-set",

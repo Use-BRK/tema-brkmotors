@@ -15,33 +15,33 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-6fe400d1542f60b97e5d965860072141": null,
+        "header-8bf41b2ebe79705217c8fa8c27063d8c": null,
         "heading": "",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-ca1c94c99407397579c9904f970b5907": null,
+        "header-093741ae0680c82a73ddfc178fe2f7fd": null,
         "tab_header_style": "horizontal",
         "horizontal_tab_style": "underline",
         "display_mode": "grid",
         "items_to_show": 24,
         "items_per_row": 5,
         "column_gap": 30,
-        "header-184eae2d2af46f2d1429e46482119373": null,
+        "header-3dae844b8ca6354318b0380300d0b8ff": null,
         "show_arrow": false,
         "carousel_pagination": "disable",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-d266dc462e00dfb6f8a923f71e3a9210": null,
+        "header-0dc72d6fa90497aed978b8a2aaaf89c3": null,
         "rows": 2,
         "show_load_more_button": false,
         "button_label": "Load more",
-        "header-c1a3b9c20e3436872938ad26f539b38d": null,
+        "header-e21b1b864cd013640d43909a0e288472": null,
         "carousel_on_mobile": true,
         "items_per_row_mobile": 1.5,
-        "header-39bb4446e54b468525357f1a7170dc69": null,
+        "header-0a5c2116c1cebcbc27117e2a08408dc8": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -70,216 +70,18 @@
       ],
       "name": "t:sections.collection-tab.name"
     },
-    "slideshow_mWxPRH": {
-      "settings": {
-        "slide_effect": "slide",
-        "autorotate_speed": 6,
-        "content_below_image": false
-      },
-      "blocks": {
-        "slider_item_xJACgF": {
-          "type": "slider_item",
-          "name": "Caveiras e Militares",
-          "disabled": false,
-          "settings": {
-            "header-bc7bcf32f9ed66fdbe9f9767ad3b1a7e": null,
-            "image": "shopify://shop_images/CAVEIRAS_MILITARES_DESK.webp",
-            "image_mobile": "shopify://shop_images/CAVEIRAS_MILITARES_MOB.webp",
-            "local_video": null,
-            "image_link": "shopify://collections/caveira-e-militar",
-            "overlay_opacity": 0,
-            "header-c773c99a7e51653bb4bba736f8296313": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_style": false,
-            "header-f39431330e3bd5ed4631d1c75b6c68a5": null,
-            "content_alignment": "center",
-            "content_position": "bottom-left",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 60,
-            "content_padding_inline": 60,
-            "header-080e0a71b49ca02c6bbd44327d8aff2a": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-81497e60066c483692cccc2a76d4da3e": null,
-            "content_alignment_mobile": "center"
-          }
-        },
-        "slider_item_qtbPtj": {
-          "type": "slider_item",
-          "name": "Segunda Pele",
-          "disabled": false,
-          "settings": {
-            "header-b7c964bc856402bfb0248289ea050edf": null,
-            "image": "shopify://shop_images/SEGUNDA_PELE_DESK.webp",
-            "image_mobile": "shopify://shop_images/SEGUNDA_PELE_MOB.webp",
-            "local_video": null,
-            "image_link": "shopify://collections/explorer-raglan",
-            "overlay_opacity": 0,
-            "header-6436b1fb54cbce8e545b331904e32b01": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_style": false,
-            "header-3f4e5180036ed30c440e8a24bcb26968": null,
-            "content_alignment": "center",
-            "content_position": "bottom-left",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 60,
-            "content_padding_inline": 60,
-            "header-d71c56fb3769f0954dec86430b1a3a58": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-799b9739448b5c778eb5124c0ba202e3": null,
-            "content_alignment_mobile": "center"
-          }
-        },
-        "slider_item_UxPEXY": {
-          "type": "slider_item",
-          "name": "Motociclismo +Vendidas",
-          "disabled": false,
-          "settings": {
-            "header-cc6aba189aaf5a351e68c67fd4627fcd": null,
-            "image": "shopify://shop_images/MOTOCICLISMO_DESK.webp",
-            "image_mobile": "shopify://shop_images/MOTOCICLISMO_MOB.webp",
-            "local_video": null,
-            "image_link": "shopify://collections/mais-vendidos",
-            "overlay_opacity": 0,
-            "header-08feb06f0aacf47a360b01576133ea60": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_style": false,
-            "header-2e5f3f7dba02b2aaf226e7163c03367b": null,
-            "content_alignment": "center",
-            "content_position": "bottom-left",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 60,
-            "content_padding_inline": 60,
-            "header-698854b2d0f8a6ea0d2f8f685c52d73a": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-3c7e91301f1d64c9903109636a973f13": null,
-            "content_alignment_mobile": "center"
-          }
-        },
-        "slider_item_ecKeq9": {
-          "type": "slider_item",
-          "name": "Kit Casal",
-          "disabled": false,
-          "settings": {
-            "header-e6678ca98e88343a5711ea15b9642d60": null,
-            "image": "shopify://shop_images/Prancheta_2.png",
-            "image_mobile": "shopify://shop_images/Mobv3.png",
-            "local_video": null,
-            "image_link": "shopify://collections/kits-casal",
-            "overlay_opacity": 0,
-            "header-a4ccaa0986c1f4906efc7cf2aa99f624": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_style": false,
-            "header-b2405fa567b6dec550df808441dfab11": null,
-            "content_alignment": "center",
-            "content_position": "top-center",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 60,
-            "content_padding_inline": 60,
-            "header-344225f9777ab65e8ec22d0673486077": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-b9bc251e4cb1e870af8ea903ec237f43": null,
-            "content_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slider_item_xJACgF",
-        "slider_item_qtbPtj",
-        "slider_item_UxPEXY",
-        "slider_item_ecKeq9",
-        "slider_item_NB9EFB"
-      ]
-    },
-    "scrolling_text_U3mttg": {
-      "settings": {},
-      "blocks": {
-        "scrolling_text_WxLKhn": {
-          "settings": {
-            "content": "<strong>FRETE FIXO R$9,90</strong>"
-          }
-        },
-        "scrolling_text_4PzYLH": {
-          "settings": {
-            "content": "ENVIO RÁPIDO"
-          }
-        }
-      }
-    },
-    "products_deal_4xQK7g": {
-      "disabled": true,
-      "settings": {},
-      "blocks": {}
-    },
-    "icon_box_TRwJBD": {
-      "settings": {},
-      "blocks": {
-        "icon_box_tj4DJd": {
-          "settings": {
-            "description": "<p>Parcele suas compras em até 3x sem juros no cartão!</p>"
-          }
-        }
-      },
-      "block_order": [
-        "icon_box_RLNr9a",
-        "icon_box_tj4DJd"
-      ]
-    },
     "faq_TtQE4": {
       "type": "faq",
       "disabled": false,
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-0b2995ac70d3cc8213d67bda665ada7b": null,
+        "header-ced27c984b4369182b4a0d4c4d0ca0bc": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-4daa40215db33250f5b4916a80d195c5": null,
+        "header-3080f9e6183feb16ed1539de6c2b9951": null,
         "padding_top": 20,
         "padding_bottom": 20,
         "reset_spacing": true
@@ -348,6 +150,215 @@
         "faq_items_8peXfd"
       ],
       "name": "t:sections.faq.presets.name"
+    },
+    "slideshow_mWxPRH": {
+      "settings": {
+        "slide_effect": "slide",
+        "autorotate_speed": 6,
+        "content_below_image": false
+      },
+      "blocks": {
+        "slider_item_xJACgF": {
+          "type": "slider_item",
+          "name": "Caveiras e Militares",
+          "disabled": false,
+          "settings": {
+            "header-fda65f4a2158504277359d66367f0c1b": null,
+            "image": "shopify://shop_images/CAVEIRAS_MILITARES_DESK.webp",
+            "image_mobile": "shopify://shop_images/CAVEIRAS_MILITARES_MOB.webp",
+            "local_video": null,
+            "image_link": "shopify://collections/caveira-e-militar",
+            "overlay_opacity": 0,
+            "header-6194e8fbc69d95b23d6e1bb94115f2a5": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
+            "header-47b5e964791aa701cc3359aac18fcf42": null,
+            "content_alignment": "center",
+            "content_position": "bottom-left",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "header-a34ffac15c7cb76b128dbfd5c194e682": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-d7e995b5548ec425a0b11a27b411f54c": null,
+            "content_alignment_mobile": "center"
+          }
+        },
+        "slider_item_qtbPtj": {
+          "type": "slider_item",
+          "name": "Segunda Pele",
+          "disabled": false,
+          "settings": {
+            "header-eea2b3bccfda1a68010b7d672e711a5c": null,
+            "image": "shopify://shop_images/SEGUNDA_PELE_DESK.webp",
+            "image_mobile": "shopify://shop_images/SEGUNDA_PELE_MOB.webp",
+            "local_video": null,
+            "image_link": "shopify://collections/explorer-raglan",
+            "overlay_opacity": 0,
+            "header-702b4db4386ca835b4a76a205bbe9fda": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
+            "header-2b533b9d08c9b4164d740ca5c2f312bd": null,
+            "content_alignment": "center",
+            "content_position": "bottom-left",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "header-549a8bc748645235e5c1157055d8b81a": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-8377860c5c15060ff57badb81a84d320": null,
+            "content_alignment_mobile": "center"
+          }
+        },
+        "slider_item_UxPEXY": {
+          "type": "slider_item",
+          "name": "Motociclismo +Vendidas",
+          "disabled": false,
+          "settings": {
+            "header-141d14f304fa2e96a4b41bd7c6aba79c": null,
+            "image": "shopify://shop_images/MOTOCICLISMO_DESK.webp",
+            "image_mobile": "shopify://shop_images/MOTOCICLISMO_MOB.webp",
+            "local_video": null,
+            "image_link": "shopify://collections/mais-vendidos",
+            "overlay_opacity": 0,
+            "header-fee65ada8b2a7e5dea82ea0438bb53e7": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
+            "header-3247a2238311f6ed07929cdb600649b5": null,
+            "content_alignment": "center",
+            "content_position": "bottom-left",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "header-8c66697dc2d2b5edee910dc097a4a488": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-53db242df15e184b14ad7c92a3cc48e9": null,
+            "content_alignment_mobile": "center"
+          }
+        },
+        "slider_item_ecKeq9": {
+          "type": "slider_item",
+          "name": "Kit Casal",
+          "disabled": false,
+          "settings": {
+            "header-25d6da7cf3a98656de583b87a1f422c0": null,
+            "image": "shopify://shop_images/Prancheta_2.png",
+            "image_mobile": "shopify://shop_images/Mobv3.png",
+            "local_video": null,
+            "image_link": "shopify://collections/kits-casal",
+            "overlay_opacity": 0,
+            "header-b548ba8625057ec811e12125849b2495": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
+            "header-8bd87d8ab05a8a50c447ac5622ec9a71": null,
+            "content_alignment": "center",
+            "content_position": "top-center",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "header-59b700c3a8857b0369da24898e14a543": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-2b7eff5b5beb7918cb27e64d58cb4eb1": null,
+            "content_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slider_item_xJACgF",
+        "slider_item_qtbPtj",
+        "slider_item_UxPEXY",
+        "slider_item_ecKeq9",
+        "slider_item_NB9EFB"
+      ]
+    },
+    "scrolling_text_U3mttg": {
+      "settings": {},
+      "blocks": {
+        "scrolling_text_WxLKhn": {
+          "settings": {
+            "content": "<strong>FRETE FIXO R$9,90</strong>"
+          }
+        },
+        "scrolling_text_4PzYLH": {
+          "settings": {
+            "content": "ENVIO RÁPIDO"
+          }
+        }
+      }
+    },
+    "products_deal_4xQK7g": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "icon_box_TRwJBD": {
+      "settings": {},
+      "blocks": {
+        "icon_box_tj4DJd": {
+          "settings": {
+            "description": "<p>Parcele suas compras em até 3x sem juros no cartão!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_RLNr9a",
+        "icon_box_tj4DJd"
+      ]
+    },
+    "collection_list_HPrebt": {
+      "settings": {},
+      "blocks": {
+        "collection_qikAgz": {
+          "disabled": true,
+          "settings": {
+            "collection_image": "shopify://shop_images/carros_bd5e23d2-46fc-4d06-a100-bb2300c55923.jpg"
+          }
+        }
+      }
     }
   },
   "context": {

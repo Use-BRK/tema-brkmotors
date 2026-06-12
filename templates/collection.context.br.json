@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-36d2c0c8646d3a62a28d572791b9d9cb": null,
+        "header-8828228df324464b6520cd4a748eb157": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 45,
-        "header-f038030b42d4791d1c7ca2c14760df73": null,
+        "header-d87e8f61c95d3ff3957a1e0d8045303d": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-54b5d1bab79c3e058bd05991c1825f4e": null,
+        "header-22273a49ac0419725b5177cd81880b9b": null,
         "padding_top": 10,
         "padding_bottom": 10,
         "reset_spacing": false
@@ -81,8 +81,8 @@
           "type": "gender_filter",
           "disabled": false,
           "settings": {
-            "label_masculino": "MASCULINO",
-            "label_feminino": "FEMININA",
+            "label_masculino": "Masculino",
+            "label_feminino": "Feminina",
             "filter_collection_list": [
               "big-trail",
               "big-trail-2026"

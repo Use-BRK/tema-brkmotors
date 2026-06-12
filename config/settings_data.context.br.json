@@ -17,6 +17,8 @@
     "show_gift_bar": false,
     "gift_threshold_1": "240",
     "gift_product_1": "bolsa-termica-deyu-5-7-litros",
+    "minicart_type": "show_beside",
+    "show_on_cart_page": true,
     "scroll_animation": "none",
     "hover_effect": "hover_zoom",
     "color_schemes": {

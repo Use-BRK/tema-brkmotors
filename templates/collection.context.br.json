@@ -81,8 +81,8 @@
           "type": "gender_filter",
           "disabled": false,
           "settings": {
-            "label_masculino": "Masculino",
-            "label_feminino": "Feminino",
+            "label_masculino": "MASCULINO",
+            "label_feminino": "FEMININA",
             "filter_collection_list": [
               "big-trail",
               "big-trail-2026"

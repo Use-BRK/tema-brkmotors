@@ -1,4 +1,69 @@
 {{ 'collection-page.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%} Gender Filter Block - Verificação de coleção {%- endcomment -%}
+{%- assign show_gender_filter = false -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'gender_filter' -%}
+    {%- assign gender_block = block -%}
+    {%- if block.settings.filter_collection_list == blank -%}
+      {%- assign show_gender_filter = true -%}
+    {%- else -%}
+      {%- for col in block.settings.filter_collection_list -%}
+        {%- if col.handle == collection.handle -%}
+          {%- assign show_gender_filter = true -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if show_gender_filter -%}
+<style>
+  .gender-filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px 15px;
+    margin-bottom: 10px;
+  }
+  .gender-filter-btn {
+    position: relative;
+    padding: 12px 36px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 2px solid var(--color-heading, #222);
+    background: transparent;
+    color: var(--color-heading, #222);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border-radius: 0;
+    min-width: 160px;
+    text-align: center;
+  }
+  .gender-filter-btn:hover,
+  .gender-filter-btn.active {
+    background: var(--color-heading, #222);
+    color: var(--color-background, #fff);
+  }
+  @media (max-width: 749px) {
+    .gender-filter-bar {
+      gap: 8px;
+      padding: 15px 10px;
+    }
+    .gender-filter-btn {
+      flex: 1;
+      min-width: 0;
+      padding: 11px 10px;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+  }
+</style>
+{%- endif -%}
+
 {% # theme-check-disable ContentForHeaderModification %}
 {%- capture content_for_query_string -%}
   {{ content_for_header }}
@@ -106,6 +171,32 @@
           {%- if enable_filtering and filter_layout -%}
             {%- render 'filter-current', class: 'mb-30' -%}
           {% endif %}
+
+          {%- if show_gender_filter -%}
+            {%- assign masc_active = false -%}
+            {%- assign fem_active = false -%}
+            {%- assign masc_value = '' -%}
+            {%- assign fem_value = '' -%}
+            {%- for filter in collection.filters -%}
+              {%- if filter.param_name == 'filter.p.m.custom.genero' -%}
+                {%- for value in filter.values -%}
+                  {%- assign value_down = value.label | downcase -%}
+                  {%- if value_down == 'masculino' -%}
+                    {%- assign masc_active = value.active -%}
+                    {%- assign masc_value = value.label -%}
+                  {%- elsif value_down == 'feminino' -%}
+                    {%- assign fem_active = value.active -%}
+                    {%- assign fem_value = value.label -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endfor -%}
+
+            <div class="gender-filter-bar" id="gender-filter-bar" {{ gender_block.shopify_attributes }}>
+              <button class="gender-filter-btn{% if masc_active %} active{% endif %}" data-filter-value="{{ masc_value }}" type="button">{{ gender_block.settings.label_masculino }}</button>
+              <button class="gender-filter-btn{% if fem_active %} active{% endif %}" data-filter-value="{{ fem_value }}" type="button">{{ gender_block.settings.label_feminino }}</button>
+            </div>
+          {%- endif -%}
 
           <div
             class="product-grid-container relative"
@@ -287,6 +378,62 @@
     </div>
   </grid-list>
 </section>
+
+{%- if show_gender_filter -%}
+<script>
+  (function () {
+    var sectionSelector = '.sec__collection-main';
+
+    function genderFilter(btn) {
+      var isActive = btn.classList.contains('active');
+      var filterValue = btn.getAttribute('data-filter-value');
+
+      var params = new URLSearchParams(window.location.search);
+      params.delete('filter.p.m.custom.genero');
+      if (!isActive && filterValue) {
+        params.set('filter.p.m.custom.genero', filterValue);
+      }
+
+      var searchParams = params.toString();
+      var section = document.querySelector(sectionSelector);
+      var sectionId = section ? section.dataset.sectionId : '';
+      var fetchUrl = window.location.pathname + '?section_id=' + sectionId + (searchParams ? '&' + searchParams : '');
+      var browserUrl = window.location.pathname + (searchParams ? '?' + searchParams : '');
+
+      document.body.classList.add('start', 'loading');
+
+      fetch(fetchUrl)
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var doc = new DOMParser().parseFromString(html, 'text/html');
+          if (window.innerWidth <= 1024) {
+            var newGrid = doc.querySelector('#productgridcontainer');
+            var newFilters = doc.querySelector('.filter-blocks');
+            if (newGrid) document.querySelector('#productgridcontainer').innerHTML = newGrid.innerHTML;
+            if (newFilters) document.querySelector('.filter-blocks').innerHTML = newFilters.innerHTML;
+          } else {
+            var newSection = doc.querySelector(sectionSelector);
+            if (newSection) document.querySelector(sectionSelector).replaceWith(newSection);
+          }
+          window.history.pushState({ url: browserUrl }, '', browserUrl);
+        })
+        .catch(function () {
+          window.location.href = browserUrl;
+        })
+        .finally(function () {
+          document.body.classList.remove('start', 'loading', 'finish');
+          if (typeof initLazyloadItem !== 'undefined') initLazyloadItem();
+          if (typeof BlsLazyloadImg !== 'undefined') BlsLazyloadImg.init();
+        });
+    }
+
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('.gender-filter-btn');
+      if (btn) genderFilter(btn);
+    });
+  })();
+</script>
+{%- endif -%}
 
 {% schema %}
 {
@@ -541,6 +688,31 @@
     }
   ],
   "blocks": [
+    {
+      "type": "gender_filter",
+      "name": "Filtro de Gênero",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label_masculino",
+          "label": "Label botão masculino",
+          "default": "Masculino"
+        },
+        {
+          "type": "text",
+          "id": "label_feminino",
+          "label": "Label botão feminino",
+          "default": "Feminino"
+        },
+        {
+          "type": "collection_list",
+          "id": "filter_collection_list",
+          "label": "Coleções",
+          "info": "Selecione as coleções onde este filtro deve aparecer. Se vazio, aparecerá em todas."
+        }
+      ]
+    },
     {
       "type": "categories",
       "name": "t:sections.collection-main.blocks.categories.name",

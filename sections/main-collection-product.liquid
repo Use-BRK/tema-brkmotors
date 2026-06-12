@@ -173,6 +173,14 @@
           {% endif %}
 
           {%- if show_gender_filter -%}
+            <!-- DEBUG: remove after testing -->
+            <div style="background:#ffe0e0;padding:10px;margin:10px 0;font-family:monospace;font-size:12px;">
+              <strong>Filtros disponíveis:</strong><br>
+              {%- for filter in collection.filters -%}
+                {{ filter.param_name }} ({{ filter.label }}) — values: {% for v in filter.values %}{{ v.label }}{% unless forloop.last %}, {% endunless %}{% endfor %}<br>
+              {%- endfor -%}
+            </div>
+            <!-- /DEBUG -->
             {%- assign masc_active = false -%}
             {%- assign fem_active = false -%}
             {%- assign masc_value = '' -%}

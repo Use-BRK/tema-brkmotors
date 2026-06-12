@@ -184,7 +184,7 @@
                   {%- if value_down == 'masculino' -%}
                     {%- assign masc_active = value.active -%}
                     {%- assign masc_value = value.label -%}
-                  {%- elsif value_down == 'feminino' -%}
+                  {%- elsif value_down == 'feminino' or value_down == 'feminina' -%}
                     {%- assign fem_active = value.active -%}
                     {%- assign fem_value = value.label -%}
                   {%- endif -%}

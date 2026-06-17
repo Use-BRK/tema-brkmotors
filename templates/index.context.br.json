@@ -15,33 +15,33 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-8bf41b2ebe79705217c8fa8c27063d8c": null,
+        "header-b64c1d868bd42e5d8a41be24fdbbb63f": null,
         "heading": "",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-093741ae0680c82a73ddfc178fe2f7fd": null,
+        "header-146ea89785b5d7f80deabd809f5d2723": null,
         "tab_header_style": "horizontal",
         "horizontal_tab_style": "underline",
         "display_mode": "grid",
         "items_to_show": 24,
         "items_per_row": 5,
         "column_gap": 30,
-        "header-3dae844b8ca6354318b0380300d0b8ff": null,
+        "header-3ddcde9ef43fcf6a0459f64b4b16fe4e": null,
         "show_arrow": false,
         "carousel_pagination": "disable",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-0dc72d6fa90497aed978b8a2aaaf89c3": null,
+        "header-94d1b712187938cee39032e69fa8e0c6": null,
         "rows": 2,
         "show_load_more_button": false,
         "button_label": "Load more",
-        "header-e21b1b864cd013640d43909a0e288472": null,
+        "header-1210502fc653f33564d8f2084fa422ec": null,
         "carousel_on_mobile": true,
         "items_per_row_mobile": 1.5,
-        "header-0a5c2116c1cebcbc27117e2a08408dc8": null,
+        "header-b1f70de80ae456f6b71c29aefc5cc32f": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -76,12 +76,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-ced27c984b4369182b4a0d4c4d0ca0bc": null,
+        "header-d98e8e22252eb8273867697287034830": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-3080f9e6183feb16ed1539de6c2b9951": null,
+        "header-26cdf2079f5b38e450fcdd3f0f9e4ce9": null,
         "padding_top": 20,
         "padding_bottom": 20,
         "reset_spacing": true
@@ -163,13 +163,13 @@
           "name": "Caveiras e Militares",
           "disabled": false,
           "settings": {
-            "header-fda65f4a2158504277359d66367f0c1b": null,
+            "header-0ac43733aef11642f0da744df3da7bf6": null,
             "image": "shopify://shop_images/CAVEIRAS_MILITARES_DESK.webp",
             "image_mobile": "shopify://shop_images/CAVEIRAS_MILITARES_MOB.webp",
             "local_video": null,
             "image_link": "shopify://collections/caveira-e-militar",
             "overlay_opacity": 0,
-            "header-6194e8fbc69d95b23d6e1bb94115f2a5": null,
+            "header-991ec7c02ae4e93abd49e378b7ea8a2c": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -180,18 +180,18 @@
             "second_button_label": "",
             "second_button_link": "",
             "second_button_style": false,
-            "header-47b5e964791aa701cc3359aac18fcf42": null,
+            "header-a66e8f290017aee582570f90b22ce1a2": null,
             "content_alignment": "center",
             "content_position": "bottom-left",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
-            "header-a34ffac15c7cb76b128dbfd5c194e682": null,
+            "header-0f02d0b31ce5b03f0cc197bf3a489469": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-d7e995b5548ec425a0b11a27b411f54c": null,
+            "header-920db4bb9daa7dd10c83875872edb98e": null,
             "content_alignment_mobile": "center"
           }
         },
@@ -200,13 +200,13 @@
           "name": "Segunda Pele",
           "disabled": false,
           "settings": {
-            "header-eea2b3bccfda1a68010b7d672e711a5c": null,
+            "header-94399ff358816d601a549c6bb653d51c": null,
             "image": "shopify://shop_images/SEGUNDA_PELE_DESK.webp",
             "image_mobile": "shopify://shop_images/SEGUNDA_PELE_MOB.webp",
             "local_video": null,
             "image_link": "shopify://collections/explorer-raglan",
             "overlay_opacity": 0,
-            "header-702b4db4386ca835b4a76a205bbe9fda": null,
+            "header-066fda320d9d42a0796959a83ee7724f": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -217,18 +217,18 @@
             "second_button_label": "",
             "second_button_link": "",
             "second_button_style": false,
-            "header-2b533b9d08c9b4164d740ca5c2f312bd": null,
+            "header-0554e01067f56dd9684b977101fb1bd8": null,
             "content_alignment": "center",
             "content_position": "bottom-left",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
-            "header-549a8bc748645235e5c1157055d8b81a": null,
+            "header-ef0cfc82fdb5d085b8a23aedd051f274": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-8377860c5c15060ff57badb81a84d320": null,
+            "header-32502b29b5236e2685441e29103a081b": null,
             "content_alignment_mobile": "center"
           }
         },
@@ -237,13 +237,13 @@
           "name": "Motociclismo +Vendidas",
           "disabled": false,
           "settings": {
-            "header-141d14f304fa2e96a4b41bd7c6aba79c": null,
+            "header-1765ee50da30890bce5bf0e37e6d81cb": null,
             "image": "shopify://shop_images/MOTOCICLISMO_DESK.webp",
             "image_mobile": "shopify://shop_images/MOTOCICLISMO_MOB.webp",
             "local_video": null,
             "image_link": "shopify://collections/mais-vendidos",
             "overlay_opacity": 0,
-            "header-fee65ada8b2a7e5dea82ea0438bb53e7": null,
+            "header-0f52be106e065d98fcac3c1c236e095b": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -254,18 +254,18 @@
             "second_button_label": "",
             "second_button_link": "",
             "second_button_style": false,
-            "header-3247a2238311f6ed07929cdb600649b5": null,
+            "header-cb71a8d8e78900359e7d282e408a4589": null,
             "content_alignment": "center",
             "content_position": "bottom-left",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
-            "header-8c66697dc2d2b5edee910dc097a4a488": null,
+            "header-39c679b7ae646bccbce5f1128518fd4c": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-53db242df15e184b14ad7c92a3cc48e9": null,
+            "header-3d929bcf718dacfadfc2a35b708af849": null,
             "content_alignment_mobile": "center"
           }
         },
@@ -274,13 +274,13 @@
           "name": "Kit Casal",
           "disabled": false,
           "settings": {
-            "header-25d6da7cf3a98656de583b87a1f422c0": null,
+            "header-205d5187e70b9d1262f939b723c4ce67": null,
             "image": "shopify://shop_images/Prancheta_2.png",
             "image_mobile": "shopify://shop_images/Mobv3.png",
             "local_video": null,
             "image_link": "shopify://collections/kits-casal",
             "overlay_opacity": 0,
-            "header-b548ba8625057ec811e12125849b2495": null,
+            "header-a57131c299f0a35294ab38bd8f69b022": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -291,18 +291,18 @@
             "second_button_label": "",
             "second_button_link": "",
             "second_button_style": false,
-            "header-8bd87d8ab05a8a50c447ac5622ec9a71": null,
+            "header-7281df7e4bc2a5cf526300492650425b": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
-            "header-59b700c3a8857b0369da24898e14a543": null,
+            "header-d3624f5287c8ca9b395aec8055a3d86e": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-2b7eff5b5beb7918cb27e64d58cb4eb1": null,
+            "header-9efc82b81c6bcc0b45b63cf772b6a8db": null,
             "content_alignment_mobile": "center"
           }
         }
@@ -335,6 +335,17 @@
       "settings": {},
       "blocks": {}
     },
+    "collection_list_HPrebt": {
+      "settings": {},
+      "blocks": {
+        "collection_qikAgz": {
+          "disabled": true,
+          "settings": {
+            "collection_image": "shopify://shop_images/carros_bd5e23d2-46fc-4d06-a100-bb2300c55923.jpg"
+          }
+        }
+      }
+    },
     "icon_box_TRwJBD": {
       "settings": {},
       "blocks": {
@@ -348,17 +359,6 @@
         "icon_box_RLNr9a",
         "icon_box_tj4DJd"
       ]
-    },
-    "collection_list_HPrebt": {
-      "settings": {},
-      "blocks": {
-        "collection_qikAgz": {
-          "disabled": true,
-          "settings": {
-            "collection_image": "shopify://shop_images/carros_bd5e23d2-46fc-4d06-a100-bb2300c55923.jpg"
-          }
-        }
-      }
     }
   },
   "context": {
@@ -368,10 +368,10 @@
   "order": [
     "slideshow_mWxPRH",
     "scrolling_text_U3mttg",
+    "collection_tab_CPENAL",
+    "collection_list_UwFk4D",
     "products_deal_4xQK7g",
     "collection_tab_nKDAh",
-    "collection_list_UwFk4D",
-    "collection_tab_CPENAL",
     "multi_content_cP4Xyf",
     "collection_list_VmEYkJ",
     "products_carousel_7hRpFX",

@@ -21,6 +21,7 @@
     "show_on_cart_page": true,
     "scroll_animation": "none",
     "hover_effect": "hover_zoom",
+    "store_email": "sacbrk@usebrk.com.br",
     "color_schemes": {
       "default": {
         "settings": {}

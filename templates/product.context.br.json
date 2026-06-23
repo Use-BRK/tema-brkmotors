@@ -13,135 +13,49 @@
   },
   "parent": "product.json",
   "sections": {
-    "faq_UNchg": {
-      "type": "faq",
-      "disabled": false,
-      "settings": {
-        "section_width": "container",
-        "color_scheme": "",
-        "header-0d745e07a5e25344bbf350cef5a6d730": null,
-        "heading": "Perguntas Frequentes",
-        "description": "",
-        "header_size": "medium",
-        "header_alignment": "center",
-        "header-ef8d0ae2a75bb5181d4f4b6d39438a23": null,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
-      },
-      "blocks": {
-        "faq_items_fn3jR": {
-          "type": "faq-items",
-          "name": "Proteção UV50",
-          "disabled": false,
-          "settings": {
-            "faq_title": "Os produtos da BRK possuem proteção solar real?",
-            "faq_content": "Sim. Nossas camisas contam com a tecnologia <strong>UV50+</strong>, que bloqueia até 98% dos raios UVA e UVB. Essa proteção é aplicada diretamente nas fibras do tecido, o que garante que a eficácia não saia nas lavagens, mantendo você seguro durante toda a vida útil da peça."
-          }
-        },
-        "faq_items_9nYHT": {
-          "type": "faq-items",
-          "name": "Diferencial",
-          "disabled": false,
-          "settings": {
-            "faq_title": "Qual é o diferencial do tecido das camisas BRK?",
-            "faq_content": "Utilizamos tecidos de alta tecnologia, que permite a rápida evaporação do suor, mantendo o corpo seco e em temperatura agradável, mesmo em atividades sob sol intenso ou práticas esportivas."
-          }
-        },
-        "faq_items_cRtdi": {
-          "type": "faq-items",
-          "name": "Tamanho Ideal",
-          "disabled": false,
-          "settings": {
-            "faq_title": "Como escolher o tamanho ideal para mim?",
-            "faq_content": "Em cada página de produto, disponibilizamos uma <strong>Tabela de Medidas</strong>. Recomendamos comparar as medidas de uma peça que você já usa com os nossos valores."
-          }
-        },
-        "faq_items_wMB7b": {
-          "type": "faq-items",
-          "name": "Desbotam",
-          "disabled": false,
-          "settings": {
-            "faq_title": "As cores das camisas desbotam com o tempo?",
-            "faq_content": "Não. Utilizamos um processo de sublimação de alta definição. Isso garante que as estampas e cores permaneçam vivas e vibrantes mesmo após diversas lavagens e exposição prolongada ao sol."
-          }
-        },
-        "faq_items_TPHkB": {
-          "type": "faq-items",
-          "name": "Formas de Pagamento",
-          "disabled": false,
-          "settings": {
-            "faq_title": "Quais são as formas de pagamento e prazos de entrega?",
-            "faq_content": "Aceitamos as principais bandeiras de cartão de crédito (com parcelamento) e PIX. O prazo de entrega varia de acordo com a sua região e a modalidade de frete escolhida no carrinho."
-          }
-        },
-        "faq_items_9iRQn": {
-          "type": "faq-items",
-          "disabled": false,
-          "settings": {
-            "faq_title": "Posso trocar o produto se não servir?",
-            "faq_content": "Se você recebeu um produto e não ficou satisfeito ou ele simplesmente não serviu, é possível fazer a solicitação devolução para estorno <strong>em até 7 dias corridos após a entrega</strong>. Para isso, o produto deverá estar em sua embalagem original, sem indícios de uso e com todos os itens e acessórios recebidos. Para os casos de insatisfação com o produto adquirido, solicite a troca, através do nosso Portal de Trocas e Devoluções, pelo endereço <a href=\"https://brkagro.troque.app.br/\" target=\"_blank\">https://brkmotors.troque.app.br/</a>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_items_fn3jR",
-        "faq_items_9nYHT",
-        "faq_items_cRtdi",
-        "faq_items_wMB7b",
-        "faq_items_TPHkB",
-        "faq_items_9iRQn"
-      ],
-      "name": "t:sections.faq.presets.name"
-    },
-    "scrolling_text_yFWFAa": {
-      "disabled": true,
-      "settings": {},
-      "blocks": {}
-    },
     "collection_list_HHVyFp": {
       "type": "collection-list",
       "disabled": false,
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-e23c64290ded1f0cab4a2bf40bf736ae": null,
+        "header-941ccc2368758e439c869dcaf41f3a05": null,
         "heading": "Mais Coleções",
         "description": "",
         "show_view_all_button": true,
         "header_size": "medium",
         "header_alignment": "center",
-        "header-334e8a2256cb806cceb7c7fb9c8ddb6e": null,
+        "header-59ed28271055744c066137b78eed9d86": null,
         "display_mode": "carousel",
         "image_ratio": "adapt",
         "custom_ratio": "",
         "items_per_row": 4,
         "column_gap": 30,
-        "header-29dd4da6c63bec05c7663ac3624d4018": null,
+        "header-5760cbe5fdb1442d5cd2c480bdb74dff": null,
         "collection_information_position": "below_image",
         "design": "default",
         "text_alignment": "center",
         "show_product_count": false,
         "show_icon": false,
         "show_description": false,
-        "paragraph-fcd55db483d7f9fa963efd15c43bdc93": null,
+        "paragraph-0589eb66f2a9fb42c08535f242a0b922": null,
         "font_size": 16,
         "font_weight": "heading_weight",
-        "header-cb15e3646b39e3d5cd27dd72c4016d21": null,
+        "header-32b4fb2a2b37d97d307819a7311b9c17": null,
         "information_spacing": 12,
         "rounded_image": false,
         "image_custom_width": false,
         "image_width": 200,
-        "header-dd5c33723ff2712f67017be7cfad7603": null,
+        "header-862477519e6faf73bc2fabe43e2a728d": null,
         "show_arrow": true,
         "carousel_pagination": "show_dots_on_mobile",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-e9d7e488c4fe1a577ae145b9f30f107d": null,
+        "header-58eb56457f9f4b214b347b65cf7f6550": null,
         "items_per_row_mobile": 1.5,
-        "header-c43fa75b265d931979c97687f049f1ad": null,
+        "header-cb8d4f8486a46f1796c8f3fa8643cacb": null,
         "padding_top": 20,
         "padding_bottom": 20,
         "reset_spacing": true
@@ -250,6 +164,133 @@
         "collection_hfa8FK"
       ],
       "name": "Minibanners"
+    },
+    "faq_UNchg": {
+      "type": "faq",
+      "disabled": false,
+      "settings": {
+        "section_width": "container",
+        "color_scheme": "",
+        "header-5b4177e7174cb9f52c07ebf38502c4e4": null,
+        "heading": "Perguntas Frequentes",
+        "description": "",
+        "header_size": "medium",
+        "header_alignment": "center",
+        "header-3523dc19335c7ab95266b2abfea553b4": null,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      },
+      "blocks": {
+        "faq_items_fn3jR": {
+          "type": "faq-items",
+          "name": "Proteção UV50",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Os produtos da BRK possuem proteção solar real?",
+            "faq_content": "Sim. Nossas camisas contam com a tecnologia <strong>UV50+</strong>, que bloqueia até 98% dos raios UVA e UVB. Essa proteção é aplicada diretamente nas fibras do tecido, o que garante que a eficácia não saia nas lavagens, mantendo você seguro durante toda a vida útil da peça."
+          }
+        },
+        "faq_items_9nYHT": {
+          "type": "faq-items",
+          "name": "Diferencial",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Qual é o diferencial do tecido das camisas BRK?",
+            "faq_content": "Utilizamos tecidos de alta tecnologia, que permite a rápida evaporação do suor, mantendo o corpo seco e em temperatura agradável, mesmo em atividades sob sol intenso ou práticas esportivas."
+          }
+        },
+        "faq_items_cRtdi": {
+          "type": "faq-items",
+          "name": "Tamanho Ideal",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Como escolher o tamanho ideal para mim?",
+            "faq_content": "Em cada página de produto, disponibilizamos uma <strong>Tabela de Medidas</strong>. Recomendamos comparar as medidas de uma peça que você já usa com os nossos valores."
+          }
+        },
+        "faq_items_wMB7b": {
+          "type": "faq-items",
+          "name": "Desbotam",
+          "disabled": false,
+          "settings": {
+            "faq_title": "As cores das camisas desbotam com o tempo?",
+            "faq_content": "Não. Utilizamos um processo de sublimação de alta definição. Isso garante que as estampas e cores permaneçam vivas e vibrantes mesmo após diversas lavagens e exposição prolongada ao sol."
+          }
+        },
+        "faq_items_TPHkB": {
+          "type": "faq-items",
+          "name": "Formas de Pagamento",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Quais são as formas de pagamento e prazos de entrega?",
+            "faq_content": "Aceitamos as principais bandeiras de cartão de crédito (com parcelamento) e PIX. O prazo de entrega varia de acordo com a sua região e a modalidade de frete escolhida no carrinho."
+          }
+        },
+        "faq_items_9iRQn": {
+          "type": "faq-items",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Posso trocar o produto se não servir?",
+            "faq_content": "Se você recebeu um produto e não ficou satisfeito ou ele simplesmente não serviu, é possível fazer a solicitação devolução para estorno <strong>em até 7 dias corridos após a entrega</strong>. Para isso, o produto deverá estar em sua embalagem original, sem indícios de uso e com todos os itens e acessórios recebidos. Para os casos de insatisfação com o produto adquirido, solicite a troca, através do nosso Portal de Trocas e Devoluções, pelo endereço <a href=\"https://brkagro.troque.app.br/\" target=\"_blank\">https://brkmotors.troque.app.br/</a>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_items_fn3jR",
+        "faq_items_9nYHT",
+        "faq_items_cRtdi",
+        "faq_items_wMB7b",
+        "faq_items_TPHkB",
+        "faq_items_9iRQn"
+      ],
+      "name": "t:sections.faq.presets.name"
+    },
+    "scrolling_text_yFWFAa": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "main": {
+      "settings": {},
+      "blocks": {
+        "custom_name_button_mPJXV": {
+          "type": "custom_name_button",
+          "disabled": false,
+          "settings": {
+            "enable_button": true,
+            "button_label": "Quero meu nome na Camisa (R$29,90)",
+            "whatsapp_number": "553432194697",
+            "collections": []
+          }
+        }
+      },
+      "block_order": [
+        "badges_RwfTMp",
+        "review_and_sold_AAbJC9",
+        "title_G6tU8U",
+        "product_meta_kiKPhW",
+        "price_VJ4N8m",
+        "countdown_timer_QB4Ydn",
+        "complementary_products_Wip9YG",
+        "more_colors_3zmxGq",
+        "variant_picker_tcCihG",
+        "buy_buttons_LcQGtR",
+        "custom_name_button_mPJXV",
+        "short_description_9BGxVm",
+        "product_addons_YRaprz",
+        "stock_countdown_JNK9zi",
+        "product_grouped_6epkNf",
+        "delivery_return_iJHeMD",
+        "model_size_XM7z6E",
+        "pickup_avaiability_cyVydQ",
+        "text_CzxwUn",
+        "trust_badge_qKXhpg",
+        "collapsible_row_m3g6f8",
+        "collapsible_row_eLaQpR",
+        "collapsible_row_DA4FUC",
+        "frete_no_produto_shipping_calc_rYXafQ"
+      ]
     }
   },
   "order": [

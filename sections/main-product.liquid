@@ -226,6 +226,18 @@
                 else
                   assign matches_collection = true
                 endif
+                comment
+                  Envio imediato (FULL): personalização não é aplicável (peça precisa ser produzida).
+                  Se QUALQUER variante tiver 'FULL' no SKU, o botão NÃO aparece.
+                endcomment
+                assign has_full_sku = false
+                for variant in product.variants
+                  assign variant_sku_up = variant.sku | upcase
+                  if variant_sku_up contains 'FULL'
+                    assign has_full_sku = true
+                    break
+                  endif
+                endfor
                 assign button_label = block_st.button_label | default: 'Quero meu nome na Camisa (R$29,90)'
                 assign product_url = request.origin | append: product.url
                 assign message = 'Olá, gostei dessa camisa e quero meu nome nela! Estou ciente do valor adicional (+R$29,90)'
@@ -237,7 +249,7 @@
                   assign whatsapp_url = 'https://api.whatsapp.com/send?text=' | append: whatsapp_text
                 endif
               -%}
-              {% if show_button and matches_collection %}
+              {% if show_button and matches_collection and has_full_sku == false %}
                 <div class="product-detail__custom-name-button mb-20" {{ block.shopify_attributes }}>
                   <div class="button_buy-now grow-1 skeleton-loading">
                     <a
@@ -273,7 +285,7 @@
                           window.clarity('set', 'botao_nome_camisa', {{ product.handle | json }});
                         }
                         if (window.Shopify && Shopify.analytics && typeof Shopify.analytics.publish === 'function') {
-                          Shopify.analytics.publish('brkagro:nome_personalizado_click', {
+                          Shopify.analytics.publish('brkmotors:nome_personalizado_click', {
                             productId: {{ product.id | json }},
                             productTitle: {{ product.title | json }},
                             productHandle: {{ product.handle | json }},

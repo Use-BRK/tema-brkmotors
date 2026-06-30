@@ -1,9 +1,6 @@
 {% liquid
   assign block_st = block.settings
-  comment
-    `product` e `block` são recebidos via {% render 'custom-name-button', product: product, block: block %}
-    (no Glozin 2.5.0 o botão é section block, sem `closest`).
-  endcomment
+  # product e block sao recebidos via render no main-product (Glozin 2.5.0 = section block, sem closest)
   assign show_button = block_st.enable_button
   assign selected_collections = block_st.collections
   assign has_collection_filter = false

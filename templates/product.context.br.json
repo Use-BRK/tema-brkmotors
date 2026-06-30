@@ -272,12 +272,12 @@
           }
         },
         "delivery_return_iJHeMD": {
-          "disabled": true,
+          "disabled": false,
           "settings": {
-            "return_content": "",
-            "return_content_icon": "none",
+            "discount_content_icon": "discount",
             "discount_content": "<p>Use o cupom \"<strong>BEMVINDO15</strong>\" e ganhe R$15 de desconto!</p>",
-            "discount_content_icon": "none"
+            "return_content_icon": "none",
+            "return_content": ""
           }
         }
       },

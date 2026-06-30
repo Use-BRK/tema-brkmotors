@@ -357,24 +357,38 @@ class CustomNameModal extends HTMLElement {
       const d2 = await r2.json();
       if (!r2.ok) throw new Error((d2 && d2.description) || "Erro ao adicionar ao carrinho");
 
-      this.close();
-      // Atualiza a section do minicart e abre o drawer via cartAction() (padrão Glozin 2.5.0)
-      if (cn && d2 && d2.sections && typeof cn.getSectionsToRender === "function") {
+      // ── Atualiza o minicart (Glozin 2.5.0) e abre o drawer ──
+      // 1) HTML da section do minicart: da resposta do add; senão, busca fresco.
+      let sectionHTML = (d2 && d2.sections && d2.sections["minicart-form"]) || null;
+      if (!sectionHTML) {
         try {
-          cn.getSectionsToRender().forEach((section) => {
-            const el = document.getElementById(section.id);
-            const secHtml = d2.sections[section.id];
-            if (!el || !secHtml) return;
-            const parsed = new DOMParser().parseFromString(secHtml, "text/html");
-            const inner = parsed.querySelector("#minicart-form") || parsed.querySelector(".shopify-section") || parsed.body;
-            if (inner) el.innerHTML = inner.innerHTML;
-          });
+          const sres = await fetch(this.root + "?sections=minicart-form");
+          sectionHTML = (await sres.json())["minicart-form"];
         } catch (e) {}
-        if (typeof cn.cartAction === "function") cn.cartAction();
-        else if (typeof cn.open === "function") cn.open();
-      } else {
-        window.location.href = this.root + "cart";
       }
+      const mcEl = document.getElementById("minicart-form");
+      if (mcEl && sectionHTML) {
+        const parsed = new DOMParser().parseFromString(sectionHTML, "text/html");
+        const inner = parsed.querySelector("#minicart-form");
+        mcEl.innerHTML = inner ? inner.innerHTML : sectionHTML;
+      }
+      // 2) Atualiza contadores/total (igual ao tema)
+      try {
+        const cart = await (await fetch(this.root + "cart.js")).json();
+        document.querySelectorAll(".cart-count").forEach((el) => {
+          el.innerHTML = el.classList.contains("cart-count-drawer")
+            ? `(${cart.item_count})`
+            : (cart.item_count > 100 ? "~" : cart.item_count);
+        });
+        const htp = document.querySelector("header-total-price");
+        if (htp && typeof htp.updateTotal === "function") htp.updateTotal(cart);
+      } catch (e) {}
+
+      // 3) Fecha o modal, re-vincula listeners do minicart e abre o drawer
+      this.close();
+      if (cn && typeof cn.cartAction === "function") cn.cartAction();
+      if (cn && typeof cn.open === "function") cn.open();
+      else if (!cn) window.location.href = this.root + "cart";
     } catch (e) {
       this.flash((e && e.message) || "Não foi possível adicionar ao carrinho.");
     } finally {

@@ -4,11 +4,19 @@ class MinicartDiscount extends HTMLElement {
 
   constructor() {
     super();
-    this.init();
+  }
+
+  connectedCallback() {
+    // Binding no connectedCallback (NÃO no constructor): quando o minicart é
+    // re-renderizado via innerHTML, os filhos (o <form>) só existem aqui. No
+    // constructor, this.querySelector('form') retorna null e o "Aplicar" nunca vincula.
+    if (this._bound) return;
+    this._bound = true;
     this.submitButton = this.querySelector('[type="submit"]');
     this.cart =
       document.querySelector("cart-notification") ||
       document.querySelector("cart-drawer");
+    this.init();
   }
 
   init() {

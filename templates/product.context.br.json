@@ -19,43 +19,43 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-01876cac6e050a658c36cccbaa964faf": null,
+        "header-38a3013b28e8abc158e9cc7960a84be5": null,
         "heading": "Mais Coleções",
         "description": "",
         "show_view_all_button": true,
         "header_size": "medium",
         "header_alignment": "center",
-        "header-8287a974f0dd6f6517ef7baf4df52ebf": null,
+        "header-78b05514d16050bbc05050c790064824": null,
         "display_mode": "carousel",
         "image_ratio": "adapt",
         "custom_ratio": "",
         "items_per_row": 4,
         "column_gap": 30,
-        "header-96291eeeeb1380ab0e032226421167c0": null,
+        "header-c1bcb605d5cd619ec8faa07b2a98a0e7": null,
         "collection_information_position": "below_image",
         "design": "default",
         "text_alignment": "center",
         "show_product_count": false,
         "show_icon": false,
         "show_description": false,
-        "paragraph-bda91b1d8296bb4b620f1ade3d7bf80d": null,
+        "paragraph-95c9fc7655a40166b122fada48a5a69d": null,
         "font_size": 16,
         "font_weight": "heading_weight",
-        "header-5955836f5c8547242e8a03dd6a0400f6": null,
+        "header-58bc9316bc2ce56aab6a06bacb7a80ed": null,
         "information_spacing": 12,
         "rounded_image": false,
         "image_custom_width": false,
         "image_width": 200,
-        "header-7d6ddcfbaa5d0af8b6696369b2066a13": null,
+        "header-80ae7b0481d2c6bf2adc691f2869862b": null,
         "show_arrow": true,
         "carousel_pagination": "show_dots_on_mobile",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-ff1e6ff7a0e3a2397f5ec9f28f40df75": null,
+        "header-cb80c783d0ec3a0e4cdc7700d07121be": null,
         "items_per_row_mobile": 1.5,
-        "header-ecbf7d755c28a9d39707cc16041b7af2": null,
+        "header-6f99e33605ae7df792612c2f8f59669f": null,
         "padding_top": 20,
         "padding_bottom": 20,
         "reset_spacing": true
@@ -171,12 +171,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-3e44058d18146c659d4f28a781c116bb": null,
+        "header-3ec4391b2e40cd4b3c8de7913487f293": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-f69edec991cb6cb4e7fdae297d829ae7": null,
+        "header-8231a7edbb30ae29531d6c6f0eabba9c": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -256,14 +256,28 @@
       "blocks": {
         "custom_name_button_mPJXV": {
           "type": "custom_name_button",
-          "disabled": true,
+          "disabled": false,
           "settings": {
             "enable_button": true,
+            "button_mode": "whatsapp",
             "button_label": "Quero meu nome na Camisa (R$29,90)",
+            "header-b9872ddd2f87b4eef817bb7020164acd": null,
             "whatsapp_number": "553432194697",
+            "header-6c434b9edf9c3c5a46218d657cc09ff5": null,
+            "perso_variant_id": "51454118396199",
+            "perso_price": "29,90",
             "collections": [
               "camisas-brk"
             ]
+          }
+        },
+        "delivery_return_iJHeMD": {
+          "disabled": false,
+          "settings": {
+            "discount_content_icon": "discount",
+            "discount_content": "<p>Use o cupom \"<strong>BEMVINDO15</strong>\" e ganhe R$15 de desconto!</p>",
+            "return_content_icon": "none",
+            "return_content": ""
           }
         }
       },

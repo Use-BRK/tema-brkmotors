@@ -244,8 +244,5 @@
     {%- render 'sprite-svg' -%}
     {%- render 'content-bottom' -%}
     {{ 'custom-frete.css' | asset_url | stylesheet_tag }}
-  <!-- Don't Remove this code. CartPanda App code. -->
-{% capture cartX_snippet_content %}{% include 'cartxCheckoutSnippet' %}{% endcapture %} {% unless cartX_snippet_content contains 'Liquid error' %} {% include 'cartxCheckoutSnippet' %} {% endunless %}
-<!-- Don't Remove this code. CaCartPandartX App code. -->
 </body>
 </html>

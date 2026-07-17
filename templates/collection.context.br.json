@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-8828228df324464b6520cd4a748eb157": null,
+        "header-47933023b3ccfa265a5e613dcedc5c62": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 45,
-        "header-d87e8f61c95d3ff3957a1e0d8045303d": null,
+        "header-6eb49245b718b5c06b96054733e15157": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-22273a49ac0419725b5177cd81880b9b": null,
+        "header-13c481ad4aad2e2f2530aeb1decfdf1f": null,
         "padding_top": 10,
         "padding_bottom": 10,
         "reset_spacing": false
@@ -85,7 +85,10 @@
             "label_feminino": "Feminina",
             "filter_collection_list": [
               "big-trail",
-              "big-trail-2026"
+              "big-trail-2026",
+              "colecao-custom",
+              "custom",
+              "colecao-formula-1"
             ]
           }
         }

@@ -166,7 +166,7 @@
           "settings": {
             "text": "MOTOCICLISMO",
             "open-link-newtab": false,
-            "item_label": "hot",
+            "item_label": "unset",
             "collection_menu_column": 4,
             "mega_custom_width": 1030,
             "center_submenu": true,
@@ -273,7 +273,7 @@
         "mega_menu": "main-menu",
         "dropdowns_animation": "down-to-up",
         "uppercase_first": false,
-        "hot": "+ BRINDE",
+        "hot": "",
         "label_color_hot": "#ffffff",
         "label_background_hot": "#fc5106",
         "new": "CONFIRA",

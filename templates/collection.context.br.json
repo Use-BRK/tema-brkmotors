@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-47933023b3ccfa265a5e613dcedc5c62": null,
+        "header-e55bbdec93a26f8b296854c4520e4046": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 45,
-        "header-6eb49245b718b5c06b96054733e15157": null,
+        "header-b0d27653a38c74ddc03ec145c02f42a7": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-13c481ad4aad2e2f2530aeb1decfdf1f": null,
+        "header-1a3511e90a2f89e3bb46393875644bd8": null,
         "padding_top": 10,
         "padding_bottom": 10,
         "reset_spacing": false
@@ -88,7 +88,8 @@
               "big-trail-2026",
               "colecao-custom",
               "custom",
-              "colecao-formula-1"
+              "colecao-formula-1",
+              "lancamentos"
             ]
           }
         }

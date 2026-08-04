@@ -12,7 +12,12 @@
     "market": "br"
   },
   "current": {
-    "show_quantity_input": true,
+    "button_radius": 8,
+    "show_quantity_input": false,
+    "product_truncation_title": "2",
+    "price_size": 15,
+    "show_rate": true,
+    "limit_color": "3",
     "show_on_minicart_cart_page": false,
     "show_gift_bar": false,
     "gift_threshold_1": "240",
@@ -60,13 +65,6 @@
         "settings": {}
       },
       "scheme-d69edefb-38da-47d9-9431-87f591681493": {
-        "settings": {}
-      }
-    },
-    "blocks": {
-      "pagefly-page-builder": {
-        "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
-        "disabled": true,
         "settings": {}
       }
     }

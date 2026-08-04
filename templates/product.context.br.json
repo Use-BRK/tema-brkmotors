@@ -246,12 +246,8 @@
       ],
       "name": "t:sections.faq.presets.name"
     },
-    "scrolling_text_yFWFAa": {
-      "disabled": true,
-      "settings": {},
-      "blocks": {}
-    },
     "main": {
+      "custom_css": [],
       "settings": {},
       "blocks": {
         "custom_name_button_mPJXV": {
@@ -336,7 +332,6 @@
   },
   "order": [
     "breadcrumb",
-    "scrolling_text_yFWFAa",
     "main",
     "divider_tjfNx6",
     "17609883485ad8d257",

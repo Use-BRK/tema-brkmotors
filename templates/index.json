@@ -211,6 +211,61 @@
         "reset_spacing": true
       }
     },
+    "collection_tab_CPENAL": {
+      "type": "collection-tab",
+      "blocks": {
+        "collection_HAz8ty": {
+          "type": "collection",
+          "settings": {
+            "collection": "mais-vendidos",
+            "collection_title": ""
+          }
+        },
+        "collection_RmK8bc": {
+          "type": "collection",
+          "settings": {
+            "collection": "lancamentos",
+            "collection_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_HAz8ty",
+        "collection_RmK8bc"
+      ],
+      "custom_css": [
+        ".collection-tab__tab-item {font-size: clamp(1.275em, 2vw, 2.5rem); overflow: hidden;}"
+      ],
+      "name": "Mais Vendidos / Lançamentos",
+      "settings": {
+        "section_width": "fluid_container",
+        "color_scheme": "",
+        "heading": "",
+        "description": "",
+        "header_size": "small",
+        "header_alignment": "center",
+        "tab_header_style": "horizontal",
+        "horizontal_tab_style": "underline",
+        "display_mode": "grid",
+        "items_to_show": 10,
+        "items_per_row": 5,
+        "column_gap": 30,
+        "show_arrow": false,
+        "carousel_pagination": "disable",
+        "infinite": false,
+        "autoplay": false,
+        "autorotate_speed": 3,
+        "reveal": false,
+        "rows": 2,
+        "show_load_more_button": true,
+        "button_label": "VER MAIS",
+        "carousel_on_mobile": false,
+        "items_per_row_mobile": 1.5,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": true
+      }
+    },
     "collection_list_UwFk4D": {
       "type": "collection-list",
       "blocks": {
@@ -343,61 +398,6 @@
         "items_per_row_mobile": 1.5,
         "padding_top": 20,
         "padding_bottom": 20,
-        "reset_spacing": true
-      }
-    },
-    "collection_tab_CPENAL": {
-      "type": "collection-tab",
-      "blocks": {
-        "collection_HAz8ty": {
-          "type": "collection",
-          "settings": {
-            "collection": "mais-vendidos",
-            "collection_title": ""
-          }
-        },
-        "collection_RmK8bc": {
-          "type": "collection",
-          "settings": {
-            "collection": "lancamentos",
-            "collection_title": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_HAz8ty",
-        "collection_RmK8bc"
-      ],
-      "custom_css": [
-        ".collection-tab__tab-item {font-size: clamp(1.275em, 2vw, 2.5rem); overflow: hidden;}"
-      ],
-      "name": "Mais Vendidos / Lançamentos",
-      "settings": {
-        "section_width": "fluid_container",
-        "color_scheme": "",
-        "heading": "",
-        "description": "",
-        "header_size": "small",
-        "header_alignment": "center",
-        "tab_header_style": "horizontal",
-        "horizontal_tab_style": "underline",
-        "display_mode": "grid",
-        "items_to_show": 10,
-        "items_per_row": 5,
-        "column_gap": 30,
-        "show_arrow": false,
-        "carousel_pagination": "disable",
-        "infinite": false,
-        "autoplay": false,
-        "autorotate_speed": 3,
-        "reveal": false,
-        "rows": 2,
-        "show_load_more_button": true,
-        "button_label": "VER MAIS",
-        "carousel_on_mobile": false,
-        "items_per_row_mobile": 1.5,
-        "padding_top": 0,
-        "padding_bottom": 0,
         "reset_spacing": true
       }
     },
@@ -1305,8 +1305,8 @@
   "order": [
     "slideshow_mWxPRH",
     "scrolling_text_U3mttg",
-    "collection_list_UwFk4D",
     "collection_tab_CPENAL",
+    "collection_list_UwFk4D",
     "multi_content_cP4Xyf",
     "products_deal_4xQK7g",
     "collection_list_VmEYkJ",

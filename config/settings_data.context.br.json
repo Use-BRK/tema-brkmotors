@@ -13,6 +13,7 @@
   },
   "current": {
     "button_radius": 8,
+    "badges_rounded_corner": 0,
     "show_sale": true,
     "scrolling_text": "",
     "show_quantity_input": false,

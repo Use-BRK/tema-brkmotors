@@ -13,7 +13,10 @@
   },
   "current": {
     "button_radius": 8,
+    "show_sale": true,
+    "scrolling_text": "",
     "show_quantity_input": false,
+    "product_size": 14,
     "product_truncation_title": "2",
     "price_size": 15,
     "show_rate": true,

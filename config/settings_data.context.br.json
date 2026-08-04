@@ -15,6 +15,7 @@
     "button_radius": 8,
     "badges_rounded_corner": 0,
     "show_sale": true,
+    "sale_badge_type": "percent",
     "scrolling_text": "",
     "show_quantity_input": false,
     "product_size": 14,

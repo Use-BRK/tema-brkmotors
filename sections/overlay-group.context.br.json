@@ -12,5 +12,11 @@
     "market": "br"
   },
   "parent": "overlay-group.json",
-  "sections": {}
+  "sections": {
+    "mobile_navigation_bar_GG8UWc": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    }
+  }
 }

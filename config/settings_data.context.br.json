@@ -17,6 +17,7 @@
     "show_sale": true,
     "sale_badge_type": "percent",
     "scrolling_text": "",
+    "custom_badge_background": "#1D1A76",
     "show_quantity_input": false,
     "product_size": 14,
     "product_truncation_title": "2",

@@ -249,8 +249,9 @@
     "main": {
       "custom_css": [],
       "settings": {
-        "padding_top": 20,
-        "section_width": "fluid_container"
+        "section_width": "container",
+        "mobile_options": "hidden_thumbnail",
+        "padding_top": 20
       },
       "blocks": {
         "custom_name_button_mPJXV": {

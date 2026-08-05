@@ -56,6 +56,10 @@ div#product-grid motion-element select-option {
 .product-list-action {
   margin-top: 2.5rem;
 }
+/* Ícone de ordenar exibido só no mobile das coleções com gender bar (ver .toolbar--gender) */
+.sort-icon-mobile {
+  display: none;
+}
 .product-type-list .compare-price {
   font-size: 1.4rem;
 }

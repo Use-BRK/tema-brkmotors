@@ -14,7 +14,10 @@
   "parent": "header-group.json",
   "sections": {
     "top_bar_CbXNYj": {
-      "settings": {},
+      "settings": {
+        "padding_top": 3,
+        "padding_bottom": 3
+      },
       "blocks": {
         "text_slider_LFaC38": {
           "settings": {

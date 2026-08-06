@@ -776,6 +776,7 @@
         },
         "collection_qikAgz": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "carros-antigos",
             "collection_image": "shopify://shop_images/carros_bd5e23d2-46fc-4d06-a100-bb2300c55923.jpg",
@@ -784,6 +785,7 @@
         },
         "collection_9mEt3k": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "carga-pesada",
             "collection_image": "shopify://shop_images/carga_pesada.jpg",
@@ -816,6 +818,7 @@
         },
         "collection_3CYUkL": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "jipe-e-off-road",
             "collection_image": "shopify://shop_images/offroad.jpg",

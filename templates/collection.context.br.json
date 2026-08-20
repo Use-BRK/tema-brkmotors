@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-f8ff725c9ce94b89f168c09cf941733a": null,
+        "header-2a00985c798b92146c8f29abb3e7ab8e": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 45,
-        "header-ca31fe4e51ce42456e06e3679f654232": null,
+        "header-f220d56751498d07aff3e8d178adc48a": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-bfa65f5ac2babad7239357d4b26ea6bd": null,
+        "header-4820103a8a308c8a24ef104d5a53ccd4": null,
         "padding_top": 10,
         "padding_bottom": 10,
         "reset_spacing": false
@@ -88,7 +88,6 @@
               "big-trail-2026",
               "colecao-custom",
               "custom",
-              "colecao-automobilismo",
               "lancamentos",
               "expedicao-manga-longa"
             ]

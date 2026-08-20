@@ -179,6 +179,8 @@
           "settings": {
             "image_asset": "brk-cat-esportivo.jpg",
             "title": "ESPORTIVO",
+            "subtitle": "Confira a coleção",
+            "label_color": "#f7ddae",
             "link": ""
           }
         },
@@ -187,6 +189,8 @@
           "settings": {
             "image_asset": "brk-cat-estrada.jpg",
             "title": "ESTRADA",
+            "subtitle": "Confira a coleção",
+            "label_color": "#f7ddae",
             "link": ""
           }
         },
@@ -195,6 +199,8 @@
           "settings": {
             "image_asset": "brk-cat-urbano.jpg",
             "title": "URBANO",
+            "subtitle": "Confira a coleção",
+            "label_color": "#f7ddae",
             "link": ""
           }
         },
@@ -204,6 +210,7 @@
             "image_asset": "brk-cat-custom.png",
             "title": "CUSTOM",
             "subtitle": "Confira a coleção",
+            "label_color": "#f7ddae",
             "link": ""
           }
         }
@@ -221,6 +228,7 @@
         "background_color": "#0d0d0d",
         "overlap_previous": true,
         "overlap_amount": 40,
+        "card_orientation": "4 / 5",
         "corner_radius": 20,
         "column_gap": 18,
         "padding_top": 40,
@@ -272,6 +280,7 @@
         "text_color": "#f8e4c9",
         "accent_color": "#f7f2f0",
         "overlay_opacity": 10,
+        "fade_bottom_color": "#0d0d0d",
         "min_height": 570,
         "padding_top": 0,
         "padding_bottom": 0
@@ -316,6 +325,7 @@
       "name": "Cards de Coleção",
       "settings": {
         "section_width": "fluid_container",
+        "heading": "",
         "background_color": "#0d0d0d",
         "title_color": "#fdfaec",
         "accent_color": "#ff5e22",
@@ -332,14 +342,16 @@
           "type": "collection",
           "settings": {
             "collection": "kits-casal",
-            "collection_title": "Mais Vendidos"
+            "collection_title": "Mais Vendidos",
+            "link": ""
           }
         },
         "tab_lancamentos": {
           "type": "collection",
           "settings": {
             "collection": "explorer-raglan",
-            "collection_title": "Lançamentos"
+            "collection_title": "Lançamentos",
+            "link": ""
           }
         }
       },
@@ -1115,6 +1127,7 @@
         "video_kM6Wkk",
         "video_eWUBmx"
       ],
+      "disabled": true,
       "name": "t:sections.shopable-video.name",
       "settings": {
         "section_width": "fluid_container",

@@ -19,12 +19,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-5e1869d76f3184a903939c70dd131f22": null,
+        "header-4cba3dd7c3d435c3b66e0b5e9585823f": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-c219a27aa86df60ec3311dc0abdbe1fc": null,
+        "header-745084a3d5ad1dc0c10ec054bac98768": null,
         "padding_top": 25,
         "padding_bottom": 25,
         "reset_spacing": true
@@ -100,43 +100,43 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-59654c95b1409ddf78dffcc643da1cf4": null,
+        "header-35471a82cbd4fa5ab7bbce31b113a9f5": null,
         "heading": "Mais Coleções",
         "description": "",
         "show_view_all_button": true,
         "header_size": "medium",
         "header_alignment": "center",
-        "header-e1b1cefb09e6d8d3de3a432edb49cbcb": null,
+        "header-ae29271bd2042c94ec38078ded816124": null,
         "display_mode": "carousel",
         "image_ratio": "adapt",
         "custom_ratio": "",
         "items_per_row": 4,
         "column_gap": 30,
-        "header-217e1a423cf3a8c83527718a924b9555": null,
+        "header-37e89d20827dec3b100155fef0dfdcbd": null,
         "collection_information_position": "below_image",
         "design": "default",
         "text_alignment": "center",
         "show_product_count": false,
         "show_icon": false,
         "show_description": false,
-        "paragraph-ef57f2ee557d080b75129b3b7afe2198": null,
+        "paragraph-ba220bf1b3118905af7a4115cd337e8d": null,
         "font_size": 16,
         "font_weight": "heading_weight",
-        "header-386b7cb7a045cbc90bf9e28f8d17a688": null,
+        "header-cbfddaf3d5a3ded583e43a23f477f7ac": null,
         "information_spacing": 12,
         "rounded_image": false,
         "image_custom_width": false,
         "image_width": 200,
-        "header-b4d3081ff20e1614fa6e84b635906145": null,
+        "header-51ee2ad5c41326af0ba4d83b3e1d6d17": null,
         "show_arrow": true,
         "carousel_pagination": "show_dots_on_mobile",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-1095a74c2b60921cc78bda79b3e37ba1": null,
+        "header-8fad858fd04347e1fc43804d2699cb79": null,
         "items_per_row_mobile": 1.5,
-        "header-df7774607df8bd2c9b6c27f89b80c4c0": null,
+        "header-cda5642345ebf29944c3d553bf6461b9": null,
         "padding_top": 20,
         "padding_bottom": 20,
         "reset_spacing": true
@@ -277,9 +277,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na Camisa (R$29,90)",
-            "header-c5ed184c5616d31f73298045e1ae6f2c": null,
+            "header-26833248d99e340a279be02ffee0c153": null,
             "whatsapp_number": "553432194697",
-            "header-5cc900fb8a53de010842bca7629a6514": null,
+            "header-9d29de314fb7ef87ff62c5e888b867ed": null,
             "perso_variant_id": "51454118396199",
             "perso_price": "29,90",
             "collections": [
@@ -294,15 +294,15 @@
             "enable_button": true,
             "button_text": "Ou se preferir [whatsapp] <strong>COMPRE PELO WHATSAPP</strong>",
             "text_color": "#128c4a",
-            "header-468641ae22d5bb94a963b8f6eb054e3a": null,
+            "header-a33701d4c9b8c40686faf3c1413e6106": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Olá! Tenho interesse neste produto:",
             "append_product_link": true,
-            "header-35b87326e19e7389f909288f4e4bec86": null,
+            "header-8a802b0b7e928ba0ad53bdc97f869ddf": null,
             "enable_schedule": true,
             "hours_start": "08:00",
             "hours_end": "17:00",
-            "header-a52a9211ae1e681166a22164bfecd773": null,
+            "header-5db5a182955df1bad13ae4aaa3a49a20": null,
             "collections": []
           }
         },
@@ -382,6 +382,83 @@
       "disabled": true,
       "settings": {},
       "blocks": {}
+    },
+    "shopable_video_Uq6pnj": {
+      "type": "shopable-video",
+      "disabled": false,
+      "settings": {
+        "section_width": "fluid_container",
+        "color_scheme": "default",
+        "header-4915cf4f2b2d3f5cb7005a6ed7e7c464": null,
+        "heading": "Lifestyle",
+        "description": "",
+        "header_size": "medium",
+        "header_alignment": "center",
+        "header-5dc4ff257ac699d73069efb9c82648b2": null,
+        "image_ratio": "adapt",
+        "custom_ratio": "",
+        "video_autoplay": true,
+        "items_per_row": 4,
+        "column_gap": 20,
+        "header-80829f0ccf61c7f5cffc22eb25f065f1": null,
+        "show_arrow": false,
+        "carousel_pagination": "disable",
+        "infinite": false,
+        "autoplay": false,
+        "autorotate_speed": 5,
+        "reveal": false,
+        "header-33617395e0398d2d92ef36e167719679": null,
+        "items_per_row_mobile": 1,
+        "header-6ec9acd7f55aa63196be1ec073114b20": null,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "reset_spacing": false
+      },
+      "blocks": {
+        "video_bYPW6V": {
+          "type": "video",
+          "disabled": false,
+          "settings": {
+            "product": "camisa-de-motociclismo-brk-expedicao-ushuaia-azul-com-protecao-solar-uv50",
+            "poster_image": null,
+            "local_video": "shopify://files/videos/C009FBA5-74EA-4814-AD97-62D2790C7665 Copy.mov"
+          }
+        },
+        "video_iGb7WG": {
+          "type": "video",
+          "disabled": false,
+          "settings": {
+            "product": "camisa-de-motociclismo-brk-big-trail-expedicao-argentina-azul-escuro-com-protecao-solar-uv50",
+            "poster_image": null,
+            "local_video": "shopify://files/videos/camisa-bigtral-azul.mp4"
+          }
+        },
+        "video_aqhnV7": {
+          "type": "video",
+          "disabled": false,
+          "settings": {
+            "product": "camisa-masculina-motociclismo-brk-triumph-tiger-for-the-ride-com-protecao-solar-uv50",
+            "poster_image": null,
+            "local_video": "shopify://files/videos/IMG_3114.MOV"
+          }
+        },
+        "video_3PzVet": {
+          "type": "video",
+          "disabled": false,
+          "settings": {
+            "product": "camisa-masculina-motociclismo-brk-gs-bmw-performance-azul-com-protecao-solar-uv50",
+            "poster_image": null,
+            "local_video": "shopify://files/videos/IMG_8575.MOV"
+          }
+        }
+      },
+      "block_order": [
+        "video_bYPW6V",
+        "video_iGb7WG",
+        "video_aqhnV7",
+        "video_3PzVet"
+      ],
+      "name": "t:sections.shopable-video.name"
     }
   },
   "order": [
@@ -389,6 +466,7 @@
     "main",
     "brk_benefits",
     "brk_specs",
+    "shopable_video_Uq6pnj",
     "faq_UNchg",
     "collection_list_HHVyFp"
   ]

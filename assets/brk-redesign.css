@@ -1,0 +1,1050 @@
+/* =========================================================
+   BRK MOTORS — Redesign overrides (modular, reversível)
+   ========================================================= */
+
+/* ---- Product card (fiel ao Figma: imagem grande + título + preço) ---- */
+.product-item__information { margin-top: 1.4rem; }
+
+.product-item__name {
+  font-family: var(--heading-font) !important;
+  font-weight: 500 !important;
+  font-size: 2rem !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0 !important;
+  color: var(--color-heading) !important;
+  text-transform: none !important;
+}
+
+.product-item__price { margin-top: .6rem; align-items: baseline; }
+.product-item__price .price,
+.product-item__price .price-same-style,
+.product-item__price .price-regular .price {
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--color-text);
+}
+.product-item__price .compare-price { font-size: 1.4rem; opacity: .7; }
+.product-item__price .pi-avista {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+.product-item__installment {
+  margin-top: .2rem;
+  font-family: var(--heading-font);
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--color-text);
+  line-height: 1.25;
+}
+.product-item__installment .pi-ou { font-weight: 300; }
+
+/* Imagem grande e expositiva, SEM borda arredondada (cantos retos) */
+.product-item__media--ratio,
+.product-item__media--ratio.rounded,
+.product-item__inner .product__media,
+.product-item__inner .product__media.rounded {
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+.product-item,
+.product-item__inner,
+.product-item__wrapper { border: none !important; }
+
+/* Card limpo como no design: sem swatches de cor no card */
+.product-item .color-swatches,
+.product-item [class*="color-swatches"] { display: none !important; }
+
+/* Em fundos escuros (color scheme escuro) o card herda texto claro automaticamente */
+.color-scheme-dark .product-item__name,
+[class*="scheme-"] .product-item__name { color: var(--color-heading); }
+
+/* ---- Header sempre transparente na home (sticky incluído) ---- */
+body.template-index .shopify-section-header-sticky .transparent,
+body.template-index .shopify-section-header-sticky .transparent-mobile {
+  background-color: transparent !important;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%) !important;
+  --color-background: transparent !important;
+  --input-bg: transparent !important;
+  box-shadow: none !important;
+}
+body.template-index .shopify-section-header-sticky .transparent .header-color,
+body.template-index .shopify-section-header-sticky .transparent header-inner .button-localization,
+body.template-index .shopify-section-header-sticky .transparent-mobile .header-color {
+  color: var(--transparent-color, #ffffff) !important;
+}
+body.template-index .shopify-section-header-sticky .transparent .level0 > menu-item > a {
+  --color-heading: var(--transparent-color, #ffffff);
+}
+/* Logo branco no sticky transparente da home */
+body.template-index .shopify-section-header-sticky .transparent .header__normal-logo,
+body.template-index .shopify-section-header-sticky .transparent-mobile .header__normal-logo {
+  display: none;
+}
+body.template-index .shopify-section-header-sticky .transparent .header__transparent-logo,
+body.template-index .shopify-section-header-sticky .transparent-mobile .header__transparent-logo {
+  display: block;
+}
+
+/* ================================================================
+   BRK MOTORS — Header / Nav / Mega Menu (fiel ao Figma)
+   ================================================================ */
+
+/* --- Variável de hover (laranja BRK) ---------------------------- */
+.section-header { --color-link-hover: #e14810; }
+
+/* ================================================================
+   NAV DESKTOP — "Underline de corrida"
+   Hover/ativo: texto laranja + barra fina que cresce do centro.
+   Sem preenchimento, sem sobreposição — à prova de layout.
+   ================================================================ */
+@media screen and (min-width: 1025px) {
+  .section-header .horizontal-list { align-items: center; }
+  .section-header .horizontal-list .level0 > menu-item { padding: 0 !important; }
+
+  /* Item base: Inter Medium, fundo transparente, posição para o underline */
+  .section-header .horizontal-list .level0 > menu-item > a {
+    font-family: var(--body-font);
+    font-weight: 500;
+    font-size: 1.52rem;
+    letter-spacing: 0.01em;
+    color: var(--color-heading);
+    position: relative;
+    padding: 8px 16px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    transition: color 0.18s ease;
+  }
+
+  /* Barra de corrida: começa com largura 0, centralizada, sob a palavra */
+  .section-header .horizontal-list .level0 > menu-item > a::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 2px !important;
+    height: 2px !important;
+    width: 0 !important;
+    background: #e14810 !important;
+    border-radius: 2px !important;
+    transition: width 0.24s cubic-bezier(.4,0,.2,1) !important;
+    pointer-events: none !important;
+  }
+
+  /* Hover / foco / aberto (.visible = mega aberto): texto laranja + barra cresce */
+  .section-header .horizontal-list .level0:hover > menu-item > a,
+  .section-header .horizontal-list .level0:focus-within > menu-item > a,
+  .section-header .horizontal-list .level0.visible > menu-item > a,
+  .section-header .horizontal-list .level0.open > menu-item > a {
+    color: #e14810 !important;
+  }
+  .section-header .horizontal-list .level0:hover > menu-item > a::after,
+  .section-header .horizontal-list .level0:focus-within > menu-item > a::after,
+  .section-header .horizontal-list .level0.visible > menu-item > a::after,
+  .section-header .horizontal-list .level0.open > menu-item > a::after {
+    width: calc(100% - 28px) !important;
+  }
+
+  /* Seta do dropdown acompanha a cor (currentColor) */
+  .section-header .horizontal-list .level0:hover > menu-item svg,
+  .section-header .horizontal-list .level0.visible > menu-item svg,
+  .section-header .horizontal-list .level0.open > menu-item svg { color: #e14810 !important; }
+
+  /* Item ativo (página atual): texto laranja + barra fixa */
+  .section-header .horizontal-list .level0.active > menu-item > a,
+  .section-header .horizontal-list .level0[aria-current] > menu-item > a {
+    color: #e14810 !important;
+    text-decoration: none !important;
+  }
+  .section-header .horizontal-list .level0.active > menu-item > a::after,
+  .section-header .horizontal-list .level0[aria-current] > menu-item > a::after {
+    width: calc(100% - 28px) !important;
+  }
+
+  /* --- Mega menu: card branco que abre SOB o item hoverizado ---- */
+  /* O próprio submenu é o card: largura do conteúdo, ancorado ao item */
+  .mega-menu > .submenu:not(.submenu-vertical),
+  .dropdown-menu > .submenu:not(.submenu-vertical) {
+    background-color: #ffffff !important;
+    --color-background: #ffffff !important;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12) !important;
+    border-top: none !important;
+    border-radius: 16px !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    min-width: 0 !important;
+    --mega_custom_width: auto !important;
+    padding: 26px 32px !important;
+    margin-top: 12px !important;
+    max-width: 96vw !important;
+    overflow: visible !important;
+  }
+  /* Linha de conteúdo (imagem + colunas) encolhe ao necessário */
+  .mega-menu > .submenu .fluid_container,
+  .mega-menu > .submenu .stretch_width {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .mega-menu > .submenu [class*="flex-1025-row"] {
+    display: inline-flex !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    align-items: flex-start !important;
+    gap: 40px !important;
+  }
+  /* Imagem promo com largura fixa (evita colapso no fit-content) */
+  .mega-menu > .submenu .col-mega { flex: 0 0 200px !important; width: 200px !important; }
+  /* menu-list não estica */
+  .mega-menu > .submenu .menu-list {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* Evita transbordo à direita: itens à direita abrem "puxando" p/ esquerda */
+  .section-header .horizontal-list .level0[data-align="right"] > .submenu {
+    left: auto !important;
+    right: 0 !important;
+  }
+
+  /* --- Mega menu: colunas compactas + estilo Citerol ----------- */
+
+  /* Links base: Roboto Condensed Light */
+  .mega-menu .subchildmenu .menu_item-link,
+  .mega-menu .subchildmenu a {
+    font-family: var(--heading-font) !important;
+    font-weight: 300 !important;
+    font-size: 1.5rem !important;
+    color: #4e4e4e !important;
+    letter-spacing: 0.01em;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    padding-left: 0 !important;
+    text-decoration: none !important;
+    display: block;
+    line-height: 1.2;
+    transition: color 0.15s ease;
+  }
+  .mega-menu .subchildmenu .menu_item-link:hover,
+  .mega-menu .subchildmenu a:hover { color: #e14810 !important; }
+
+  /* Grid compacto: colunas do tamanho do conteúdo, sem esticar */
+  .mega-menu .subchildmenu {
+    grid-template-columns: repeat(var(--col-desktop, 1), max-content) !important;
+    column-gap: 56px !important;
+    row-gap: 0 !important;
+    align-items: start;
+  }
+
+  /* Heading de grupo (tem sub-filhos): bold uppercase + borda laranja embaixo */
+  .mega-menu .subchildmenu > li.menu-link:has(.sub-children-menu) > menu-item {
+    display: block;
+    border-bottom: 2px solid #e14810;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+  .mega-menu .subchildmenu > li.menu-link:has(.sub-children-menu) > menu-item > .menu_item-link {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .mega-menu .subchildmenu > li.menu-link > menu-item > .menu_item-link > span:not(.reversed-links):not(.smooth-padding-hover) {
+    font-family: var(--heading-font) !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    font-size: 1.3rem !important;
+    color: #212121 !important;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* Sub-itens dentro do grupo */
+  .mega-menu .sub-children-menu a,
+  .mega-menu .sub-children-menu .menu_item-link {
+    font-family: var(--heading-font) !important;
+    font-weight: 300 !important;
+    font-size: 1.5rem !important;
+    color: #4e4e4e !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    padding-left: 0 !important;
+    text-decoration: none !important;
+    display: block;
+    line-height: 1.2;
+    transition: color 0.15s ease;
+  }
+  .mega-menu .sub-children-menu a:hover { color: #e14810 !important; }
+
+  /* Imagem promo: cantos arredondados */
+  .col-mega a.rounded,
+  .col-mega .rounded { border-radius: 16px !important; overflow: hidden; }
+  .col-mega img { border-radius: 16px !important; }
+
+  /* Grupo com sub-filhos sempre na coluna 2; folhas auto-place na coluna 1 */
+  .mega-menu .subchildmenu > li.menu-link:has(.sub-children-menu) {
+    grid-column: 2;
+    grid-row: 1 / span 10;
+  }
+}
+
+/* ================================================================
+   BRK MOTORS — Página de Coleção (/collections/*) — fiel ao Figma
+   Fundo #f7f2f0 · heading COLEÇÃO · cards limpos (img grande,
+   título pequeno 2 linhas, preço à vista laranja)
+   ================================================================ */
+body.collection { background-color: #f7f2f0; }
+body.collection .section-main-collection-product,
+body.collection .sec__page-heading { background-color: transparent; }
+
+/* --- Heading: eyebrow + título bold itálico, alinhado à esquerda --- */
+body.collection .sec__page-heading {
+  margin-bottom: 20px !important;
+  justify-content: flex-start !important;
+}
+body.collection .sec__page-heading .heading-content,
+body.collection .sec__page-heading .heading-content.text-center { text-align: left !important; }
+body.collection .page-title-breadcrumb { text-align: left; }
+
+.brk-collection-eyebrow {
+  display: block;
+  font-family: var(--heading-font);
+  font-weight: 400;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #4e4e4e;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+body.collection .heading-title {
+  font-family: var(--heading-font) !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+  text-transform: uppercase !important;
+  color: #212121 !important;
+  font-size: clamp(2.6rem, 7vw, 4.6rem) !important;
+  line-height: 0.95 !important;
+  letter-spacing: 0 !important;
+  margin-top: 0 !important;
+}
+.brk-title-accent { color: #e14810 !important; }
+
+/* --- Product card: imagem grande, título minúsculo 2 linhas ------- */
+body.collection .product-item__media--ratio,
+body.collection .product-item__media--ratio.rounded { border-radius: 0 !important; }
+body.collection .product-item__information { margin-top: 8px !important; text-align: left !important; }
+
+body.collection .product-item__name {
+  font-family: var(--heading-font) !important;
+  font-weight: 500 !important;
+  font-size: 1.3rem !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0 !important;
+  color: #212121 !important;
+  text-transform: none !important;
+  --line-clamp: 2 !important;
+  -webkit-line-clamp: 2 !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+/* Remove a faixa verde rolante de oferta (redundante com o preço riscado, some do Figma) */
+body.collection .product__badges-sale-scrolling { display: none !important; }
+
+/* Preço "à vista" laranja; parcelamento cinza; comparação riscada discreta */
+body.collection .product-item__price {
+  margin-top: 5px !important;
+  gap: 4px !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+  align-items: baseline !important;
+}
+body.collection .product-item__price .card-product-price { flex: 0 0 auto !important; }
+body.collection .product-item__price .price,
+body.collection .product-item__price .price-same-style {
+  color: #e14810 !important;
+  font-family: var(--heading-font) !important;
+  font-weight: 700 !important;
+  font-size: 1.7rem !important;
+}
+/* Remove o "à vista" */
+body.collection .product-item__price .pi-avista { display: none !important; }
+/* Preço "de" (fora de promoção) vem ANTES do preço real e menor */
+body.collection .product-item__price .card-product-price {
+  flex-wrap: wrap !important;
+  align-items: baseline !important;
+  gap: 5px !important;
+}
+body.collection .product-item__price .card-product-price .price-regular:not(.primary-color) {
+  order: -1 !important;
+}
+body.collection .product-item__price .compare-price {
+  font-size: 1rem !important;
+  color: #9a9a9a !important;
+  font-weight: 400 !important;
+}
+@media screen and (min-width: 1025px) {
+  body.collection .product-item__price .compare-price { font-size: 1.15rem !important; }
+}
+body.collection .product-item__installment {
+  font-family: var(--heading-font) !important;
+  font-weight: 400 !important;
+  font-size: 1.2rem !important;
+  color: #4e4e4e !important;
+  line-height: 1.2 !important;
+  margin-top: 3px !important;
+}
+body.collection .product-item__installment .pi-ou { font-weight: 300; }
+
+/* Badge de oferta discreto (sintetiza o excesso do card) */
+body.collection .product__badges > * {
+  font-size: 1rem !important;
+  padding: 2px 7px !important;
+  border-radius: 3px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.3 !important;
+}
+
+/* Título maior no desktop, mantendo compacto */
+@media screen and (min-width: 1025px) {
+  body.collection .product-item__name { font-size: 1.5rem !important; }
+  body.collection .product-item__price .price,
+  body.collection .product-item__price .price-same-style { font-size: 1.9rem !important; }
+  body.collection .product-item__installment { font-size: 1.35rem !important; }
+
+  /* Título da coleção alinhado ao INÍCIO da grade (após a sidebar de filtros).
+     Heading e grade compartilham o mesmo fluid_container, então o offset é
+     exatamente largura do filtro (27rem) + gap (60px) — alinha em qualquer largura. */
+  body.collection .sec__page-heading { margin-bottom: 8px !important; }
+  body.collection .sec__page-heading .heading-content {
+    padding-left: calc(27rem + 60px) !important;
+  }
+}
+
+/* Imagens quase bleeding-edge no mobile: menos padding e gap */
+@media screen and (max-width: 1024.98px) {
+  body.collection .fluid_container { padding-left: 6px !important; padding-right: 6px !important; }
+  /* Colunas FLEXÍVEIS (1fr) — o tema usa px fixo e cortava em telas estreitas */
+  body.collection .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 5px !important;
+    row-gap: 20px !important;
+  }
+
+  /* Filtro no mobile = drawer fixo fora da tela; NUNCA inline (à prova de FOUC/cache) */
+  body.collection .collection-filter.transition-popup {
+    position: fixed !important;
+    inset: 0 !important;
+    width: min(88vw, 380px) !important;
+    z-index: 60 !important;
+    background: #ffffff !important;
+  }
+  body.collection .collection-filter.transition-popup:not(.open) {
+    transform: translateX(-100%) !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+  body.collection .collection-filter.transition-popup.open {
+    transform: none !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* ================================================================
+   BRK MOTORS — PDP buy box (pills redondos, botões motorsport,
+   trust bar). Escopo: .product-detail__information
+   ================================================================ */
+
+/* --- Breadcrumbs sutis (acima do produto) ----------------------- */
+body.product .breadcrumbs {
+  padding-top: 1.6rem !important;
+  padding-bottom: 0 !important;
+  background: transparent !important;
+}
+body.product .breadcrumbs .breadcrumb,
+body.product .breadcrumbs nav,
+body.product .breadcrumbs ol,
+body.product .breadcrumbs ul {
+  font-family: var(--body-font);
+  font-size: 1.2rem;
+  letter-spacing: .02em;
+  color: #9a9a9a;
+}
+body.product .breadcrumbs a {
+  color: #9a9a9a;
+  text-decoration: none;
+  transition: color .15s ease;
+}
+body.product .breadcrumbs a:hover { color: var(--brk-accent, #fc5106); }
+body.product .breadcrumbs :is(.breadcrumb__current, [aria-current], .current) {
+  color: var(--color-heading, #212121);
+  font-weight: 600;
+}
+
+/* --- Pills de TAMANHO redondos (círculos) ------------------------ */
+.product-detail__information .product-form__input:not([class*="_color"]) .product__item-option {
+  min-width: 4.6rem;
+  width: 4.6rem;
+  height: 4.6rem;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  aspect-ratio: 1 / 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--heading-font);
+  font-weight: 600;
+  font-size: 1.4rem;
+  border: 1.5px solid #d8d8d8;
+  color: var(--color-heading, #212121);
+  transition: border-color .18s ease, color .18s ease, background-color .18s ease, transform .12s ease;
+}
+/* tamanhos de 2+ caracteres (GG, G1, G2) mantêm o círculo */
+.product-detail__information .product-form__input:not([class*="_color"]) .product__item-option > span {
+  line-height: 1;
+}
+/* mata o preenchimento verde do .btn-hover do tema nas pills */
+.product-detail__information .product-form__input:not([class*="_color"]) .product__item-option::before,
+.product-detail__information .product-form__input:not([class*="_color"]) .product__item-option::after {
+  background: transparent !important;
+  display: none !important;
+}
+.product-detail__information .product-form__input:not([class*="_color"]) .product__item-option:hover {
+  background: transparent !important;
+  border-color: var(--brk-accent, #fc5106) !important;
+  color: var(--brk-accent, #fc5106) !important;
+  transform: translateY(-1px);
+}
+/* garante que o selecionado permaneça carvão mesmo no hover */
+.product-detail__information .product-form__input:not([class*="_color"]) .product__item-option.active:hover,
+.product-detail__information .product-form__input:not([class*="_color"]) input:checked + .product__item-option:hover {
+  background: var(--color-heading, #212121) !important;
+  border-color: var(--color-heading, #212121) !important;
+  color: #fff !important;
+}
+/* selecionado: preenchido carvão */
+.product-detail__information .product-form__input:not([class*="_color"]) .product__item-option.active,
+.product-detail__information .product-form__input:not([class*="_color"]) input:checked + .product__item-option,
+.product-detail__information .product-form__input:not([class*="_color"]) .product__item-option[aria-checked="true"] {
+  background: var(--color-heading, #212121) !important;
+  border-color: var(--color-heading, #212121) !important;
+  color: #fff !important;
+}
+/* esgotado */
+.product-detail__information .product-form__input:not([class*="_color"]) .product__item-option.disabled,
+.product-detail__information .product-form__input:not([class*="_color"]) .product__item-option[aria-disabled="true"] {
+  opacity: .4;
+}
+@media (max-width: 767.98px) {
+  .product-detail__information .product-form__input:not([class*="_color"]) .product__item-option {
+    min-width: 4.2rem; width: 4.2rem; height: 4.2rem; font-size: 1.3rem;
+  }
+}
+
+/* --- Botão ADICIONAR AO CARRINHO (charcoal -> laranja) ----------- */
+.product-detail__information .product_submit_button {
+  --btn-primary-bg-color: #1c1c1c;
+  --btn-primary-border-color: #1c1c1c;
+  background: #1c1c1c !important;
+  border-color: #1c1c1c !important;
+  color: #fff !important;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  min-height: 5.4rem;
+  border-radius: var(--btn-radius, 30px);
+  position: relative;
+  overflow: hidden;
+  transition: background-color .2s ease, transform .12s ease, box-shadow .2s ease;
+  z-index: 0;
+}
+/* preenchimento laranja que "corre" da esquerda no hover */
+.product-detail__information .product_submit_button::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--brk-accent, #fc5106);
+  transform: translateX(-101%);
+  transition: transform .28s cubic-bezier(.4,0,.2,1);
+  z-index: -1;
+}
+.product-detail__information .product_submit_button:hover:not([disabled])::before { transform: translateX(0); }
+.product-detail__information .product_submit_button:hover:not([disabled]) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px -12px rgba(252,81,6,.6);
+}
+.product-detail__information .product_submit_button[disabled] { opacity: .55; }
+
+/* --- Botão QUERO MEU NOME NA CAMISA (outline + tag laranja) ------ */
+.product-detail__custom-name-button button {
+  background: transparent !important;
+  border: 1.5px solid #1c1c1c !important;
+  color: #1c1c1c !important;
+  font-family: var(--heading-font);
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  min-height: 5rem;
+  border-radius: var(--btn-radius, 30px);
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease, transform .12s ease;
+}
+.product-detail__custom-name-button button:hover {
+  background: var(--brk-accent, #fc5106) !important;
+  border-color: var(--brk-accent, #fc5106) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+.product-detail__custom-name-button button svg { transition: transform .18s ease; }
+.product-detail__custom-name-button button:hover svg { transform: rotate(-8deg) scale(1.05); }
+
+/* --- Trust bar dentro do buy box (substitui delivery-return) ----- */
+.brk-trust--buybox {
+  --brk-accent: #fc5106;
+  margin-bottom: 2rem;
+  border: 1px solid var(--color-border, #ebebeb);
+  border-radius: 10px;
+  padding: 1.4rem 1.6rem;
+  background: #fff;
+}
+.brk-trust--buybox .brk-trust__grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem 1.6rem;
+}
+.brk-trust--buybox .brk-trust__item { display: flex; align-items: center; gap: .9rem; }
+.brk-trust--buybox .brk-trust__icon { color: var(--brk-accent); line-height: 0; flex: 0 0 auto; }
+.brk-trust--buybox .brk-trust__icon svg { width: 2.1rem; height: 2.1rem; display: block; }
+.brk-trust--buybox .brk-trust__title {
+  font-family: var(--heading-font); font-weight: 600; text-transform: uppercase;
+  letter-spacing: .03em; font-size: 1.2rem; line-height: 1.15; color: var(--color-heading, #212121);
+}
+@media (max-width: 480px) {
+  .brk-trust--buybox .brk-trust__title { font-size: 1.12rem; }
+  .brk-trust--buybox .brk-trust__icon svg { width: 1.9rem; height: 1.9rem; }
+}
+
+/* ================================================================
+   BRK MOTORS — Header preto (#121212) nas rotas /products/ e /collections/
+   Header padrão do tema; só o fundo vira preto e os elementos da barra
+   (logo, menu, ícones, busca) ficam claros pra contraste. O drawer de
+   menu mobile é preservado (texto escuro sobre fundo claro).
+   ================================================================ */
+:is(body.product, body.collection) .section-header .header {
+  background-color: #121212 !important;
+  background-image: none !important;
+  --color-background: #121212;
+  --color-heading: #ffffff;
+  --color-text: #e8e8e8;
+  --color-line: rgba(255, 255, 255, 0.14);
+  --color-border: rgba(255, 255, 255, 0.14);
+  --input-bg: rgba(255, 255, 255, 0.06);
+}
+:is(body.product, body.collection) .section-header .header .header-color {
+  color: #ffffff;
+}
+/* Separador inferior sutil */
+:is(body.product, body.collection) .section-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Campo de busca legível no fundo preto */
+:is(body.product, body.collection) .section-header .header input {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+:is(body.product, body.collection) .section-header .header input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* O drawer de menu mobile continua claro (texto escuro sobre fundo claro) */
+:is(body.product, body.collection) .navigation.mobile {
+  --color-background: #ffffff;
+  --color-heading: #1c1c1c;
+  --color-text: #4e4e4e;
+  --color-line: #ebebeb;
+  background: #ffffff;
+}
+
+/* ================================================================
+   BRK MOTORS — Product media arredondada (cards de produto)
+   ================================================================ */
+.product-item__media--ratio,
+.product-item__media--ratio img,
+.product-item__inner { border-radius: 14px; }
+.product-item__media--ratio { overflow: hidden; }
+@media (max-width: 768px) {
+  .product-item__media--ratio,
+  .product-item__media--ratio img,
+  .product-item__inner { border-radius: 10px; }
+}
+
+/* ================================================================
+   BRK MOTORS — Collection: breadcrumb + toolbar de filtros/ordenação
+   Direção: industrial/corrida — chips retos, divisórias finas, laranja
+   como acento, Roboto Condensed itálico nos rótulos.
+   ================================================================ */
+body.collection { --brk-accent: #fc5106; }
+
+/* Breadcrumb: sutil, à esquerda */
+body.collection .page-title-breadcrumb { text-align: left; margin-bottom: .4rem; }
+body.collection .page-title-breadcrumb .breadcrumb-list { justify-content: flex-start !important; }
+body.collection .page-title-breadcrumb .breadcrumb-list,
+body.collection .page-title-breadcrumb a,
+body.collection .page-title-breadcrumb span {
+  font-size: 1.2rem; letter-spacing: .04em; text-transform: uppercase;
+  font-family: var(--heading-font);
+}
+
+/* Título e conteúdo do banner à esquerda, alinhado com os produtos
+   (o tema aplica um padding-left grande p/ "centralizar" — zeramos) */
+body.collection .section.sec__page-heading .fluid_container .heading-content.relative,
+body.collection .sec__page-heading .heading-content {
+  text-align: left !important;
+  padding-inline: 0 !important;
+  padding-inline-start: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  margin-left: 0 !important;
+}
+body.collection .banner .heading-title { margin-bottom: 0; }
+
+@media (min-width: 1025px) {
+  /* ---- Barra de filtros horizontais como chips ---- */
+  body.collection .horizontal-filter { margin-bottom: 0 !important; }
+  body.collection .horizontal-filter .filter-blocks {
+    align-items: center; gap: 1rem !important; row-gap: 1rem !important;
+  }
+  body.collection .horizontal-filter .filter-blocks::before {
+    content: "Filtrar"; flex: 0 0 auto;
+    font-family: var(--heading-font); font-style: italic; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .12em; font-size: 1.2rem;
+    color: var(--color-heading, #1c1c1c); margin-right: .6rem;
+  }
+  body.collection .horizontal-filter .filter-item { padding: 0 !important; }
+  body.collection .horizontal-filter .filter-item > .collapsible.collection { border: 0 !important; padding: 0 !important; }
+  body.collection .horizontal-filter .filter-item .collapsible-heading {
+    display: inline-flex; align-items: center; gap: .8rem;
+    border: 1.5px solid var(--color-heading, #1c1c1c); border-radius: 40px;
+    padding: .85rem 1.7rem !important; margin: 0 !important;
+    font-family: var(--heading-font); font-weight: 600; text-transform: uppercase;
+    letter-spacing: .05em; font-size: 1.25rem; line-height: 1;
+    background: transparent; color: var(--color-heading, #1c1c1c);
+    transition: background .2s, color .2s, border-color .2s;
+  }
+  body.collection .horizontal-filter .filter-item .collapsible-heading:hover {
+    background: var(--color-heading, #1c1c1c); color: #fff;
+  }
+  body.collection .horizontal-filter .filter-item .collapsible.active .collapsible-heading {
+    background: var(--brk-accent); border-color: var(--brk-accent); color: #fff;
+  }
+
+  /* ---- Toolbar (contagem | ordenar) vira faixa unificada c/ divisória ---- */
+  body.collection .toolbar-products {
+    margin-top: 1.8rem !important; padding-top: 1.8rem;
+    border-top: 1px solid var(--color-border, #e3ded9);
+  }
+  body.collection .toolbar-left { color: var(--color-text, #4e4e4e); font-size: 1.35rem; }
+  body.collection .toolbar-sorter .select-selected {
+    border: 1.5px solid var(--color-border, #e3ded9); border-radius: 40px;
+    padding: .7rem 1.4rem; transition: border-color .2s;
+  }
+  body.collection .toolbar-sorter .select-selected:hover { border-color: var(--brk-accent); }
+}
+
+/* ---- Mobile: botão Filtros + Ordenar (label nativo do sorter) ---- */
+@media (max-width: 1024px) {
+  body.collection .toolbar-products { gap: 1rem; }
+  /* Botão Filtros */
+  body.collection .toolbar-left .btn-filter {
+    border-radius: 40px; border: 1.5px solid var(--color-heading, #1c1c1c);
+    padding: 1rem 1.6rem; font-family: var(--heading-font); text-transform: uppercase;
+    letter-spacing: .04em; font-size: 1.2rem;
+    background: var(--color-heading, #1c1c1c); color: #fff;
+  }
+  /* Sorter: estiliza SÓ o label interno (evita borda dupla) */
+  body.collection .toolbar-sorter .select-selected > label {
+    border-radius: 40px !important; border: 1.5px solid var(--color-heading, #1c1c1c) !important;
+    padding: 1rem 1.6rem !important; font-family: var(--heading-font);
+    text-transform: uppercase; letter-spacing: .04em; font-size: 1.2rem;
+  }
+}
+
+/* ================================================================
+   BRK MOTORS — Minicart drawer redesign (identidade de corrida)
+   ================================================================ */
+.minicart__wrapper {
+  --brk-accent: #fc5106;
+  --brk-ink: #1c1c1c;
+  --brk-line: #ececec;
+  --brk-soft: #f7f2f0;
+  background: #fff;
+}
+@media (min-width: 500px) {
+  .minicart.open_drawer .minicart__wrapper { width: 100%; max-width: 42rem; }
+}
+
+/* ---- Header ---- */
+.minicart__wrapper .minicart__header {
+  padding: 2rem 2.4rem !important;
+  border-bottom: 1px solid var(--brk-line);
+  background: #fff;
+}
+.minicart__wrapper .minicart-heading {
+  font-family: var(--heading-font); font-weight: 700; font-style: italic;
+  text-transform: uppercase; letter-spacing: .02em;
+  font-size: 1.7rem; color: var(--brk-ink);
+}
+.minicart__wrapper .minicart-heading .cart-count {
+  color: var(--brk-accent); font-style: normal;
+}
+.minicart__wrapper .button-close {
+  width: 3.4rem; height: 3.4rem; border-radius: 50%;
+  border: 1px solid var(--brk-line); justify-content: center;
+  transition: background .2s, border-color .2s;
+}
+.minicart__wrapper .button-close:hover { background: var(--brk-soft); border-color: var(--brk-ink); }
+
+/* ---- Corpo / itens ---- */
+.minicart__wrapper .minicart-body { padding: 1.8rem 2rem !important; }
+.minicart__wrapper .cart-item {
+  gap: 1.4rem !important;
+  padding: 1.4rem !important; margin-bottom: 1.2rem !important;
+  border: 1px solid var(--brk-line); border-radius: 14px;
+  background: #fff; transition: border-color .2s, box-shadow .2s;
+}
+.minicart__wrapper .cart-item:hover {
+  border-color: #dcdcdc; box-shadow: 0 6px 20px -12px rgba(0,0,0,.25);
+}
+.minicart__wrapper .minicart__product__image { --custom-width: 7.2rem !important; }
+.minicart__wrapper .minicart__product__image a,
+.minicart__wrapper .minicart__product__image img {
+  border-radius: 10px !important; overflow: hidden;
+}
+.minicart__wrapper .minicart__product__image { align-self: flex-start; background: transparent; }
+.minicart__wrapper .minicart__product-name {
+  font-family: var(--heading-font); font-weight: 600; line-height: 1.2;
+  font-size: 1.4rem; margin-bottom: .3rem !important;
+}
+.minicart__wrapper .minicart__product-name a { color: var(--brk-ink); }
+.minicart__wrapper .minicart__item-variant .product-option {
+  font-size: 1.15rem; color: #8a8a8a; line-height: 1.4;
+}
+.minicart__wrapper .minicart__item-prices { margin-top: .8rem !important; align-items: center; }
+.minicart__wrapper .minicart__item-price,
+.minicart__wrapper .minicart__item-regular-price {
+  color: var(--brk-accent) !important; font-family: var(--heading-font);
+  font-weight: 700; font-size: 1.55rem; letter-spacing: .01em;
+}
+.minicart__wrapper .minicart__item-original-price {
+  color: #b3b3b3; font-size: 1.25rem; margin-left: .6rem;
+}
+.minicart__wrapper .remove-text {
+  font-size: 1.15rem !important; color: #9a9a9a !important;
+  text-transform: uppercase; letter-spacing: .04em;
+}
+.minicart__wrapper .remove-text:hover { color: var(--brk-accent) !important; }
+/* Remover/editar fluem abaixo do preço (sem sobrepor em itens curtos) */
+.minicart__wrapper .minicart__bottom {
+  position: static !important; inset: auto !important;
+  margin-top: .8rem; gap: 1.4rem; align-items: center;
+}
+
+/* Stepper de quantidade (quando ativo) */
+.minicart__wrapper .quantity--compact {
+  border: 1px solid var(--brk-line) !important; border-radius: 40px !important;
+  overflow: hidden; background: #fff !important;
+}
+
+/* ---- Cupom ---- */
+.minicart__wrapper .cart-addons,
+.minicart__wrapper [class*="coupon"] { font-family: var(--body-font); }
+
+/* ---- Footer / CTAs ---- */
+.minicart__wrapper .drawer-bottom.cart__ctas {
+  background: var(--brk-soft) !important;
+  border-top: 1px solid var(--brk-line) !important;
+  padding: 2rem 2.4rem 2.4rem !important;
+}
+.minicart__wrapper .subtotal { margin-bottom: 1.4rem; }
+.minicart__wrapper .subtotal h5 {
+  font-family: var(--heading-font); font-weight: 700; font-style: italic;
+  text-transform: uppercase; letter-spacing: .03em; font-size: 1.5rem; color: var(--brk-ink);
+}
+.minicart__wrapper .subtotal-price {
+  font-family: var(--heading-font); font-weight: 700; font-size: 2rem; color: var(--brk-ink);
+}
+.minicart__wrapper .btn-checkout {
+  border-radius: 40px !important; background: var(--brk-accent) !important;
+  --btn-bg: var(--brk-accent); --btn-bg-gradient: var(--brk-accent);
+  font-family: var(--heading-font); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .04em; padding-block: 1.5rem !important;
+  transition: filter .2s, transform .05s;
+}
+.minicart__wrapper .btn-checkout:hover { filter: brightness(1.06); }
+.minicart__wrapper .btn-checkout:active { transform: translateY(1px); }
+.minicart__wrapper .viewcart {
+  border-radius: 40px !important; border: 1.5px solid var(--brk-ink) !important;
+  font-family: var(--heading-font); text-transform: uppercase; letter-spacing: .04em;
+  padding-block: 1.2rem !important; transition: background .2s, color .2s;
+}
+.minicart__wrapper .viewcart:hover { background: var(--brk-ink); color: #fff; }
+
+/* ---- Carrinho vazio ---- */
+.minicart__wrapper .cart-empty h6 {
+  font-family: var(--heading-font); font-weight: 700; font-style: italic; text-transform: uppercase;
+}
+.minicart__wrapper .cart-empty .minicart-action {
+  border-radius: 40px !important; text-transform: uppercase; font-family: var(--heading-font);
+}
+
+/* ================================================================
+   BRK MOTORS — FAQ redesign (global: home, /collections, /products)
+   ================================================================ */
+.sec__faq { --brk-accent: #fc5106; background: #f7f2f0 !important; padding-block: 5.5rem; }
+@media (max-width: 767.98px){ .sec__faq { padding-block: 3.5rem; } }
+/* Heading da seção */
+.sec__faq .section__header-heading {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: var(--color-heading, #212121);
+}
+.sec__faq .section__header { position: relative; }
+.sec__faq .section__header.text-center .section__header-heading::after,
+.sec__faq .section__header.text-left .section__header-heading::after {
+  content: "";
+  display: block;
+  width: 5.4rem;
+  height: 4px;
+  background: var(--brk-accent);
+  margin: 1.2rem auto 0;
+}
+.sec__faq .section__header.text-left .section__header-heading::after { margin-left: 0; }
+
+/* limita a largura da lista pra leitura confortável */
+.sec__faq .sec__content { max-width: 82rem; margin-inline: auto; }
+
+/* Cada item vira card */
+.sec__faq .faq-section-items {
+  display: block;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  padding: 0 2.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 18px rgba(0,0,0,.07);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .12s ease;
+  overflow: hidden;
+  position: relative;
+}
+.sec__faq .faq-section-items::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px; background: var(--brk-accent);
+  transform: scaleY(0); transform-origin: top;
+  transition: transform .22s ease;
+}
+.sec__faq .faq-section-items:hover {
+  border-color: #d6d6d6;
+  box-shadow: 0 10px 26px -18px rgba(0,0,0,.35);
+}
+/* título da pergunta */
+.sec__faq .faq-section-title {
+  border-bottom: 0 !important;
+  font-family: var(--heading-font);
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 1.3;
+  color: var(--color-heading, #212121);
+  padding: 1.9rem 4rem 1.9rem 0 !important;
+  transition: color .18s ease;
+}
+.sec__faq .faq-section-title:hover { color: var(--brk-accent); }
+/* conteúdo */
+.sec__faq .faq_content-inner {
+  padding: 0 0 2rem !important;
+  font-family: var(--body-font);
+  font-size: 1.4rem;
+  line-height: 1.65;
+  color: var(--color-text, #4e4e4e);
+}
+.sec__faq .faq_content-inner a { color: var(--brk-accent); text-decoration: underline; }
+/* ícone + / - em laranja (só as barras, não o container) */
+.sec__faq .icon_plus-animation { background-color: transparent !important; }
+.sec__faq .icon_plus-animation::before,
+.sec__faq .icon_plus-animation::after {
+  background-color: var(--brk-accent) !important;
+}
+/* estado aberto: borda + barra lateral laranja, título laranja */
+.sec__faq .faq-section-items.active,
+.sec__faq collapsible-block[open],
+.sec__faq .faq-section-items:has(.faq-section-content[style*="block"]) {
+  border-color: var(--brk-accent);
+}
+.sec__faq .faq-section-items.active::before,
+.sec__faq collapsible-block[open]::before,
+.sec__faq .faq-section-items:has(.faq-section-content[style*="block"])::before {
+  transform: scaleY(1);
+}
+.sec__faq .faq-section-items:has(.faq-section-content[style*="block"]) .faq-section-title { color: var(--brk-accent); }
+
+@media (max-width: 767.98px) {
+  .sec__faq .faq-section-items { padding: 0 1.6rem; }
+  .sec__faq .faq-section-title { font-size: 1.5rem; padding: 1.6rem 3.4rem 1.6rem 0 !important; }
+}
+
+/* ================================================================
+   BRK MOTORS — Sticky add-to-cart
+   Desktop: desativado (enable_on_desktop=false). Mobile: vira um único
+   botão flutuante "Escolher Opções" (sem fundo branco) que rola até a galeria.
+   ================================================================ */
+#media-gallery { scroll-margin-top: 8rem; }
+@media (min-width: 768px) {
+  body.product sticky-add-cart { display: none !important; }
+}
+@media (max-width: 767.98px) {
+  body.product sticky-add-cart {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 0 0 calc(1.2rem + env(safe-area-inset-bottom, 0px)) !important;
+    pointer-events: none; /* área transparente não bloqueia toques; só o botão */
+  }
+  body.product sticky-add-cart .brk-sticky-full { display: none !important; }
+  body.product sticky-add-cart .brk-choose-options {
+    pointer-events: auto;
+    display: block;
+    width: min(90%, 42rem);
+    margin: 0 auto;
+    padding: 1.5rem 2.4rem;
+    background: var(--brk-accent, #fc5106);
+    color: #fff;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-size: 1.5rem;
+    line-height: 1.1;
+    border-radius: 50px;
+    box-shadow: 0 12px 30px -8px rgba(0,0,0,.4);
+  }
+}
+/* Desktop mantém o botão fora do fluxo caso a barra apareça em algum estado */
+.brk-choose-options { display: none; }
+@media (max-width: 767.98px) { .brk-choose-options { display: block; } }

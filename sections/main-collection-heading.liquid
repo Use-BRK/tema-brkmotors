@@ -58,9 +58,15 @@
                 data-motion-delay="{{ forloop.index0 | times: 50 }}"
                 class=" {% if scroll_animation == 'slide_in' %} opacity-0 {% endif %} block"
               >
+              {%- if template contains 'collection' and collection != blank -%}
+                <span class="brk-collection-eyebrow">COLEÇÃO</span>
+              {%- endif -%}
               <h1 class="heading-title heading-letter-spacing h2 mt-8 mb-0 {{ header_size }}">
                 {%- if block_st.page_title != blank -%}
                   {{ block_st.page_title }}
+                {%- elsif template contains 'collection' and collection.title != blank -%}
+                  {%- assign _brk_first = collection.title | split: ' ' | first -%}
+                  <span class="brk-title-accent">{{ _brk_first }}</span>{{ collection.title | remove_first: _brk_first }}
                 {%- else -%}
                   {{ collection.title }}
                 {% endif %}

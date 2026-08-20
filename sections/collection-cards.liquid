@@ -1,0 +1,110 @@
+{%- liquid
+  assign s = section.settings
+  assign count = section.blocks.size
+-%}
+{%- capture css_vars -%}
+--cl-bg: {{ s.background_color | default: '#0d0d0d' }};
+--cl-accent: {{ s.accent_color | default: '#ff5e22' }};
+--cl-title: {{ s.title_color | default: '#fdfaec' }};
+--cl-radius: {{ s.corner_radius }}px;
+--cl-gap: {{ s.column_gap }}px;
+--cl-cols: {{ count }};
+--section-pt: {{ s.padding_top }}px; --section-pb: {{ s.padding_bottom }}px;
+{%- endcapture -%}
+{%- style -%}
+  .collection-cards { position: relative; background-color: var(--cl-bg); padding-top: var(--section-pt); padding-bottom: var(--section-pb); }
+  .collection-cards__grid { display: grid; grid-template-columns: repeat(var(--cl-cols), minmax(0, 1fr)); gap: var(--cl-gap); }
+  .collection-cards__item { position: relative; display: block; aspect-ratio: 465 / 480; border-radius: var(--cl-radius); overflow: hidden; isolation: isolate; text-decoration: none; }
+  .collection-cards__img { position: absolute; inset: 0; width: 100% !important; height: 100% !important; max-width: none; object-fit: cover !important; transition: transform var(--duration-long, .5s) ease; }
+  .collection-cards__item:hover .collection-cards__img { transform: scale(1.05); }
+  .collection-cards__item::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(102,102,102,0) 0%, rgba(26,22,18,0.94) 100%); }
+  .collection-cards__body { position: absolute; z-index: 2; left: 0; right: 0; bottom: 40px; padding: 0 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+  .collection-cards__title { margin: 0; color: var(--cl-title); font-family: var(--heading-font); font-weight: 600; font-style: italic; text-transform: uppercase; line-height: 1; font-size: clamp(3rem, 3.2vw, 4.8rem); letter-spacing: -0.01em; }
+  .collection-cards__btn { display: inline-flex; align-items: center; justify-content: center; min-width: 190px; padding: 10px 26px; border-radius: 26px; background: var(--cl-accent); color: #fff; font-family: var(--heading-font); font-weight: 500; font-size: clamp(1.4rem, 1.4vw, 1.7rem); letter-spacing: .04em; text-transform: uppercase; transition: opacity var(--duration-short,.3s) ease, transform var(--duration-short,.3s) ease; }
+  .collection-cards__item:hover .collection-cards__btn { opacity: .88; transform: translateY(-1px); }
+  @media screen and (max-width: 1024.98px) {
+    .collection-cards__grid { grid-auto-flow: column; grid-auto-columns: 90%; grid-template-columns: none; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 4px; }
+    .collection-cards__grid::-webkit-scrollbar { display: none; }
+    .collection-cards__item { scroll-snap-align: start; }
+    .collection-cards__body { bottom: 30px; gap: 16px; }
+  }
+{%- endstyle -%}
+<div class="collection-cards" style="{{ css_vars | strip | strip_newlines }}">
+  <div class="{{ s.section_width }}">
+    {%- if s.heading != blank -%}
+      <h2 class="collection-cards__heading heading-letter-spacing text-center mb-30" style="color: var(--cl-title);">{{ s.heading }}</h2>
+    {%- endif -%}
+    <div class="collection-cards__grid">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign b = block.settings
+          assign card_url = b.link | default: '#'
+        -%}
+        <a href="{{ card_url }}" class="collection-cards__item" {{ block.shopify_attributes }} aria-label="{{ b.title | escape }}">
+          {%- if b.image != blank -%}
+            <img class="collection-cards__img" src="{{ b.image | image_url: width: 930 }}" srcset="{{ b.image | image_url: width: 465 }} 465w, {{ b.image | image_url: width: 930 }} 930w" sizes="(min-width:1025px) 33vw, 78vw" width="465" height="480" alt="{{ b.title | escape }}" loading="lazy">
+          {%- elsif b.image_asset != blank -%}
+            <img class="collection-cards__img" src="{{ b.image_asset | asset_url }}" width="465" height="480" alt="{{ b.title | escape }}" loading="lazy">
+          {%- endif -%}
+          <div class="collection-cards__body">
+            {%- if b.title != blank -%}<h3 class="collection-cards__title">{{ b.title }}</h3>{%- endif -%}
+            {%- if b.button_label != blank -%}<span class="collection-cards__btn">{{ b.button_label }}</span>{%- endif -%}
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Cards de Coleção",
+  "tag": "section",
+  "class": "section-collection-cards",
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "options": [
+        { "value": "container", "label": "t:sections.all.section_width.container.label" },
+        { "value": "fluid_container", "label": "t:sections.all.section_width.fluid_container.label" },
+        { "value": "full_width", "label": "t:sections.all.section_width.full_width.label" }
+      ],
+      "default": "fluid_container",
+      "label": "t:sections.all.section_width.label"
+    },
+    { "type": "text", "id": "heading", "label": "Título da seção (opcional)" },
+    { "type": "color", "id": "background_color", "label": "Cor de fundo", "default": "#0d0d0d" },
+    { "type": "color", "id": "title_color", "label": "Cor do título dos cards", "default": "#fdfaec" },
+    { "type": "color", "id": "accent_color", "label": "Cor do botão", "default": "#ff5e22" },
+    { "type": "range", "id": "corner_radius", "min": 0, "max": 30, "step": 1, "unit": "px", "label": "Arredondamento", "default": 0 },
+    { "type": "range", "id": "column_gap", "min": 0, "max": 40, "step": 1, "unit": "px", "label": "Espaço entre cards", "default": 20 },
+    { "type": "header", "content": "t:sections.all.section_padding.label" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "t:sections.all.section_padding.top.label", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "t:sections.all.section_padding.bottom.label", "default": 60 }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Imagem de fundo" },
+        { "type": "text", "id": "image_asset", "label": "Imagem padrão (arquivo do tema)", "info": "Ex: brk-col-segunda-pele.jpg" },
+        { "type": "text", "id": "title", "label": "Título", "default": "Coleção" },
+        { "type": "text", "id": "button_label", "label": "Texto do botão", "default": "Ver produtos" },
+        { "type": "url", "id": "link", "label": "Link (categoria)" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Cards de Coleção",
+      "blocks": [
+        { "type": "card", "settings": { "title": "SEGUNDA PELE", "image_asset": "brk-col-segunda-pele.jpg" } },
+        { "type": "card", "settings": { "title": "ÓCULOS DE SOL", "image_asset": "brk-col-oculos.jpg" } },
+        { "type": "card", "settings": { "title": "BANDANA", "image_asset": "brk-col-bandana.jpg" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

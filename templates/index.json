@@ -148,7 +148,7 @@
         "slide_height": "adapt",
         "desktop_height": 800,
         "mobile_height": 300,
-        "color_scheme": "",
+        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
         "subheading_font_size": 15,
         "subheading_font_weight": "subheading_weight",
         "subheading_spacing_bottom": 0,
@@ -169,6 +169,204 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
+      }
+    },
+    "category_cards_brk": {
+      "type": "category-cards",
+      "blocks": {
+        "card_esportivo": {
+          "type": "card",
+          "settings": {
+            "image_asset": "brk-cat-esportivo.jpg",
+            "title": "ESPORTIVO",
+            "link": ""
+          }
+        },
+        "card_estrada": {
+          "type": "card",
+          "settings": {
+            "image_asset": "brk-cat-estrada.jpg",
+            "title": "ESTRADA",
+            "link": ""
+          }
+        },
+        "card_urbano": {
+          "type": "card",
+          "settings": {
+            "image_asset": "brk-cat-urbano.jpg",
+            "title": "URBANO",
+            "link": ""
+          }
+        },
+        "card_custom": {
+          "type": "card",
+          "settings": {
+            "image_asset": "brk-cat-custom.png",
+            "title": "CUSTOM",
+            "subtitle": "Confira a coleção",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_esportivo",
+        "card_estrada",
+        "card_urbano",
+        "card_custom"
+      ],
+      "name": "Cards de Categoria",
+      "settings": {
+        "section_width": "fluid_container",
+        "color_scheme": "default",
+        "background_color": "#0d0d0d",
+        "overlap_previous": true,
+        "overlap_amount": 40,
+        "corner_radius": 20,
+        "column_gap": 18,
+        "padding_top": 40,
+        "padding_bottom": 70
+      }
+    },
+    "automobilismo_banner_brk": {
+      "type": "automobilismo-banner",
+      "settings": {
+        "section_width": "fluid_container",
+        "image_asset": "brk-automobilismo-bg-wide.png",
+        "image_position": "right center",
+        "image_fit": "cover",
+        "background_color": "#0d0d0d",
+        "text_color": "#ffffff",
+        "accent_color": "#ff5e22",
+        "badge": "NOVA COLEÇÃO",
+        "title_accent": "AUTO",
+        "title_solid": "MOBILISMO",
+        "subtitle": "Velocidade, estilo e tecnologia UV50+. Vista sua paixão pelo automobilismo com máxima proteção.",
+        "collection": "colecao-automobilismo",
+        "items_to_show": 12,
+        "items_per_row": 4,
+        "items_per_row_mobile": 1.5,
+        "column_gap": 20,
+        "show_arrow": true,
+        "infinite": true,
+        "autoplay": false,
+        "autorotate_speed": 5,
+        "card_title_color": "#f7f2f0",
+        "card_price_color": "#ff5e22",
+        "card_sub_color": "#e1e1e1",
+        "button_label": "Ver Coleção",
+        "button_link": "",
+        "padding_top": 0,
+        "padding_bottom": 64
+      }
+    },
+    "bigtrail_banner_brk": {
+      "type": "bigtrail-banner",
+      "settings": {
+        "section_width": "fluid_container",
+        "image_asset": "brk-bigtrail.png",
+        "image_asset_mobile": "brk-bigtrail.png",
+        "content_position": "right",
+        "heading_white": "BIGTRAIL",
+        "heading_accent": "2026",
+        "subtitle_strong": "Sem estradas, sem limites.",
+        "subtitle_text": "Proteção feita para transformar qualquer caminho.",
+        "button_label": "Conferir Lançamento",
+        "button_link": "shopify://collections/big-trail",
+        "text_color": "#f8e4c9",
+        "accent_color": "#f7f2f0",
+        "overlay_opacity": 10,
+        "min_height": 570,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collection_cards_brk": {
+      "type": "collection-cards",
+      "blocks": {
+        "col_segunda_pele": {
+          "type": "card",
+          "settings": {
+            "image_asset": "brk-col-segunda-pele.jpg",
+            "title": "SEGUNDA PELE",
+            "button_label": "Ver produtos",
+            "link": "shopify://collections/explorer-raglan"
+          }
+        },
+        "col_oculos": {
+          "type": "card",
+          "settings": {
+            "image_asset": "brk-col-oculos.jpg",
+            "title": "ÓCULOS DE SOL",
+            "button_label": "Ver produtos",
+            "link": ""
+          }
+        },
+        "col_bandana": {
+          "type": "card",
+          "settings": {
+            "image_asset": "brk-col-bandana.jpg",
+            "title": "BANDANA",
+            "button_label": "Ver produtos",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "col_segunda_pele",
+        "col_oculos",
+        "col_bandana"
+      ],
+      "name": "Cards de Coleção",
+      "settings": {
+        "section_width": "fluid_container",
+        "background_color": "#0d0d0d",
+        "title_color": "#fdfaec",
+        "accent_color": "#ff5e22",
+        "corner_radius": 0,
+        "column_gap": 20,
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    },
+    "best_sellers_tabs_brk": {
+      "type": "best-sellers-tabs",
+      "blocks": {
+        "tab_mais_vendidos": {
+          "type": "collection",
+          "settings": {
+            "collection": "kits-casal",
+            "collection_title": "Mais Vendidos"
+          }
+        },
+        "tab_lancamentos": {
+          "type": "collection",
+          "settings": {
+            "collection": "explorer-raglan",
+            "collection_title": "Lançamentos"
+          }
+        }
+      },
+      "block_order": [
+        "tab_mais_vendidos",
+        "tab_lancamentos"
+      ],
+      "name": "Coleções em Abas",
+      "settings": {
+        "section_width": "fluid_container",
+        "background_color": "#f7f2f0",
+        "active_color": "#252525",
+        "inactive_color": "#929292",
+        "active_font_size": 48,
+        "inactive_font_size": 36,
+        "show_view_all": true,
+        "view_all_label": "Ver tudo",
+        "items_to_show": 10,
+        "items_per_row": 5,
+        "column_gap": 16,
+        "show_arrow": true,
+        "items_per_row_mobile": 1.5,
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "scrolling_text_U3mttg": {
@@ -1307,6 +1505,11 @@
   },
   "order": [
     "slideshow_mWxPRH",
+    "category_cards_brk",
+    "automobilismo_banner_brk",
+    "bigtrail_banner_brk",
+    "collection_cards_brk",
+    "best_sellers_tabs_brk",
     "scrolling_text_U3mttg",
     "collection_tab_CPENAL",
     "collection_list_UwFk4D",

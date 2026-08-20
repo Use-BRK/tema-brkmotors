@@ -89,9 +89,44 @@
         </div>
       </div>
     {%- else -%}
-      <div class="dropdown-toggle">
+      {%- style -%}
+        .header-search-pill { display: none; }
+        @media screen and (min-width: 1025px) {
+          .header-search-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            min-width: 190px;
+            height: 34px;
+            padding: 0 12px 0 15px;
+            border: 1px solid currentColor;
+            border-radius: 17px;
+            font-family: var(--body-font);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            line-height: 1;
+            color: inherit;
+            background: transparent;
+          }
+          .header-search-pill .header-search-pill__icon { flex: 0 0 auto; }
+          .header-search-icon-mobile { display: none !important; }
+        }
+      {%- endstyle -%}
+      <div class="dropdown-toggle inline-flex align-center">
         <button
-          class="btn-reset top-search-toggle header-icon header-color w-44 h-44 inline-flex content-center header-color overlay pointer transition"
+          class="btn-reset top-search-toggle header-search-pill header-color overlay pointer transition"
+          aria-label="{{ 'templates.search.tooltip' | t }}"
+        >
+          <span>{{ 'general.search.search' | t }}</span>
+          <svg class="header-search-pill__icon" width="16" height="16" viewBox="0 0 17 17" fill="currentColor">
+            <use href="#icon-search" />
+          </svg>
+        </button>
+        <button
+          class="btn-reset top-search-toggle header-search-icon-mobile header-icon header-color w-44 h-44 inline-flex content-center overlay pointer transition"
           aria-label="{{ 'templates.search.tooltip' | t }}"
         >
           <svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor">

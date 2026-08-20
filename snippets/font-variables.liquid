@@ -1,6 +1,6 @@
 {% liquid
-  assign font_family_body = 'Instrument Sans'
-  assign font_family_heading = 'Instrument Sans'
+  assign font_family_body = 'Inter'
+  assign font_family_heading = 'Roboto Condensed'
 
   assign theme_st = settings
   assign font_type_body = theme_st.font_type_body
@@ -17,36 +17,15 @@
 {% comment %} Start check setting font {% endcomment %}
 {% if font_type_body == 'default_font' %}
   {{
-    'InstrumentSans-Regular.woff2'
+    'Inter-Variable.woff2'
     | asset_url
     | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous'
   }}
   {% style %}
     @font-face {
-      font-family: "Instrument Sans";
-      src: url({{ 'InstrumentSans-SemiBold.woff2' | asset_url }}) format("woff2");
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Instrument Sans";
-      src: url({{ 'InstrumentSans-Bold.ttf' | asset_url }});
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Instrument Sans";
-      src: url({{ 'InstrumentSans-Medium.woff2' | asset_url }}) format("woff2");
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Instrument Sans";
-      src: url({{ 'InstrumentSans-Regular.woff2' | asset_url }}) format("woff2");
-      font-weight: normal;
+      font-family: "Inter";
+      src: url({{ 'Inter-Variable.woff2' | asset_url }}) format("woff2");
+      font-weight: 100 900;
       font-style: normal;
       font-display: swap;
     }
@@ -66,37 +45,23 @@
 
 {% if font_type_heading == 'default_font' %}
   {{
-    'InstrumentSans-Regular.woff2'
+    'RobotoCondensed-Variable.woff2'
     | asset_url
     | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous'
   }}
   {% style %}
     @font-face {
-      font-family: "Instrument Sans";
-      src: url({{ 'InstrumentSans-SemiBold.woff2' | asset_url }}) format("woff2");
-      font-weight: 600;
+      font-family: "Roboto Condensed";
+      src: url({{ 'RobotoCondensed-Variable.woff2' | asset_url }}) format("woff2");
+      font-weight: 100 900;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
-      font-family: "Instrument Sans";
-      src: url({{ 'InstrumentSans-Bold.ttf' | asset_url }});
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Instrument Sans";
-      src: url({{ 'InstrumentSans-Medium.woff2' | asset_url }}) format("woff2");
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Instrument Sans";
-      src: url({{ 'InstrumentSans-Regular.woff2' | asset_url }}) format("woff2");
-      font-weight: normal;
-      font-style: normal;
+      font-family: "Roboto Condensed";
+      src: url({{ 'RobotoCondensed-Italic-Variable.woff2' | asset_url }}) format("woff2");
+      font-weight: 100 900;
+      font-style: italic;
       font-display: swap;
     }
   {% endstyle %}

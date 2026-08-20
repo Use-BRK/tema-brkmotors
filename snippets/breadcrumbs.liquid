@@ -40,9 +40,22 @@
           <span class="breadcrumb-link no-underline heading-color" aria-current="page">{{ page.title }}</span>
         </li>
       {%- when 'product' -%}
-        {%- if collection.url -%}
+        {%- liquid
+          # 1) Coleção pela navegação (URL /collections/x/products/y).
+          # 2) Fallback: primeira coleção real do produto (ignora all/frontpage).
+          assign bc_collection = collection
+          if bc_collection.url == blank
+            for c in product.collections
+              unless c.handle == 'all' or c.handle == 'frontpage' or c.handle == 'todos-os-produtos'
+                assign bc_collection = c
+                break
+              endunless
+            endfor
+          endif
+        -%}
+        {%- if bc_collection.url -%}
           <li class="breadcrumb-item dot-between inline-flex align-center light-dark-grey">
-            {{ collection.title | link_to: collection.url }}
+            {{ bc_collection.title | link_to: bc_collection.url }}
           </li>
         {%- endif -%}
         <li class="breadcrumb-item dot-between inline-flex align-center {% if next_product %}breadcrumb-truncate{% endif %}">

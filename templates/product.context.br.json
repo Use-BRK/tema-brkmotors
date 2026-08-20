@@ -13,9 +13,20 @@
   },
   "parent": "product.json",
   "sections": {
+    "brk_specs": {
+      "disabled": true
+    },
+    "breadcrumb": {
+      "disabled": false,
+      "settings": {
+        "section_width": "container",
+        "color_scheme": "",
+        "next_prev": false
+      }
+    },
     "collection_list_HHVyFp": {
       "type": "collection-list",
-      "disabled": false,
+      "disabled": true,
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
@@ -251,9 +262,41 @@
       "settings": {
         "section_width": "container",
         "mobile_options": "hidden_thumbnail",
+        "desktop_layout": "thumbnail_bottom",
+        "enable_on_desktop": false,
+        "enable_on_mobile": true,
         "padding_top": 20
       },
       "blocks": {
+        "product_meta_kiKPhW": {
+          "disabled": true,
+          "settings": {}
+        },
+        "brk_trust_buybox": {
+          "type": "brk_trust",
+          "settings": {
+            "accent_color": "#fc5106",
+            "t1_icon": "lock",
+            "t1_title": "Compra 100% Segura",
+            "t2_icon": "refresh",
+            "t2_title": "1ª Troca Grátis",
+            "t3_icon": "truck",
+            "t3_title": "Frete Fixo R$9,90",
+            "t4_icon": "medal",
+            "t4_title": "Qualidade Garantida"
+          }
+        },
+        "brk_specs_buybox": {
+          "type": "brk_specs_inline",
+          "settings": {
+            "accent_color": "#fc5106",
+            "heading": "Detalhes do produto",
+            "show_sku": true,
+            "sku_label": "Código",
+            "show_prazo": true,
+            "prazo_label": "Prazo de produção"
+          }
+        },
         "custom_name_button_mPJXV": {
           "type": "custom_name_button",
           "disabled": false,
@@ -291,7 +334,7 @@
           }
         },
         "delivery_return_iJHeMD": {
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "delivery_content": "<p><strong>Frete Fixo R$9,90!</strong></p>",
             "discount_content_icon": "none",
@@ -317,6 +360,8 @@
         "variant_picker_tcCihG",
         "buy_buttons_LcQGtR",
         "custom_name_button_mPJXV",
+        "brk_trust_buybox",
+        "brk_specs_buybox",
         "whatsapp_cta_Ri9qX",
         "short_description_9BGxVm",
         "product_addons_YRaprz",
@@ -337,18 +382,9 @@
   "order": [
     "breadcrumb",
     "main",
-    "divider_tjfNx6",
-    "17609883485ad8d257",
-    "custom_liquid_ncFfAE",
-    "collection_list_HHVyFp",
-    "17587473181093c5a4",
-    "divider_KGC8Br",
-    "product-set",
-    "product_bundle_meDq3n",
-    "divider_E3r6ih",
-    "products_recently_viewed_TqANG7",
-    "divider_HEtNnL",
-    "related_products",
-    "faq_UNchg"
+    "brk_benefits",
+    "brk_specs",
+    "faq_UNchg",
+    "collection_list_HHVyFp"
   ]
 }

@@ -66,8 +66,9 @@
               {%- when 'menu_promotion' -%}
                 {%- for i in (1..2) -%}
                   {%- capture promotion -%}promotion_image_{{ i }}{%- endcapture -%}
+                  {%- capture promotion_asset -%}promotion_image_asset_{{ i }}{%- endcapture -%}
                   {%- liquid
-                    if block_st[promotion] != blank
+                    if block_st[promotion] != blank or block_st[promotion_asset] != blank
                       assign has_content = true
                     endif
                   -%}
@@ -167,7 +168,8 @@
                         {% assign banner_count = 0 %}
                         {% for i in (1..2) %}
                           {%- capture promotion_image -%}promotion_image_{{i}}{%- endcapture -%}
-                          {%- if block_st[promotion_image] != blank -%}
+                          {%- capture promotion_image_asset -%}promotion_image_asset_{{i}}{%- endcapture -%}
+                          {%- if block_st[promotion_image] != blank or block_st[promotion_image_asset] != blank -%}
                             {% assign banner_count = banner_count | plus: 1 %}
                           {%- endif -%}
                         {% endfor %}
@@ -192,7 +194,7 @@
                               {%- render 'submenu-list' , link: link , only_for_domain: only_for_glozin -%}
                             </div>
                           {% endif %}
-                          {%- if block_st.promotion_image_1 != blank or block_st.promotion_image_2 != blank -%}
+                          {%- if block_st.promotion_image_1 != blank or block_st.promotion_image_asset_1 != blank or block_st.promotion_image_2 != blank or block_st.promotion_image_asset_2 != blank -%}
                             <div class="col-mega {% if only_for_glozin == true %} hidden block-1025 {% endif %}">
                               <div  
                                 class="grid grid-cols gap-20 px-30 px-1025-0 {{ settings.hover_effect }}"
@@ -226,6 +228,18 @@
                                       sizes: '(min-width: 1200px) 450px, 360px',
                                       class: 'rounded'
                                     %}
+                                  </a>
+                                {%- elsif block_st.promotion_image_asset_1 != blank -%}
+                                  <a
+                                    {% if block_st.promotion_link_1 == blank %}
+                                      role="link" aria-disabled="true"
+                                    {% else %}
+                                      aria-label="{{ link.title }}" href="{{ block_st.promotion_link_1 }}"
+                                    {% endif %}
+                                    class="rounded"
+                                    style="--aspect-ratio: 0.785; display:block; border-radius:16px; overflow:hidden;"
+                                  >
+                                    <img src="{{ block_st.promotion_image_asset_1 | asset_url }}" alt="{{ link.title | escape }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
                                   </a>
                                 {%- endif -%}
                                 {%- if block_st.promotion_image_2 != blank -%}
@@ -625,8 +639,9 @@
               {%- when 'menu_promotion' -%}
                 {%- for i in (1..2) -%}
                   {%- capture promotion -%}promotion_image_{{ i }}{%- endcapture -%}
+                  {%- capture promotion_asset -%}promotion_image_asset_{{ i }}{%- endcapture -%}
                   {%- liquid
-                    if block_st[promotion] != blank
+                    if block_st[promotion] != blank or block_st[promotion_asset] != blank
                       assign has_content = true
                     endif
                   -%}
@@ -726,7 +741,8 @@
                         {% assign banner_count = 0 %}
                         {% for i in (1..2) %}
                           {%- capture promotion_image -%}promotion_image_{{i}}{%- endcapture -%}
-                          {%- if block_st[promotion_image] != blank -%}
+                          {%- capture promotion_image_asset -%}promotion_image_asset_{{i}}{%- endcapture -%}
+                          {%- if block_st[promotion_image] != blank or block_st[promotion_image_asset] != blank -%}
                             {% assign banner_count = banner_count | plus: 1 %}
                           {%- endif -%}
                         {% endfor %}
@@ -751,7 +767,7 @@
                               {%- render 'submenu-list' , link: link , only_for_domain: only_for_glozin -%}
                             </div>
                           {% endif %}
-                          {%- if block_st.promotion_image_1 != blank or block_st.promotion_image_2 != blank -%}
+                          {%- if block_st.promotion_image_1 != blank or block_st.promotion_image_asset_1 != blank or block_st.promotion_image_2 != blank or block_st.promotion_image_asset_2 != blank -%}
                             <div class="col-mega {% if only_for_glozin == true %} hidden block-1025 {% endif %}">
                               <div  
                                 class="grid grid-cols gap-20 px-30 px-1025-0 {{ settings.hover_effect }}"
@@ -785,6 +801,18 @@
                                       sizes: '(min-width: 1200px) 450px, 360px',
                                       class: 'rounded'
                                     %}
+                                  </a>
+                                {%- elsif block_st.promotion_image_asset_1 != blank -%}
+                                  <a
+                                    {% if block_st.promotion_link_1 == blank %}
+                                      role="link" aria-disabled="true"
+                                    {% else %}
+                                      aria-label="{{ link.title }}" href="{{ block_st.promotion_link_1 }}"
+                                    {% endif %}
+                                    class="rounded"
+                                    style="--aspect-ratio: 0.785; display:block; border-radius:16px; overflow:hidden;"
+                                  >
+                                    <img src="{{ block_st.promotion_image_asset_1 | asset_url }}" alt="{{ link.title | escape }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
                                   </a>
                                 {%- endif -%}
                                 {%- if block_st.promotion_image_2 != blank -%}
@@ -1110,5 +1138,29 @@
     </div>
   </nav>
 
+  {%- comment -%} BRK: mega menu flip — evita transbordo à direita no desktop {%- endcomment -%}
+  <script>
+    (function () {
+      function brkMegaFlip() {
+        if (window.innerWidth < 1025) return;
+        document.querySelectorAll('.section-header .horizontal-list > .level0').forEach(function (li) {
+          var panel = li.querySelector(':scope > .submenu');
+          if (!panel || li.dataset.brkFlipBound) return;
+          li.dataset.brkFlipBound = '1';
+          li.addEventListener('mouseenter', function () {
+            requestAnimationFrame(function () {
+              li.removeAttribute('data-align');
+              var r = panel.getBoundingClientRect();
+              if (r.width && r.right > window.innerWidth - 8) {
+                li.setAttribute('data-align', 'right');
+              }
+            });
+          });
+        });
+      }
+      if (document.readyState !== 'loading') brkMegaFlip();
+      else document.addEventListener('DOMContentLoaded', brkMegaFlip);
+    })();
+  </script>
 
 {%- endif  -%}

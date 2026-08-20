@@ -2,18 +2,22 @@
 
 
 /* ---- INICIO ESTILIZAÇÃO PERSONALIZADA BRK ---- */
+/* Redesign (brk-redesign.css) usa imagem QUADRADA (border-radius:0) e card
+   limpo sem moldura. A moldura arredondada legada aqui (border + radius 10px)
+   criava o "vazamento": cantos quadrados da imagem para fora da borda redonda.
+   Card agora é flat, sem borda, com o texto rente à imagem. */
 div#product-grid .grid__item {
-  border: 1px solid lightgrey;
-  border-radius: 10px
+  border: none;
+  border-radius: 0;
 }
 
 div#product-grid .grid__item:hover {
-  transition: transform .5s ease,box-shadow .5s ease;
-  box-shadow: -1rem -1rem 1rem -1rem #0000000d,1rem 1rem 1rem -1rem #0000000d,0 0 .5rem #fff0,0 2rem 3.5rem -2rem #00000080
+  transition: transform .4s ease;
+  transform: translateY(-3px);
 }
 
 div#product-grid .product-item__information {
-  padding: 0 1.5rem 1.5rem 1.5rem
+  padding: 0;
 }
 
 div#product-grid motion-element product-form button {

@@ -9,6 +9,47 @@
  */
 {
   "sections": {
+    "best_sellers_tabs_brk": {
+      "disabled": false,
+      "blocks": {
+        "tab_mais_vendidos": {
+          "disabled": false,
+          "settings": {
+            "collection": "kits-casal",
+            "collection_title": "Mais Vendidos"
+          }
+        },
+        "tab_lancamentos": {
+          "disabled": false,
+          "settings": {
+            "collection": "explorer-raglan",
+            "collection_title": "Lançamentos"
+          }
+        }
+      },
+      "block_order": [
+        "tab_mais_vendidos",
+        "tab_lancamentos"
+      ],
+      "name": "Coleções em Abas",
+      "settings": {
+        "section_width": "fluid_container",
+        "background_color": "#f7f2f0",
+        "active_color": "#252525",
+        "inactive_color": "#929292",
+        "active_font_size": 48,
+        "inactive_font_size": 36,
+        "show_view_all": true,
+        "view_all_label": "Ver tudo",
+        "items_to_show": 10,
+        "items_per_row": 5,
+        "column_gap": 16,
+        "show_arrow": true,
+        "items_per_row_mobile": 1.5,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "collection_tab_nKDAh": {
       "type": "collection-tab",
       "disabled": false,
@@ -153,15 +194,47 @@
     },
     "slideshow_mWxPRH": {
       "settings": {
-        "slide_effect": "slide",
+        "slide_effect": "fade",
         "autorotate_speed": 6,
         "content_below_image": false
       },
       "blocks": {
+        "slider_item_bigtrail": {
+          "type": "slider_item",
+          "name": "Big Trail",
+          "disabled": false,
+          "settings": {
+            "image": "shopify://shop_images/FULLBANNER_DESKTOP_BIGTRAIL.webp",
+            "image_mobile": "shopify://shop_images/FULLBANNER_MOBILE_BIGTRAIL.webp",
+            "local_video": null,
+            "image_link": "shopify://collections/big-trail",
+            "overlay_opacity": 0,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
+            "content_alignment": "center",
+            "content_position": "bottom-left",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "content_alignment_mobile": "center"
+          }
+        },
         "slider_item_UxPEXY": {
           "type": "slider_item",
           "name": "Motociclismo +Vendidas",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "header-fc422940c7453a4e9bbe159bb1a3e27b": null,
             "image": "shopify://shop_images/MOTOCICLISMO_DESK.webp",
@@ -201,8 +274,8 @@
           "disabled": false,
           "settings": {
             "header-60f30cf150cf6e9c620b82d31968d2f4": null,
-            "image": "shopify://shop_images/Prancheta_2.png",
-            "image_mobile": "shopify://shop_images/Mobv3.png",
+            "image": "shopify://shop_images/FULLBANNER_DESKTOP_KITCASAL2.webp",
+            "image_mobile": "shopify://shop_images/FULLBANNER_MOBILE_KITCASAL.webp",
             "local_video": null,
             "image_link": "shopify://collections/kits-casal",
             "overlay_opacity": 0,
@@ -232,47 +305,10 @@
             "content_alignment_mobile": "center"
           }
         },
-        "slider_item_aFHxM": {
-          "type": "slider_item",
-          "disabled": true,
-          "name": "Semana do Motociclismo",
-          "settings": {
-            "header-d5c9966405958e94b627d7bffa486651": null,
-            "image": "shopify://shop_images/SEMANA_MOTOCICLISMO_DESKTOP.webp",
-            "image_mobile": "shopify://shop_images/SEMANA_MOTOCICLISMO_MOBILE.webp",
-            "local_video": null,
-            "image_link": "shopify://collections/lancamentos",
-            "overlay_opacity": 0,
-            "header-073a96f4ed77c1e4a15b28b8c96ed14a": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_style": false,
-            "header-e7b5302325265e565b9445c46c2d2033": null,
-            "content_alignment": "center",
-            "content_position": "bottom-left",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 60,
-            "content_padding_inline": 60,
-            "header-37ce1a371292f0eeab310e30c004659e": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-363d17b04920c89751069a5885cdbf04": null,
-            "content_alignment_mobile": "center"
-          }
-        },
         "slider_item_xJACgF": {
           "type": "slider_item",
           "name": "Caveiras e Militares",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "header-eb02240d977a76d45422291f85cfcabf": null,
             "image": "shopify://shop_images/CAVEIRAS_MILITARES_DESK.webp",
@@ -309,7 +345,7 @@
         "slider_item_qtbPtj": {
           "type": "slider_item",
           "name": "Segunda Pele",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "header-b47b1d4eb1eb28acd178b198c7d4d066": null,
             "image": "shopify://shop_images/SEGUNDA_PELE_DESK.webp",
@@ -345,9 +381,9 @@
         }
       },
       "block_order": [
-        "slider_item_UxPEXY",
+        "slider_item_bigtrail",
         "slider_item_ecKeq9",
-        "slider_item_aFHxM",
+        "slider_item_UxPEXY",
         "slider_item_xJACgF",
         "slider_item_qtbPtj"
       ]
@@ -423,6 +459,11 @@
   "parent": "index.json",
   "order": [
     "slideshow_mWxPRH",
+    "category_cards_brk",
+    "automobilismo_banner_brk",
+    "bigtrail_banner_brk",
+    "collection_cards_brk",
+    "best_sellers_tabs_brk",
     "collection_tab_CPENAL",
     "collection_list_UwFk4D",
     "scrolling_text_U3mttg",

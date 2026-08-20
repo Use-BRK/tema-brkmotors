@@ -1,0 +1,122 @@
+{%- liquid
+  assign s = section.settings
+  assign pos = s.content_position | default: 'right'
+-%}
+{%- capture css_vars -%}
+--btb-min-h: {{ s.min_height }}px; --btb-overlay: {{ s.overlay_opacity | divided_by: 100.0 }};
+--btb-fg: {{ s.text_color | default: '#ffffff' }}; --btb-accent: {{ s.accent_color | default: 'rgba(255,255,255,0.66)' }};
+--btb-fade-bottom: {{ s.fade_bottom_color | default: '#0d0d0d' }};
+--section-pt: {{ s.padding_top }}px; --section-pb: {{ s.padding_bottom }}px;
+{%- endcapture -%}
+{%- style -%}
+  .bigtrail-banner { position: relative; padding-top: var(--section-pt); padding-bottom: var(--section-pb); }
+  .bigtrail-banner__frame { position: relative; width: 100%; aspect-ratio: 4096 / 1596; min-height: var(--btb-min-h); display: flex; align-items: center; overflow: hidden; }
+  .bigtrail-banner__bg { position: absolute; inset: 0; width: 100% !important; height: 100% !important; max-width: none; object-fit: cover !important; z-index: 0; }
+  .bigtrail-banner__bg--mobile { display: none; }
+  .bigtrail-banner__frame::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,0) 74%, var(--btb-fade-bottom, #0d0d0d) 100%), rgba(0,0,0,var(--btb-overlay)); }
+  .bigtrail-banner__container { position: relative; z-index: 2; width: 100%; }
+  .bigtrail-banner__content { color: var(--btb-fg); max-width: 700px; }
+  .bigtrail-banner--right .bigtrail-banner__content { margin-left: auto; text-align: right; }
+  .bigtrail-banner--center .bigtrail-banner__content { margin: 0 auto; text-align: center; }
+  .bigtrail-banner--left .bigtrail-banner__content { margin-right: auto; text-align: left; }
+  .bigtrail-banner__title { margin: 0; font-family: var(--heading-font); font-weight: 700; font-style: italic; text-transform: uppercase; line-height: .82; font-size: clamp(5rem, 8vw, 11.5rem); letter-spacing: -0.01em; color: var(--btb-fg); }
+  .bigtrail-banner__title .accent { color: rgba(255, 255, 255, 0.66); }
+  .bigtrail-banner__subtitle { margin: 16px 0 0; font-family: var(--heading-font); font-weight: 400; color: var(--btb-fg); line-height: 1.2; }
+  .bigtrail-banner__subtitle .st-strong { display: block; font-weight: 500; font-size: clamp(2rem, 2.4vw, 3.2rem); }
+  .bigtrail-banner__subtitle .st-text { display: block; font-weight: 400; font-size: clamp(1.5rem, 1.7vw, 2.4rem); }
+  .bigtrail-banner__cta { display: inline-flex; align-items: center; gap: 12px; margin-top: 26px; padding: 12px 26px; border-radius: 22.5px;
+    background: rgba(217,217,217,0.20); border: 1px solid var(--btb-fg); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+    color: var(--btb-fg); font-family: var(--body-font); font-weight: 500; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
+    transition: background var(--duration-short,.3s) ease, transform var(--duration-short,.3s) ease; }
+  .bigtrail-banner__cta:hover { background: rgba(217,217,217,0.35); transform: translateY(-2px); }
+  @media screen and (max-width: 1024.98px) {
+    .bigtrail-banner__bg--desktop { display: none; }
+    .bigtrail-banner__bg--mobile { display: block; object-position: 32% center; }
+    .bigtrail-banner__frame { aspect-ratio: 87 / 100; min-height: 440px; align-items: stretch; }
+    .bigtrail-banner__container { display: flex; height: 100%; }
+    .bigtrail-banner__content,
+    .bigtrail-banner--right .bigtrail-banner__content,
+    .bigtrail-banner--left .bigtrail-banner__content {
+      margin: 0; width: 100%; height: 100%; display: flex; flex-direction: column; padding: 24px 22px 84px; text-align: right;
+    }
+    .bigtrail-banner__title { text-align: left; font-size: clamp(3.4rem, 13vw, 5.4rem); }
+    .bigtrail-banner__subtitle { margin-left: auto; }
+    .bigtrail-banner__cta { position: absolute; left: 0; right: 0; bottom: 26px; margin: 0 auto; width: max-content; }
+  }
+{%- endstyle -%}
+<div class="bigtrail-banner bigtrail-banner--{{ pos }}" style="{{ css_vars | strip | strip_newlines }}">
+  <div class="bigtrail-banner__frame">
+    {%- capture desktop_src -%}{% if s.image != blank %}{{ s.image | image_url: width: 2600 }}{% elsif s.image_asset != blank %}{{ s.image_asset | asset_url }}{% endif %}{%- endcapture -%}
+    {%- capture mobile_src -%}{% if s.image_mobile != blank %}{{ s.image_mobile | image_url: width: 1200 }}{% elsif s.image_asset_mobile != blank %}{{ s.image_asset_mobile | asset_url }}{% endif %}{%- endcapture -%}
+    {%- assign desktop_src = desktop_src | strip -%}{%- assign mobile_src = mobile_src | strip -%}
+    {%- if desktop_src != blank -%}
+      <img class="bigtrail-banner__bg bigtrail-banner__bg--desktop" src="{{ desktop_src }}" alt="{{ s.heading_white | escape }}" loading="lazy" width="1440" height="574">
+    {%- endif -%}
+    {%- if mobile_src != blank -%}
+      <img class="bigtrail-banner__bg bigtrail-banner__bg--mobile" src="{{ mobile_src }}" alt="{{ s.heading_white | escape }}" loading="lazy" width="1080" height="1080">
+    {%- endif -%}
+    <div class="bigtrail-banner__container {{ s.section_width }}">
+      <div class="bigtrail-banner__content">
+        <h2 class="bigtrail-banner__title">{{ s.heading_white }}{% if s.heading_accent != blank %} <span class="accent">{{ s.heading_accent }}</span>{% endif %}</h2>
+        {%- if s.subtitle_strong != blank or s.subtitle_text != blank -%}
+          <p class="bigtrail-banner__subtitle">
+            {%- if s.subtitle_strong != blank -%}<span class="st-strong">{{ s.subtitle_strong }}</span>{%- endif -%}
+            {%- if s.subtitle_text != blank -%}<span class="st-text">{{ s.subtitle_text }}</span>{%- endif -%}
+          </p>
+        {%- endif -%}
+        {%- if s.button_label != blank -%}
+          <a class="bigtrail-banner__cta" href="{{ s.button_link | default: '#' }}">{{ s.button_label }} <span aria-hidden="true">&rarr;</span></a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Banner Destaque",
+  "tag": "section",
+  "class": "section-bigtrail-banner",
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "options": [
+        { "value": "container", "label": "t:sections.all.section_width.container.label" },
+        { "value": "fluid_container", "label": "t:sections.all.section_width.fluid_container.label" }
+      ],
+      "default": "fluid_container",
+      "label": "t:sections.all.section_width.label"
+    },
+    { "type": "image_picker", "id": "image", "label": "Imagem de fundo (desktop)" },
+    { "type": "text", "id": "image_asset", "label": "Imagem padrão desktop (arquivo do tema)", "info": "Ex: brk-bigtrail.png", "default": "brk-bigtrail.png" },
+    { "type": "image_picker", "id": "image_mobile", "label": "Imagem de fundo (mobile)" },
+    { "type": "text", "id": "image_asset_mobile", "label": "Imagem padrão mobile (arquivo do tema)", "info": "Ex: brk-bigtrail.png", "default": "brk-bigtrail.png" },
+    {
+      "type": "select",
+      "id": "content_position",
+      "options": [
+        { "value": "left", "label": "Esquerda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Direita" }
+      ],
+      "default": "right",
+      "label": "Posição do conteúdo"
+    },
+    { "type": "text", "id": "heading_white", "label": "Título", "default": "BIGTRAIL" },
+    { "type": "text", "id": "heading_accent", "label": "Título (destaque)", "default": "2026" },
+    { "type": "text", "id": "subtitle_strong", "label": "Subtítulo (linha forte)", "default": "Sem estradas, sem limites." },
+    { "type": "text", "id": "subtitle_text", "label": "Subtítulo (linha secundária)", "default": "Proteção feita para transformar qualquer caminho." },
+    { "type": "text", "id": "button_label", "label": "Texto do botão", "default": "Conferir Lançamento" },
+    { "type": "url", "id": "button_link", "label": "Link do botão" },
+    { "type": "color", "id": "text_color", "label": "Cor do texto", "default": "#ffffff" },
+    { "type": "color", "id": "accent_color", "label": "Cor de destaque do título", "default": "#f7f2f0" },
+    { "type": "range", "id": "overlay_opacity", "min": 0, "max": 80, "step": 5, "unit": "%", "label": "Escurecer imagem", "default": 10 },
+    { "type": "color", "id": "fade_bottom_color", "label": "Cor de transição (base)", "info": "Mescla a base do banner com a seção seguinte", "default": "#0d0d0d" },
+    { "type": "range", "id": "min_height", "min": 300, "max": 720, "step": 10, "unit": "px", "label": "Altura mínima", "default": 570 },
+    { "type": "header", "content": "t:sections.all.section_padding.label" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.section_padding.top.label", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "t:sections.all.section_padding.bottom.label", "default": 0 }
+  ],
+  "presets": [ { "name": "Banner Destaque" } ]
+}
+{% endschema %}

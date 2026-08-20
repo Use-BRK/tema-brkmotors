@@ -62,7 +62,7 @@
       "settings": {},
       "blocks": {
         "breadcrumb_MJHLQb": {
-          "disabled": true,
+          "disabled": false,
           "settings": {}
         }
       }

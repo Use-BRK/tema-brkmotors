@@ -1,0 +1,13 @@
+# Arquivos temporários de saves atômicos (editores) — não enviar ao tema
+*.tmp
+*.tmp.*
+*.tmp*
+*~
+.tmp_*
+# Temporários do sed -i (git-bash)
+sed*
+*/sed*
+
+# Screenshots/artefatos locais de trabalho
+.tmp_*.png
+*.bak

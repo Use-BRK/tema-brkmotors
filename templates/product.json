@@ -308,6 +308,21 @@
         "reset_spacing": false
       }
     },
+    "brk_benefits": {
+      "type": "brk-product-benefits",
+      "settings": {
+        "accent_color": "#fc5106",
+        "bg_color": "#1c1c1c",
+        "show_benefits": true,
+        "show_trust": true
+      }
+    },
+    "brk_specs": {
+      "type": "brk-product-specs",
+      "settings": {
+        "accent_color": "#fc5106"
+      }
+    },
     "divider_tjfNx6": {
       "type": "divider",
       "name": "t:sections.divider.name",
@@ -325,6 +340,7 @@
     "custom_liquid_ncFfAE": {
       "type": "custom-liquid",
       "name": "t:sections.custom_liquid.name",
+      "disabled": true,
       "settings": {
         "section_width": "container",
         "color_scheme": "",
@@ -511,6 +527,8 @@
     "breadcrumb",
     "scrolling_text_yFWFAa",
     "main",
+    "brk_benefits",
+    "brk_specs",
     "divider_tjfNx6",
     "17609883485ad8d257",
     "custom_liquid_ncFfAE",

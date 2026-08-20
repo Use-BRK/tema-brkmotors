@@ -14,6 +14,7 @@
   "parent": "header-group.json",
   "sections": {
     "top_bar_CbXNYj": {
+      "disabled": true,
       "settings": {
         "padding_top": 3,
         "padding_bottom": 3

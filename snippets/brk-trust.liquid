@@ -1,0 +1,24 @@
+{%- comment -%}
+  BRK trust bar dentro do buy box (substitui o bloco delivery-return).
+  Uso: {% render 'brk-trust', block: block %}
+  Lê block.settings: t1..t4 _icon / _title. Estilos em assets/brk-redesign.css (.brk-trust--buybox).
+{%- endcomment -%}
+{%- assign st = block.settings -%}
+<div class="brk-trust brk-trust--buybox" {{ block.shopify_attributes }} style="--brk-accent: {{ st.accent_color | default: '#fc5106' }};">
+  <ul class="brk-trust__grid">
+    {%- for i in (1..4) -%}
+      {%- liquid
+        assign kt = 't' | append: i | append: '_title'
+        assign ki = 't' | append: i | append: '_icon'
+        assign title = st[kt]
+        assign icon = st[ki]
+      -%}
+      {%- if title != blank -%}
+        <li class="brk-trust__item">
+          <span class="brk-trust__icon">{% render 'brk-icon', name: icon %}</span>
+          <span class="brk-trust__title">{{ title }}</span>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</div>

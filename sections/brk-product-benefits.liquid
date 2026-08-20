@@ -1,0 +1,172 @@
+{%- comment -%}
+  BRK MOTORS — Faixa de benefícios (motorsport). Strip carvão com até 4 benefícios
+  (ícone thin-line laranja + título condensado uppercase + 1 linha).
+  Modular por metafield (namespace custom): cada benefício pode ter um mf_key.
+   - Se mf_key vazio -> sempre mostra (default de camisa UV50+).
+   - Se mf_key setado e o metafield do produto = sentinela (nao/não/off/false/none/0/-/—)
+     -> OCULTA o benefício (ex.: produto sem UV50).
+   - Se mf_key setado e o metafield tem texto -> usa como descrição (override).
+{%- endcomment -%}
+{%- liquid
+  assign st = section.settings
+  assign accent = st.accent_color | default: '#fc5106'
+  assign bg = st.bg_color | default: '#1c1c1c'
+  assign sentinels = 'nao,não,off,false,none,no,0,-,—'
+-%}
+<div class="brk-benefits" id="brk-benefits-{{ section.id }}" style="--brk-accent: {{ accent }}; --brk-bg: {{ bg }};">
+  <div class="brk-benefits__strip">
+    <div class="brk-wrap">
+      <ul class="brk-benefits__grid">
+        {%- for i in (1..4) -%}
+          {%- liquid
+            assign kt = 'b' | append: i | append: '_title'
+            assign kx = 'b' | append: i | append: '_text'
+            assign ki = 'b' | append: i | append: '_icon'
+            assign km = 'b' | append: i | append: '_mf'
+            assign title = st[kt]
+            assign text = st[kx]
+            assign icon = st[ki]
+            assign mfk = st[km]
+            assign show = true
+            if mfk != blank
+              assign mv = product.metafields.custom[mfk]
+              if mv != blank
+                assign mvs = mv | downcase | strip
+                if sentinels contains mvs
+                  assign show = false
+                else
+                  assign text = mv
+                endif
+              endif
+            endif
+          -%}
+          {%- if title != blank and show -%}
+            <li class="brk-benefits__item" style="--i: {{ forloop.index }};">
+              <span class="brk-benefits__icon">{% render 'brk-icon', name: icon %}</span>
+              <span class="brk-benefits__body">
+                <span class="brk-benefits__title">{{ title }}</span>
+                {%- if text != blank -%}<span class="brk-benefits__text">{{ text }}</span>{%- endif -%}
+              </span>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+.brk-benefits { --brk-accent: #fc5106; --brk-bg: #1c1c1c; }
+.brk-benefits .brk-wrap { width: 100%; max-width: 130rem; margin-inline: auto; padding-inline: 3rem; }
+.brk-benefits__strip {
+  background: var(--brk-bg);
+  color: #fff;
+  padding-block: 3.4rem;
+  position: relative;
+  overflow: hidden;
+}
+.brk-benefits__strip::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 22rem;
+  background-image: repeating-linear-gradient(-45deg, var(--brk-accent) 0 3px, transparent 3px 12px);
+  opacity: .10;
+  pointer-events: none;
+}
+.brk-benefits__grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem 3rem;
+}
+.brk-benefits__item {
+  display: flex; align-items: flex-start; gap: 1.4rem;
+  position: relative;
+}
+.brk-benefits__item + .brk-benefits__item::before {
+  content: ""; position: absolute; left: -1.5rem; top: 4px; bottom: 4px;
+  width: 1px; background: rgba(255,255,255,.14);
+}
+.brk-benefits__icon { flex: 0 0 auto; color: var(--brk-accent); line-height: 0; }
+.brk-benefits__icon svg { width: 3.2rem; height: 3.2rem; display: block; }
+.brk-benefits__body { display: flex; flex-direction: column; gap: 3px; }
+.brk-benefits__title {
+  font-family: var(--heading-font); font-weight: 700; font-style: italic;
+  text-transform: uppercase; letter-spacing: .02em;
+  font-size: 1.55rem; line-height: 1.05; color: #fff;
+}
+.brk-benefits__text { font-family: var(--body-font); font-size: 1.3rem; line-height: 1.35; color: rgba(255,255,255,.72); }
+
+@media (max-width: 1024px) {
+  .brk-benefits .brk-wrap { padding-inline: 1.6rem; }
+  .brk-benefits__grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .brk-benefits__item + .brk-benefits__item::before { display: none; }
+}
+@media (max-width: 480px) {
+  .brk-benefits__strip { padding-block: 2.6rem; }
+  .brk-benefits__title { font-size: 1.4rem; }
+  .brk-benefits__icon svg { width: 2.8rem; height: 2.8rem; }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "BRK Benefícios",
+  "tag": "section",
+  "class": "sec__brk-benefits",
+  "settings": [
+    { "type": "color", "id": "accent_color", "label": "Cor de destaque (laranja)", "default": "#fc5106" },
+    { "type": "color", "id": "bg_color", "label": "Fundo da faixa", "default": "#1c1c1c" },
+    { "type": "paragraph", "content": "Modular: preencha o campo Metafield de um benefício para ocultá-lo em produtos que setam esse metafield como 'nao' (ex.: produto sem UV50). Se o metafield tiver texto, ele vira a descrição." },
+
+    { "type": "header", "content": "Benefício 1" },
+    { "type": "select", "id": "b1_icon", "label": "Ícone", "default": "sun",
+      "options": [
+        {"value":"sun","label":"Sol (UV)"},{"value":"dry","label":"Secagem"},
+        {"value":"feather","label":"Leve/Respirável"},{"value":"shield","label":"Proteção"},
+        {"value":"lock","label":"Cadeado"},{"value":"truck","label":"Caminhão"},
+        {"value":"refresh","label":"Troca"},{"value":"medal","label":"Selo"},{"value":"ruler","label":"Modelagem"}
+      ] },
+    { "type": "text", "id": "b1_title", "label": "Título", "default": "Proteção UV50+ Homologada" },
+    { "type": "text", "id": "b1_text", "label": "Texto", "default": "Certificada nas fibras do tecido" },
+    { "type": "text", "id": "b1_mf", "label": "Metafield p/ ocultar/override (custom.)" },
+
+    { "type": "header", "content": "Benefício 2" },
+    { "type": "select", "id": "b2_icon", "label": "Ícone", "default": "dry",
+      "options": [
+        {"value":"sun","label":"Sol (UV)"},{"value":"dry","label":"Secagem"},
+        {"value":"feather","label":"Leve/Respirável"},{"value":"shield","label":"Proteção"},
+        {"value":"lock","label":"Cadeado"},{"value":"truck","label":"Caminhão"},
+        {"value":"refresh","label":"Troca"},{"value":"medal","label":"Selo"},{"value":"ruler","label":"Modelagem"}
+      ] },
+    { "type": "text", "id": "b2_title", "label": "Título", "default": "Secagem Rápida" },
+    { "type": "text", "id": "b2_text", "label": "Texto", "default": "Evapora o suor, sem peso na estrada" },
+    { "type": "text", "id": "b2_mf", "label": "Metafield p/ ocultar/override (custom.)" },
+
+    { "type": "header", "content": "Benefício 3" },
+    { "type": "select", "id": "b3_icon", "label": "Ícone", "default": "feather",
+      "options": [
+        {"value":"sun","label":"Sol (UV)"},{"value":"dry","label":"Secagem"},
+        {"value":"feather","label":"Leve/Respirável"},{"value":"shield","label":"Proteção"},
+        {"value":"lock","label":"Cadeado"},{"value":"truck","label":"Caminhão"},
+        {"value":"refresh","label":"Troca"},{"value":"medal","label":"Selo"},{"value":"ruler","label":"Modelagem"}
+      ] },
+    { "type": "text", "id": "b3_title", "label": "Título", "default": "Leve e Respirável" },
+    { "type": "text", "id": "b3_text", "label": "Texto", "default": "Toque macio, fresco o dia todo" },
+    { "type": "text", "id": "b3_mf", "label": "Metafield p/ ocultar/override (custom.)" },
+
+    { "type": "header", "content": "Benefício 4" },
+    { "type": "select", "id": "b4_icon", "label": "Ícone", "default": "ruler",
+      "options": [
+        {"value":"sun","label":"Sol (UV)"},{"value":"dry","label":"Secagem"},
+        {"value":"feather","label":"Leve/Respirável"},{"value":"shield","label":"Proteção"},
+        {"value":"lock","label":"Cadeado"},{"value":"truck","label":"Caminhão"},
+        {"value":"refresh","label":"Troca"},{"value":"medal","label":"Selo"},{"value":"ruler","label":"Modelagem"}
+      ] },
+    { "type": "text", "id": "b4_title", "label": "Título", "default": "Modelagem Ergonômica" },
+    { "type": "text", "id": "b4_text", "label": "Texto", "default": "Pensada no conforto" },
+    { "type": "text", "id": "b4_mf", "label": "Metafield p/ ocultar/override (custom.)" }
+  ],
+  "presets": [{ "name": "BRK Benefícios" }]
+}
+{% endschema %}

@@ -11,7 +11,7 @@
   "sections": {
     "collection_tab_nKDAh": {
       "type": "collection-tab",
-      "disabled": false,
+      "disabled": true,
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
@@ -394,6 +394,7 @@
       "name": "Coleções em Abas"
     },
     "collection_list_UwFk4D": {
+      "disabled": true,
       "settings": {
         "heading": "Escolha sua Coleção",
         "description": ""
@@ -482,10 +483,35 @@
         },
         "card_custom": {
           "settings": {
-            "link": "shopify://collections/custom"
+            "link": "shopify://collections/colecao-custom"
           }
         }
       }
+    },
+    "collection_cards_brk": {
+      "settings": {},
+      "blocks": {
+        "col_oculos": {
+          "settings": {
+            "link": "shopify://collections/oculos-de-sol"
+          }
+        },
+        "col_bandana": {
+          "settings": {
+            "link": "shopify://collections/bandana-tubeneck"
+          }
+        }
+      }
+    },
+    "collection_tab_CPENAL": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "multi_content_cP4Xyf": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
     }
   },
   "context": {

@@ -312,9 +312,7 @@
       "type": "brk-product-benefits",
       "settings": {
         "accent_color": "#fc5106",
-        "bg_color": "#1c1c1c",
-        "show_benefits": true,
-        "show_trust": true
+        "bg_color": "#1c1c1c"
       }
     },
     "brk_specs": {
@@ -339,8 +337,8 @@
     },
     "custom_liquid_ncFfAE": {
       "type": "custom-liquid",
-      "name": "t:sections.custom_liquid.name",
       "disabled": true,
+      "name": "t:sections.custom_liquid.name",
       "settings": {
         "section_width": "container",
         "color_scheme": "",

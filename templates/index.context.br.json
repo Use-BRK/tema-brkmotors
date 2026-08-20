@@ -434,6 +434,7 @@
       "blocks": {}
     },
     "collection_list_HPrebt": {
+      "disabled": true,
       "settings": {},
       "blocks": {
         "collection_qikAgz": {
@@ -509,6 +510,33 @@
       "blocks": {}
     },
     "multi_content_cP4Xyf": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "shopable_video_8bAdnX": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {
+        "video_eWUBmx": {
+          "disabled": true,
+          "settings": {}
+        },
+        "video_kM6Wkk": {
+          "disabled": true,
+          "settings": {}
+        },
+        "video_QtKihW": {
+          "disabled": true,
+          "settings": {}
+        },
+        "video_tMJktJ": {
+          "disabled": true,
+          "settings": {}
+        }
+      }
+    },
+    "instagram_shop_6Fb3i7": {
       "disabled": true,
       "settings": {},
       "blocks": {}

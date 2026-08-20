@@ -13,16 +13,86 @@
   },
   "parent": "product.json",
   "sections": {
-    "brk_specs": {
-      "disabled": true
-    },
-    "breadcrumb": {
+    "faq_UNchg": {
+      "type": "faq",
       "disabled": false,
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "next_prev": false
-      }
+        "header-5e1869d76f3184a903939c70dd131f22": null,
+        "heading": "Perguntas Frequentes",
+        "description": "",
+        "header_size": "medium",
+        "header_alignment": "center",
+        "header-c219a27aa86df60ec3311dc0abdbe1fc": null,
+        "padding_top": 25,
+        "padding_bottom": 25,
+        "reset_spacing": true
+      },
+      "blocks": {
+        "faq_items_fn3jR": {
+          "type": "faq-items",
+          "name": "Proteção UV50",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Os produtos da BRK possuem proteção solar real?",
+            "faq_content": "Sim. Nossas camisas contam com a tecnologia <strong>UV50+</strong>, que bloqueia até 98% dos raios UVA e UVB. Essa proteção é aplicada diretamente nas fibras do tecido, o que garante que a eficácia não saia nas lavagens, mantendo você seguro durante toda a vida útil da peça."
+          }
+        },
+        "faq_items_9nYHT": {
+          "type": "faq-items",
+          "name": "Diferencial",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Qual é o diferencial do tecido das camisas BRK?",
+            "faq_content": "Utilizamos tecidos de alta tecnologia, que permite a rápida evaporação do suor, mantendo o corpo seco e em temperatura agradável, mesmo em atividades sob sol intenso ou práticas esportivas."
+          }
+        },
+        "faq_items_cRtdi": {
+          "type": "faq-items",
+          "name": "Tamanho Ideal",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Como escolher o tamanho ideal para mim?",
+            "faq_content": "Em cada página de produto, disponibilizamos uma <strong>Tabela de Medidas</strong>. Recomendamos comparar as medidas de uma peça que você já usa com os nossos valores."
+          }
+        },
+        "faq_items_wMB7b": {
+          "type": "faq-items",
+          "name": "Desbotam",
+          "disabled": false,
+          "settings": {
+            "faq_title": "As cores das camisas desbotam com o tempo?",
+            "faq_content": "Não. Utilizamos um processo de sublimação de alta definição. Isso garante que as estampas e cores permaneçam vivas e vibrantes mesmo após diversas lavagens e exposição prolongada ao sol."
+          }
+        },
+        "faq_items_TPHkB": {
+          "type": "faq-items",
+          "name": "Formas de Pagamento",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Quais são as formas de pagamento e prazos de entrega?",
+            "faq_content": "Aceitamos as principais bandeiras de cartão de crédito (com parcelamento) e PIX. O prazo de entrega varia de acordo com a sua região e a modalidade de frete escolhida no carrinho."
+          }
+        },
+        "faq_items_9iRQn": {
+          "type": "faq-items",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Posso trocar o produto se não servir?",
+            "faq_content": "Se você recebeu um produto e não ficou satisfeito ou ele simplesmente não serviu, é possível fazer a solicitação devolução para estorno <strong>em até 7 dias corridos após a entrega</strong>. Para isso, o produto deverá estar em sua embalagem original, sem indícios de uso e com todos os itens e acessórios recebidos. Para os casos de insatisfação com o produto adquirido, solicite a troca, através do nosso Portal de Trocas e Devoluções, pelo endereço <a href=\"https://brkagro.troque.app.br/\" target=\"_blank\">https://brkmotors.troque.app.br/</a>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_items_fn3jR",
+        "faq_items_9nYHT",
+        "faq_items_cRtdi",
+        "faq_items_wMB7b",
+        "faq_items_TPHkB",
+        "faq_items_9iRQn"
+      ],
+      "name": "t:sections.faq.presets.name"
     },
     "collection_list_HHVyFp": {
       "type": "collection-list",
@@ -30,43 +100,43 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-e0d5d6ea3cea22f5ff9bb24b66b6b52f": null,
+        "header-59654c95b1409ddf78dffcc643da1cf4": null,
         "heading": "Mais Coleções",
         "description": "",
         "show_view_all_button": true,
         "header_size": "medium",
         "header_alignment": "center",
-        "header-920aa506ff25abc56d22caf6cd3343bc": null,
+        "header-e1b1cefb09e6d8d3de3a432edb49cbcb": null,
         "display_mode": "carousel",
         "image_ratio": "adapt",
         "custom_ratio": "",
         "items_per_row": 4,
         "column_gap": 30,
-        "header-8ac7f0e6886a3fec17787573a5bacd30": null,
+        "header-217e1a423cf3a8c83527718a924b9555": null,
         "collection_information_position": "below_image",
         "design": "default",
         "text_alignment": "center",
         "show_product_count": false,
         "show_icon": false,
         "show_description": false,
-        "paragraph-4fd63c205acd06384b22e730ba20ec3a": null,
+        "paragraph-ef57f2ee557d080b75129b3b7afe2198": null,
         "font_size": 16,
         "font_weight": "heading_weight",
-        "header-97bacb8cb2b95da3f219a441cff241db": null,
+        "header-386b7cb7a045cbc90bf9e28f8d17a688": null,
         "information_spacing": 12,
         "rounded_image": false,
         "image_custom_width": false,
         "image_width": 200,
-        "header-fe70418d6f6a5018b9c9bc9693fdfde5": null,
+        "header-b4d3081ff20e1614fa6e84b635906145": null,
         "show_arrow": true,
         "carousel_pagination": "show_dots_on_mobile",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-1a85cd19eeafc394bc80cd76d7d5370d": null,
+        "header-1095a74c2b60921cc78bda79b3e37ba1": null,
         "items_per_row_mobile": 1.5,
-        "header-ebf249769a0316f827dc6dd240cd7134": null,
+        "header-df7774607df8bd2c9b6c27f89b80c4c0": null,
         "padding_top": 20,
         "padding_bottom": 20,
         "reset_spacing": true
@@ -176,126 +246,29 @@
       ],
       "name": "Minibanners"
     },
-    "faq_UNchg": {
-      "type": "faq",
+    "breadcrumb": {
       "disabled": false,
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-450a837b1c8f658564a8141926d9480a": null,
-        "heading": "Perguntas Frequentes",
-        "description": "",
-        "header_size": "medium",
-        "header_alignment": "center",
-        "header-a9bdbca4c6a7b6fb7d52be619adb89a3": null,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
+        "next_prev": false
       },
-      "blocks": {
-        "faq_items_fn3jR": {
-          "type": "faq-items",
-          "name": "Proteção UV50",
-          "disabled": false,
-          "settings": {
-            "faq_title": "Os produtos da BRK possuem proteção solar real?",
-            "faq_content": "Sim. Nossas camisas contam com a tecnologia <strong>UV50+</strong>, que bloqueia até 98% dos raios UVA e UVB. Essa proteção é aplicada diretamente nas fibras do tecido, o que garante que a eficácia não saia nas lavagens, mantendo você seguro durante toda a vida útil da peça."
-          }
-        },
-        "faq_items_9nYHT": {
-          "type": "faq-items",
-          "name": "Diferencial",
-          "disabled": false,
-          "settings": {
-            "faq_title": "Qual é o diferencial do tecido das camisas BRK?",
-            "faq_content": "Utilizamos tecidos de alta tecnologia, que permite a rápida evaporação do suor, mantendo o corpo seco e em temperatura agradável, mesmo em atividades sob sol intenso ou práticas esportivas."
-          }
-        },
-        "faq_items_cRtdi": {
-          "type": "faq-items",
-          "name": "Tamanho Ideal",
-          "disabled": false,
-          "settings": {
-            "faq_title": "Como escolher o tamanho ideal para mim?",
-            "faq_content": "Em cada página de produto, disponibilizamos uma <strong>Tabela de Medidas</strong>. Recomendamos comparar as medidas de uma peça que você já usa com os nossos valores."
-          }
-        },
-        "faq_items_wMB7b": {
-          "type": "faq-items",
-          "name": "Desbotam",
-          "disabled": false,
-          "settings": {
-            "faq_title": "As cores das camisas desbotam com o tempo?",
-            "faq_content": "Não. Utilizamos um processo de sublimação de alta definição. Isso garante que as estampas e cores permaneçam vivas e vibrantes mesmo após diversas lavagens e exposição prolongada ao sol."
-          }
-        },
-        "faq_items_TPHkB": {
-          "type": "faq-items",
-          "name": "Formas de Pagamento",
-          "disabled": false,
-          "settings": {
-            "faq_title": "Quais são as formas de pagamento e prazos de entrega?",
-            "faq_content": "Aceitamos as principais bandeiras de cartão de crédito (com parcelamento) e PIX. O prazo de entrega varia de acordo com a sua região e a modalidade de frete escolhida no carrinho."
-          }
-        },
-        "faq_items_9iRQn": {
-          "type": "faq-items",
-          "disabled": false,
-          "settings": {
-            "faq_title": "Posso trocar o produto se não servir?",
-            "faq_content": "Se você recebeu um produto e não ficou satisfeito ou ele simplesmente não serviu, é possível fazer a solicitação devolução para estorno <strong>em até 7 dias corridos após a entrega</strong>. Para isso, o produto deverá estar em sua embalagem original, sem indícios de uso e com todos os itens e acessórios recebidos. Para os casos de insatisfação com o produto adquirido, solicite a troca, através do nosso Portal de Trocas e Devoluções, pelo endereço <a href=\"https://brkagro.troque.app.br/\" target=\"_blank\">https://brkmotors.troque.app.br/</a>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_items_fn3jR",
-        "faq_items_9nYHT",
-        "faq_items_cRtdi",
-        "faq_items_wMB7b",
-        "faq_items_TPHkB",
-        "faq_items_9iRQn"
-      ],
-      "name": "t:sections.faq.presets.name"
+      "blocks": {}
     },
     "main": {
       "custom_css": [],
       "settings": {
         "section_width": "container",
-        "mobile_options": "hidden_thumbnail",
         "desktop_layout": "thumbnail_bottom",
         "enable_on_desktop": false,
         "enable_on_mobile": true,
+        "mobile_options": "hidden_thumbnail",
         "padding_top": 20
       },
       "blocks": {
         "product_meta_kiKPhW": {
           "disabled": true,
           "settings": {}
-        },
-        "brk_trust_buybox": {
-          "type": "brk_trust",
-          "settings": {
-            "accent_color": "#fc5106",
-            "t1_icon": "lock",
-            "t1_title": "Compra 100% Segura",
-            "t2_icon": "refresh",
-            "t2_title": "1ª Troca Grátis",
-            "t3_icon": "truck",
-            "t3_title": "Frete Fixo R$9,90",
-            "t4_icon": "medal",
-            "t4_title": "Qualidade Garantida"
-          }
-        },
-        "brk_specs_buybox": {
-          "type": "brk_specs_inline",
-          "settings": {
-            "accent_color": "#fc5106",
-            "heading": "Detalhes do produto",
-            "show_sku": true,
-            "sku_label": "Código",
-            "show_prazo": true,
-            "prazo_label": "Prazo de produção"
-          }
         },
         "custom_name_button_mPJXV": {
           "type": "custom_name_button",
@@ -304,9 +277,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na Camisa (R$29,90)",
-            "header-a7a31c11bd118355fe6f624e0c0930d2": null,
+            "header-c5ed184c5616d31f73298045e1ae6f2c": null,
             "whatsapp_number": "553432194697",
-            "header-7f4acbaf07494616760c7f4328f5511d": null,
+            "header-5cc900fb8a53de010842bca7629a6514": null,
             "perso_variant_id": "51454118396199",
             "perso_price": "29,90",
             "collections": [
@@ -321,16 +294,43 @@
             "enable_button": true,
             "button_text": "Ou se preferir [whatsapp] <strong>COMPRE PELO WHATSAPP</strong>",
             "text_color": "#128c4a",
-            "header-5b5ba0c1e635faa43eddeea3374ecd81": null,
+            "header-468641ae22d5bb94a963b8f6eb054e3a": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Olá! Tenho interesse neste produto:",
             "append_product_link": true,
-            "header-3d6efbb44fa537c38a34c9ab8c187455": null,
+            "header-35b87326e19e7389f909288f4e4bec86": null,
             "enable_schedule": true,
             "hours_start": "08:00",
             "hours_end": "17:00",
-            "header-a72bc696b307d1299897f61e85219a5b": null,
+            "header-a52a9211ae1e681166a22164bfecd773": null,
             "collections": []
+          }
+        },
+        "brk_trust_buybox": {
+          "type": "brk_trust",
+          "disabled": false,
+          "settings": {
+            "accent_color": "#fc5106",
+            "t1_icon": "lock",
+            "t1_title": "Compra 100% Segura",
+            "t2_icon": "refresh",
+            "t2_title": "1ª Troca Grátis",
+            "t3_icon": "truck",
+            "t3_title": "Frete Fixo R$9,90",
+            "t4_icon": "medal",
+            "t4_title": "Qualidade Garantida"
+          }
+        },
+        "brk_specs_buybox": {
+          "type": "brk_specs_inline",
+          "disabled": false,
+          "settings": {
+            "accent_color": "#fc5106",
+            "heading": "Detalhes do produto",
+            "show_sku": true,
+            "sku_label": "Código",
+            "show_prazo": true,
+            "prazo_label": "Prazo de produção"
           }
         },
         "delivery_return_iJHeMD": {
@@ -360,9 +360,9 @@
         "variant_picker_tcCihG",
         "buy_buttons_LcQGtR",
         "custom_name_button_mPJXV",
+        "whatsapp_cta_Ri9qX",
         "brk_trust_buybox",
         "brk_specs_buybox",
-        "whatsapp_cta_Ri9qX",
         "short_description_9BGxVm",
         "product_addons_YRaprz",
         "stock_countdown_JNK9zi",
@@ -377,6 +377,11 @@
         "collapsible_row_DA4FUC",
         "frete_no_produto_shipping_calc_rYXafQ"
       ]
+    },
+    "brk_specs": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
     }
   },
   "order": [

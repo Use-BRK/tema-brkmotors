@@ -9,80 +9,39 @@
  */
 {
   "sections": {
-    "best_sellers_tabs_brk": {
-      "disabled": false,
-      "blocks": {
-        "tab_mais_vendidos": {
-          "disabled": false,
-          "settings": {
-            "collection": "kits-casal",
-            "collection_title": "Mais Vendidos"
-          }
-        },
-        "tab_lancamentos": {
-          "disabled": false,
-          "settings": {
-            "collection": "explorer-raglan",
-            "collection_title": "Lançamentos"
-          }
-        }
-      },
-      "block_order": [
-        "tab_mais_vendidos",
-        "tab_lancamentos"
-      ],
-      "name": "Coleções em Abas",
-      "settings": {
-        "section_width": "fluid_container",
-        "background_color": "#f7f2f0",
-        "active_color": "#252525",
-        "inactive_color": "#929292",
-        "active_font_size": 48,
-        "inactive_font_size": 36,
-        "show_view_all": true,
-        "view_all_label": "Ver tudo",
-        "items_to_show": 10,
-        "items_per_row": 5,
-        "column_gap": 16,
-        "show_arrow": true,
-        "items_per_row_mobile": 1.5,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
     "collection_tab_nKDAh": {
       "type": "collection-tab",
       "disabled": false,
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-ce6882473df0b1abd7a1f222bc184902": null,
+        "header-7f129fcfad21bfd2ca1bd129472dd8d2": null,
         "heading": "",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-6cfb14c7d65ecf48b7da512720e4014a": null,
+        "header-ab1890d7b2732d1a586f17fed651462d": null,
         "tab_header_style": "horizontal",
         "horizontal_tab_style": "underline",
         "display_mode": "grid",
         "items_to_show": 24,
         "items_per_row": 5,
         "column_gap": 30,
-        "header-9bb2d5357cedd26b52d73a87377663e3": null,
+        "header-0422242de0fb0450c29497b48f007898": null,
         "show_arrow": false,
         "carousel_pagination": "disable",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-1b8f4879b2ea4339132ecd17d38f0f4a": null,
+        "header-9d12b216a54eaa28743935bfe3af1829": null,
         "rows": 2,
         "show_load_more_button": false,
         "button_label": "Load more",
-        "header-f75a5cafe2bf05070bc0d388e0411368": null,
+        "header-6bb24dfc7585f17fdc38ce7971dc18e0": null,
         "carousel_on_mobile": true,
         "items_per_row_mobile": 1.5,
-        "header-93a59d6497c8cdf8f0e0834e3be0bb6a": null,
+        "header-1b2d05ecad73dd77d8eb23322026f236": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -117,12 +76,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-4fee7a1ee8b1c45557a55ccbe7543e21": null,
+        "header-fa06647c8a81a5e14a1df6e9cfdef085": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-bde7f061ca80bcac5a0b77201e22e5bb": null,
+        "header-0824689be7acb67c0f618ea986dcf52a": null,
         "padding_top": 20,
         "padding_bottom": 20,
         "reset_spacing": true
@@ -204,11 +163,13 @@
           "name": "Big Trail",
           "disabled": false,
           "settings": {
+            "header-d7dbc431f14d7bcd512f4813e5fd6ec9": null,
             "image": "shopify://shop_images/FULLBANNER_DESKTOP_BIGTRAIL.webp",
             "image_mobile": "shopify://shop_images/FULLBANNER_MOBILE_BIGTRAIL.webp",
             "local_video": null,
             "image_link": "shopify://collections/big-trail",
             "overlay_opacity": 0,
+            "header-82151bc5e8a3ed007945e05a80278434": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -219,52 +180,18 @@
             "second_button_label": "",
             "second_button_link": "",
             "second_button_style": false,
+            "header-b11bcdae0e93d69937a8c55b7bbb3127": null,
             "content_alignment": "center",
             "content_position": "bottom-left",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
+            "header-bde44f3c3b767f4770ea2007f902eb46": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "content_alignment_mobile": "center"
-          }
-        },
-        "slider_item_UxPEXY": {
-          "type": "slider_item",
-          "name": "Motociclismo +Vendidas",
-          "disabled": true,
-          "settings": {
-            "header-fc422940c7453a4e9bbe159bb1a3e27b": null,
-            "image": "shopify://shop_images/MOTOCICLISMO_DESK.webp",
-            "image_mobile": "shopify://shop_images/MOTOCICLISMO_MOB.webp",
-            "local_video": null,
-            "image_link": "shopify://collections/mais-vendidos",
-            "overlay_opacity": 0,
-            "header-2b9db1190cf29a11ce0d759780f0264a": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_style": false,
-            "header-75bb553bcb6bee3beb31b15f2cb87abb": null,
-            "content_alignment": "center",
-            "content_position": "bottom-left",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 60,
-            "content_padding_inline": 60,
-            "header-9fc69309a6c946928bd627b034152a95": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-fb1e539a7cd4a5196b2e57b1bd7fb9fe": null,
+            "header-9b2f5018f76cbdd01c0fa3428d542353": null,
             "content_alignment_mobile": "center"
           }
         },
@@ -273,13 +200,13 @@
           "name": "Kit Casal",
           "disabled": false,
           "settings": {
-            "header-60f30cf150cf6e9c620b82d31968d2f4": null,
+            "header-900f6d69dc4b174038ed60de34a8705f": null,
             "image": "shopify://shop_images/FULLBANNER_DESKTOP_KITCASAL2.webp",
             "image_mobile": "shopify://shop_images/FULLBANNER_MOBILE_KITCASAL.webp",
             "local_video": null,
             "image_link": "shopify://collections/kits-casal",
             "overlay_opacity": 0,
-            "header-0588bd3a357ad1566eeb16c44f9a2665": null,
+            "header-3170900431d99d4d7b580e586c30b54a": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -290,33 +217,70 @@
             "second_button_label": "",
             "second_button_link": "",
             "second_button_style": false,
-            "header-6c52926d6c5e9f927fa6d1eab2cb6de9": null,
+            "header-45738c6d13bfeafddb79402db1d6e38f": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
-            "header-7f20fa6745cf03556bc890ff53fc5f7c": null,
+            "header-e4be60a106469c13dfcd340552e3b426": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-d86f444b2c7370098df773a782da32bd": null,
+            "header-be0af170e1b7f13c150c23306fe518ba": null,
+            "content_alignment_mobile": "center"
+          }
+        },
+        "slider_item_UxPEXY": {
+          "type": "slider_item",
+          "disabled": true,
+          "name": "Motociclismo +Vendidas",
+          "settings": {
+            "header-da847f9369d12899d0fc3f3752baaec2": null,
+            "image": "shopify://shop_images/MOTOCICLISMO_DESK.webp",
+            "image_mobile": "shopify://shop_images/MOTOCICLISMO_MOB.webp",
+            "local_video": null,
+            "image_link": "shopify://collections/mais-vendidos",
+            "overlay_opacity": 0,
+            "header-032bc0b2c39cd4d7336e861a74af5962": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
+            "header-6356b184575d63ecc0caae316031cbeb": null,
+            "content_alignment": "center",
+            "content_position": "bottom-left",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "header-430c6cc88a23462bb26afb45af5f1dbf": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-9e79e73f69ce1f1764fe013860810095": null,
             "content_alignment_mobile": "center"
           }
         },
         "slider_item_xJACgF": {
           "type": "slider_item",
-          "name": "Caveiras e Militares",
           "disabled": true,
+          "name": "Caveiras e Militares",
           "settings": {
-            "header-eb02240d977a76d45422291f85cfcabf": null,
+            "header-e217dd031ff7ef0d0307c92501a8ce63": null,
             "image": "shopify://shop_images/CAVEIRAS_MILITARES_DESK.webp",
             "image_mobile": "shopify://shop_images/CAVEIRAS_MILITARES_MOB.webp",
             "local_video": null,
             "image_link": "shopify://collections/caveira-e-militar",
             "overlay_opacity": 0,
-            "header-79f01ab5c4976050473067b00acbebbf": null,
+            "header-7a70eb28ec9dd2afc11cd97041a2dc84": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -327,33 +291,33 @@
             "second_button_label": "",
             "second_button_link": "",
             "second_button_style": false,
-            "header-6c3883e818ead3e090ac1a6ca225d039": null,
+            "header-d65826a5fe8f6880caff36c826422ab6": null,
             "content_alignment": "center",
             "content_position": "bottom-left",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
-            "header-06e966dbc144d8cd7c7150e5536095cc": null,
+            "header-1f0d0da7a0d71d38a97c8e3006c6ada0": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-fb52e23657e16663306eab19bcc6c76d": null,
+            "header-42cedec8448e5a57545241c6814d8737": null,
             "content_alignment_mobile": "center"
           }
         },
         "slider_item_qtbPtj": {
           "type": "slider_item",
-          "name": "Segunda Pele",
           "disabled": true,
+          "name": "Segunda Pele",
           "settings": {
-            "header-b47b1d4eb1eb28acd178b198c7d4d066": null,
+            "header-c09246d996e286147b35be3aad5e7d24": null,
             "image": "shopify://shop_images/SEGUNDA_PELE_DESK.webp",
             "image_mobile": "shopify://shop_images/SEGUNDA_PELE_MOB.webp",
             "local_video": null,
             "image_link": "shopify://collections/explorer-raglan",
             "overlay_opacity": 0,
-            "header-1c98d96f095616a704e8c46177d7960e": null,
+            "header-54712dc572716a8da86820aac097f22f": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -364,18 +328,18 @@
             "second_button_label": "",
             "second_button_link": "",
             "second_button_style": false,
-            "header-bc317de1ec3dd0cace951d591377c23c": null,
+            "header-b598e051d5a5f9261dbeac788b9b3b5c": null,
             "content_alignment": "center",
             "content_position": "bottom-left",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
-            "header-2d107c8d6f7937c0ccad8a755f4013e1": null,
+            "header-e796f9e9257c9cce4864a00b7df09777": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-d1a09a9b28a3d93ec05a004a2a96deab": null,
+            "header-75747804a88a96331f492a06cecdfbd6": null,
             "content_alignment_mobile": "center"
           }
         }
@@ -387,6 +351,47 @@
         "slider_item_xJACgF",
         "slider_item_qtbPtj"
       ]
+    },
+    "best_sellers_tabs_brk": {
+      "disabled": false,
+      "settings": {
+        "section_width": "fluid_container",
+        "background_color": "#f7f2f0",
+        "active_color": "#252525",
+        "inactive_color": "#929292",
+        "active_font_size": 48,
+        "inactive_font_size": 36,
+        "show_view_all": true,
+        "view_all_label": "Ver tudo",
+        "items_to_show": 10,
+        "items_per_row": 5,
+        "column_gap": 16,
+        "show_arrow": true,
+        "items_per_row_mobile": 1.5,
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "tab_mais_vendidos": {
+          "disabled": false,
+          "settings": {
+            "collection": "kits-casal",
+            "collection_title": "Mais Vendidos"
+          }
+        },
+        "tab_lancamentos": {
+          "disabled": false,
+          "settings": {
+            "collection": "explorer-raglan",
+            "collection_title": "Lançamentos"
+          }
+        }
+      },
+      "block_order": [
+        "tab_mais_vendidos",
+        "tab_lancamentos"
+      ],
+      "name": "Coleções em Abas"
     },
     "collection_list_UwFk4D": {
       "settings": {
@@ -451,6 +456,36 @@
         "icon_box_RLNr9a",
         "icon_box_tj4DJd"
       ]
+    },
+    "category_cards_brk": {
+      "settings": {},
+      "blocks": {
+        "card_esportivo": {
+          "disabled": true,
+          "settings": {}
+        },
+        "card_estrada": {
+          "settings": {
+            "image": "shopify://shop_images/CARD_BIGTRAIL_MOTORS.png",
+            "image_asset": "",
+            "title": "BIG TRAIL",
+            "link": "shopify://collections/big-trail-2026"
+          }
+        },
+        "card_urbano": {
+          "settings": {
+            "image": "shopify://shop_images/CARD_EXPEDICOES.png",
+            "image_asset": "",
+            "title": "EXPEDIÇÕES",
+            "link": "shopify://collections/expedicao-manga-longa"
+          }
+        },
+        "card_custom": {
+          "settings": {
+            "link": "shopify://collections/custom"
+          }
+        }
+      }
     }
   },
   "context": {

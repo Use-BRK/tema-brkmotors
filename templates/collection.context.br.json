@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-f743136bebcdce72c93c3d242999c084": null,
+        "header-f8ff725c9ce94b89f168c09cf941733a": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 45,
-        "header-a8251ee8989c06ca0191a1ee33221629": null,
+        "header-ca31fe4e51ce42456e06e3679f654232": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-e239832d58ecb026b2f5ed835d71afd7": null,
+        "header-bfa65f5ac2babad7239357d4b26ea6bd": null,
         "padding_top": 10,
         "padding_bottom": 10,
         "reset_spacing": false
@@ -89,7 +89,8 @@
               "colecao-custom",
               "custom",
               "colecao-automobilismo",
-              "lancamentos"
+              "lancamentos",
+              "expedicao-manga-longa"
             ]
           }
         }

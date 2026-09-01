@@ -14,7 +14,7 @@
   "parent": "header-group.json",
   "sections": {
     "top_bar_CbXNYj": {
-      "disabled": false,
+      "disabled": true,
       "settings": {
         "padding_top": 3,
         "padding_bottom": 3
@@ -22,7 +22,7 @@
       "blocks": {
         "text_slider_LFaC38": {
           "settings": {
-            "text1": "<strong>FRETE GRÁTIS ACIMA DE R$199</strong>",
+            "text1": "<strong>FRETE FIXO R$9,90 — PARA TODO BRASIL</strong>",
             "coupon1": "",
             "coupon1_enabled": false,
             "text2": "",

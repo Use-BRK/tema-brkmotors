@@ -526,7 +526,7 @@
               style="--font-size: {{ settings.price_size }}; --gap: 3px;"
             >
               {%- render 'price', scope: 'item', product: card_product, show_badges: false, class: priceclass -%}
-              <span class="pi-avista">&nbspà vista</span>
+              {% comment %} <span class="pi-avista">&nbspà vista</span> {% endcomment %}
             </div>
             {%- assign pi_parcela = card_product.price | divided_by: 3 | money -%}
             <div class="product-item__installment{% if type == 'list' or type == 'sticky' %} text-start{% endif %}">

@@ -46,14 +46,18 @@
 {%- endstyle -%}
 <div class="bigtrail-banner bigtrail-banner--{{ pos }}" style="{{ css_vars | strip | strip_newlines }}">
   <div class="bigtrail-banner__frame">
-    {%- capture desktop_src -%}{% if s.image != blank %}{{ s.image | image_url: width: 2600 }}{% elsif s.image_asset != blank %}{{ s.image_asset | asset_url }}{% endif %}{%- endcapture -%}
-    {%- capture mobile_src -%}{% if s.image_mobile != blank %}{{ s.image_mobile | image_url: width: 1200 }}{% elsif s.image_asset_mobile != blank %}{{ s.image_asset_mobile | asset_url }}{% endif %}{%- endcapture -%}
-    {%- assign desktop_src = desktop_src | strip -%}{%- assign mobile_src = mobile_src | strip -%}
-    {%- if desktop_src != blank -%}
-      <img class="bigtrail-banner__bg bigtrail-banner__bg--desktop" src="{{ desktop_src }}" alt="{{ s.heading_white | escape }}" loading="lazy" width="1440" height="574">
-    {%- endif -%}
-    {%- if mobile_src != blank -%}
-      <img class="bigtrail-banner__bg bigtrail-banner__bg--mobile" src="{{ mobile_src }}" alt="{{ s.heading_white | escape }}" loading="lazy" width="1080" height="1080">
+    {%- if s.video != blank -%}
+      {{ s.video | video_tag: class: 'bigtrail-banner__bg', image_size: '1200x', autoplay: true, loop: s.video_loop, muted: true, controls: false, playsinline: true, preload: 'auto' }}
+    {%- else -%}
+      {%- capture desktop_src -%}{% if s.image != blank %}{{ s.image | image_url: width: 2600 }}{% elsif s.image_asset != blank %}{{ s.image_asset | asset_url }}{% endif %}{%- endcapture -%}
+      {%- capture mobile_src -%}{% if s.image_mobile != blank %}{{ s.image_mobile | image_url: width: 1200 }}{% elsif s.image_asset_mobile != blank %}{{ s.image_asset_mobile | asset_url }}{% endif %}{%- endcapture -%}
+      {%- assign desktop_src = desktop_src | strip -%}{%- assign mobile_src = mobile_src | strip -%}
+      {%- if desktop_src != blank -%}
+        <img class="bigtrail-banner__bg bigtrail-banner__bg--desktop" src="{{ desktop_src }}" alt="{{ s.heading_white | escape }}" loading="lazy" width="1440" height="574">
+      {%- endif -%}
+      {%- if mobile_src != blank -%}
+        <img class="bigtrail-banner__bg bigtrail-banner__bg--mobile" src="{{ mobile_src }}" alt="{{ s.heading_white | escape }}" loading="lazy" width="1080" height="1080">
+      {%- endif -%}
     {%- endif -%}
     <div class="bigtrail-banner__container {{ s.section_width }}">
       <div class="bigtrail-banner__content">
@@ -91,6 +95,9 @@
     { "type": "text", "id": "image_asset", "label": "Imagem padrão desktop (arquivo do tema)", "info": "Ex: brk-bigtrail.png", "default": "brk-bigtrail.png" },
     { "type": "image_picker", "id": "image_mobile", "label": "Imagem de fundo (mobile)" },
     { "type": "text", "id": "image_asset_mobile", "label": "Imagem padrão mobile (arquivo do tema)", "info": "Ex: brk-bigtrail.png", "default": "brk-bigtrail.png" },
+    { "type": "header", "content": "Vídeo de fundo (opcional)" },
+    { "type": "video", "id": "video", "label": "Vídeo de fundo", "info": "Quando definido, o vídeo substitui as imagens de fundo (desktop e mobile)" },
+    { "type": "checkbox", "id": "video_loop", "label": "Repetir vídeo em loop", "default": true },
     {
       "type": "select",
       "id": "content_position",

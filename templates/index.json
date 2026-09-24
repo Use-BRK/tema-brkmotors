@@ -270,6 +270,8 @@
         "section_width": "fluid_container",
         "image_asset": "brk-bigtrail.png",
         "image_asset_mobile": "brk-bigtrail.png",
+        "video": "shopify://files/videos/Motorcycle_physics_and_tracking_…_202608211555.mp4",
+        "video_loop": true,
         "content_position": "right",
         "heading_white": "BIGTRAIL",
         "heading_accent": "2026",

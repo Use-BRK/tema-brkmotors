@@ -525,8 +525,7 @@
               class="product-item__price{% if type == 'list' or type == 'sticky' %} text-start{% else %} justify-content-{{ settings.product_alignment }} fs-custom{% endif %} flex gap-custom lh-normal {{ priceclass }}"
               style="--font-size: {{ settings.price_size }}; --gap: 3px;"
             >
-              {%- render 'price', scope: 'item', product: card_product, show_badges: false, class: priceclass -%}
-              <span class="pi-avista">&nbsp;à vista</span>
+              {%- render 'price', scope: 'item', product: card_product, show_badges: false, class: priceclass, show_avista: true -%}
             </div>
             {%- assign pi_parcela = card_product.price | divided_by: 3 | money -%}
             <div class="product-item__installment{% if type == 'list' or type == 'sticky' %} text-start{% endif %}">

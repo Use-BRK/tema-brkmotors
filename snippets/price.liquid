@@ -41,6 +41,9 @@
         <span class="price heading_weight primary-color price-same-style {{ special_class }}">
           {{ money_price }}
         </span>
+        {%- if show_avista -%}
+          <span class="pi-avista">&nbsp;à vista</span>
+        {%- endif -%}
       </div>
     </div>
   {%- else -%}
@@ -51,6 +54,9 @@
       <span class="price price-same-style heading-style">
         {{ money_price }}
       </span>
+      {%- if show_avista -%}
+        <span class="pi-avista">&nbsp;à vista</span>
+      {%- endif -%}
     </div>
   {%- endif -%}
   {% if target.unit_price_measurement != null %}

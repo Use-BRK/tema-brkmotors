@@ -24,7 +24,7 @@
   font-size: 1.6rem;
   color: var(--color-text);
 }
-.product-item__price .compare-price { font-size: 1.4rem; opacity: .7; }
+.product-item__price .compare-price { font-size: 1.2rem; opacity: .7; }
 .product-item__price .pi-avista {
   font-family: var(--heading-font);
   font-weight: 400;
@@ -387,12 +387,12 @@ body.collection .product-item__price .card-product-price .price-regular:not(.pri
   order: -1 !important;
 }
 body.collection .product-item__price .compare-price {
-  font-size: 1rem !important;
+  font-size: 0.9rem !important;
   color: #9a9a9a !important;
   font-weight: 400 !important;
 }
 @media screen and (min-width: 1025px) {
-  body.collection .product-item__price .compare-price { font-size: 1.15rem !important; }
+  body.collection .product-item__price .compare-price { font-size: 1rem !important; }
 }
 body.collection .product-item__installment {
   font-family: var(--heading-font) !important;

@@ -3327,6 +3327,13 @@ slide-section motion-element select-option {
   justify-content: center;
 }
 
+.price-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
 /* select-option.w-full.product__add-cart.product-item__select-options {
   color: white;
   border-radius: 6px;

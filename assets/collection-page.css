@@ -65,7 +65,7 @@ div#product-grid motion-element select-option {
   display: none;
 }
 .product-type-list .compare-price {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 @media (max-width: 575.98px) {
   .product-type-list .product-item__wrapper {

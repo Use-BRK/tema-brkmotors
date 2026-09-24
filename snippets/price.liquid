@@ -23,23 +23,25 @@
 
 <div class="card-product-price {{ class }} flex align-center flex-wrap gap-5 relative">
   {%- if compare_at_price > price -%}
-    <div class="price-regular primary-color">
-      <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
-      <span class="price heading_weight primary-color price-same-style {{ special_class }}">
-        {{ money_price }}
-      </span>
-    </div>
-    <div class="price-regular">
-      <span class="visually-hidden">
-        {{- 'products.product.price.regular_price' | t -}}
-      </span>
-      <s class="price-item compare-price dark-grey">
-        {%- if theme_st.show_currency_code -%}
-          {{ compare_at_price | money_with_currency }}
-        {%- else -%}
-          {{ compare_at_price | money }}
-        {%- endif -%}
-      </s>
+    <div class="price-stack">
+      <div class="price-regular">
+        <span class="visually-hidden">
+          {{- 'products.product.price.regular_price' | t -}}
+        </span>
+        <s class="price-item compare-price dark-grey">
+          {%- if theme_st.show_currency_code -%}
+            {{ compare_at_price | money_with_currency }}
+          {%- else -%}
+            {{ compare_at_price | money }}
+          {%- endif -%}
+        </s>
+      </div>
+      <div class="price-regular primary-color">
+        <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+        <span class="price heading_weight primary-color price-same-style {{ special_class }}">
+          {{ money_price }}
+        </span>
+      </div>
     </div>
   {%- else -%}
     <div class="price-regular">

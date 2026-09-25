@@ -34,7 +34,8 @@
     },
     "header": {
       "settings": {
-        "hot": "20% OFF"
+        "hot": "25% OFF",
+        "label_background_hot": "#E00E0E"
       },
       "blocks": {
         "menu_collection_JbLDyz": {

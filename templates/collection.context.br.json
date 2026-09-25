@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-2a00985c798b92146c8f29abb3e7ab8e": null,
+        "header-35a3a213462331942c67574ae2f356c3": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 45,
-        "header-f220d56751498d07aff3e8d178adc48a": null,
+        "header-4208f64fa79a69eb2392d1e5e388364c": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-4820103a8a308c8a24ef104d5a53ccd4": null,
+        "header-372073f0c02b089529ad7451abdc627e": null,
         "padding_top": 10,
         "padding_bottom": 10,
         "reset_spacing": false
@@ -89,7 +89,8 @@
               "colecao-custom",
               "custom",
               "lancamentos",
-              "expedicao-manga-longa"
+              "expedicao-manga-longa",
+              "1ª-oferta-brkmotors"
             ]
           }
         }

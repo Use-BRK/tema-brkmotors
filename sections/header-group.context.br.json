@@ -34,12 +34,18 @@
     },
     "header": {
       "settings": {
-        "hot": "+ BRINDE"
+        "hot": "20% OFF"
       },
       "blocks": {
         "menu_collection_JbLDyz": {
           "settings": {
-            "text": "MOTOCICLISMO"
+            "text": "🔥 1ª Oferta MOTORS",
+            "item_label": "hot"
+          }
+        },
+        "menu_promotion_EeqGGC": {
+          "settings": {
+            "item_label": "unset"
           }
         }
       }

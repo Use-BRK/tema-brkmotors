@@ -240,7 +240,7 @@
       "settings": {
         "section_width": "fluid_container",
         "image_asset": "brk-automobilismo-bg-wide.png",
-        "image_mobile": "shopify://shop_images/Banner_automobilismo_mobile.png",
+        "image_mobile": "shopify://shop_images/Banner_automobilismo_mobile_v2.png",
         "image_position": "right center",
         "image_fit": "cover",
         "background_color": "#0d0d0d",

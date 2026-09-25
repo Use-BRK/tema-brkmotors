@@ -20,6 +20,7 @@
 {%- style -%}
   .collection-spotlight { position: relative; background-color: var(--cs-bg); color: var(--cs-fg); overflow: hidden; padding-top: var(--section-pt); padding-bottom: var(--section-pb); }
   .collection-spotlight__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: var(--cs-img-fit, cover) !important; object-position: var(--cs-img-pos, right top); z-index: 0; }
+  .collection-spotlight__bg--mobile { display: none; }
   .collection-spotlight__scrim { position: absolute; inset: 0; z-index: 1;
     background: linear-gradient(90deg, color-mix(in srgb, var(--cs-bg) 45%, transparent) 0%, transparent 34%),
                 linear-gradient(180deg, var(--cs-bg) 0%, transparent 15%, transparent 56%, color-mix(in srgb, var(--cs-bg) 50%, transparent) 78%, var(--cs-bg) 100%); }
@@ -46,12 +47,21 @@
     .collection-spotlight__scrim { background: linear-gradient(180deg, var(--cs-bg) 0%, transparent 20%, color-mix(in srgb, var(--cs-bg) 45%, transparent) 55%, var(--cs-bg) 85%); }
     .collection-spotlight__header { max-width: 100%; padding-top: 16px; padding-bottom: 20px; }
   }
+  {%- if s.image_mobile != blank -%}
+  @media screen and (max-width: 749px) {
+    .collection-spotlight__bg--desktop { display: none; }
+    .collection-spotlight__bg--mobile { display: block; }
+  }
+  {%- endif -%}
 {%- endstyle -%}
 <div class="collection-spotlight" style="{{ css_vars | strip | strip_newlines }}">
   {%- if s.image != blank -%}
-    <img class="collection-spotlight__bg" src="{{ s.image | image_url: width: 2400 }}" alt="{{ s.title_solid | escape }}" loading="lazy" width="1440" height="900">
+    <img class="collection-spotlight__bg collection-spotlight__bg--desktop" src="{{ s.image | image_url: width: 2400 }}" alt="{{ s.title_solid | escape }}" loading="lazy" width="1440" height="900">
   {%- elsif s.image_asset != blank -%}
-    <img class="collection-spotlight__bg" src="{{ s.image_asset | asset_url }}" alt="{{ s.title_solid | escape }}" loading="lazy" width="1440" height="900">
+    <img class="collection-spotlight__bg collection-spotlight__bg--desktop" src="{{ s.image_asset | asset_url }}" alt="{{ s.title_solid | escape }}" loading="lazy" width="1440" height="900">
+  {%- endif -%}
+  {%- if s.image_mobile != blank -%}
+    <img class="collection-spotlight__bg collection-spotlight__bg--mobile" src="{{ s.image_mobile | image_url: width: 1200 }}" alt="{{ s.title_solid | escape }}" loading="lazy" width="750" height="1000">
   {%- endif -%}
   <div class="collection-spotlight__scrim"></div>
   <div class="collection-spotlight__content {{ s.section_width }}">
@@ -131,6 +141,7 @@
     { "type": "header", "content": "Fundo e cabeçalho" },
     { "type": "image_picker", "id": "image", "label": "Imagem de fundo" },
     { "type": "text", "id": "image_asset", "label": "Imagem padrão (arquivo do tema)", "info": "Ex: brk-automobilismo-bg-wide.png", "default": "brk-automobilismo-bg-wide.png" },
+    { "type": "image_picker", "id": "image_mobile", "label": "Imagem de fundo (mobile)", "info": "Opcional. Se definida, substitui a imagem acima em telas de celular." },
     {
       "type": "select",
       "id": "image_position",

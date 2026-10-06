@@ -35,12 +35,12 @@
     "header": {
       "settings": {
         "hot": "25% OFF",
-        "label_background_hot": "#E00E0E"
+        "label_background_hot": "#e00e0e"
       },
       "blocks": {
         "menu_collection_JbLDyz": {
           "settings": {
-            "text": "🔥 1ª Oferta MOTORS",
+            "text": "🔥 Camisas em Oferta",
             "item_label": "hot"
           }
         },

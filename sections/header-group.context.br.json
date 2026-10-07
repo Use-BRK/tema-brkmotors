@@ -51,7 +51,9 @@
         },
         "menu_promotion_masculino": {
           "settings": {
-            "promotion_menu_column": 3
+            "promotion_menu_column": 3,
+            "center_submenu": true,
+            "full_width": true
           }
         },
         "menu_promotion_XUmKDC": {
@@ -64,8 +66,8 @@
             "header-01436f782b8e10d6fc06023fe4aae4d1": null,
             "promotion_menu_column": 3,
             "mega_custom_width": 1030,
-            "center_submenu": false,
-            "full_width": false,
+            "center_submenu": true,
+            "full_width": true,
             "header-1e859eb8e5e355b9f7c448eabf0bdb99": null,
             "promotion_position": "left",
             "promotion_image_width": 16,

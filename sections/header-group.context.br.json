@@ -53,7 +53,7 @@
           "settings": {
             "promotion_menu_column": 3,
             "center_submenu": false,
-            "full_width": true
+            "full_width": false
           }
         },
         "menu_promotion_XUmKDC": {
@@ -63,20 +63,20 @@
             "text": "Femininas",
             "open-link-newtab": false,
             "item_label": "unset",
-            "header-01436f782b8e10d6fc06023fe4aae4d1": null,
+            "header-3755b16c5b6fca0039871aac3fc4eafd": null,
             "promotion_menu_column": 3,
             "mega_custom_width": 1030,
-            "center_submenu": true,
-            "full_width": true,
-            "header-1e859eb8e5e355b9f7c448eabf0bdb99": null,
+            "center_submenu": false,
+            "full_width": false,
+            "header-448bf23b2e7bbad3b9517bec12968871": null,
             "promotion_position": "left",
             "promotion_image_width": 16,
-            "header-cb55a7a1af1047c177f04c769010da81": null,
+            "header-7a187f6770776bc59e3f6cf058ed56e6": null,
             "promotion_image_1": null,
             "promotion_image_asset_1": "",
             "promotion_link_1": "",
             "promotion_link_newtab_1": false,
-            "header-1d0837b929e23640acc5f9c18779462c": null,
+            "header-48742c31ee880e83a90c2309d7b1e52b": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": false

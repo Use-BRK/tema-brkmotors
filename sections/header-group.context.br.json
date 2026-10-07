@@ -52,7 +52,7 @@
         "menu_promotion_masculino": {
           "settings": {
             "promotion_menu_column": 3,
-            "center_submenu": true,
+            "center_submenu": false,
             "full_width": true
           }
         },

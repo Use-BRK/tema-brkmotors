@@ -287,10 +287,24 @@ body.template-index .shopify-section-header-sticky .transparent-mobile .header__
   .col-mega .rounded { border-radius: 16px !important; overflow: hidden; }
   .col-mega img { border-radius: 16px !important; }
 
-  /* Grupo com sub-filhos sempre na coluna 2; folhas auto-place na coluna 1 */
+  /* Menu com grupos (3º nível): folhas empilhadas na coluna 1 e
+     cada grupo em sua própria coluna (2, 3, 4...) — evita sobreposição
+     quando há mais de um grupo */
+  .mega-menu .subchildmenu:has(> li.menu-link .sub-children-menu) {
+    grid-auto-columns: max-content;
+  }
+  .mega-menu .subchildmenu:has(> li.menu-link .sub-children-menu) > li.menu-link:not(:has(.sub-children-menu)) {
+    grid-column: 1;
+  }
   .mega-menu .subchildmenu > li.menu-link:has(.sub-children-menu) {
     grid-column: 2;
     grid-row: 1 / span 10;
+  }
+  .mega-menu .subchildmenu > li.menu-link:has(.sub-children-menu) ~ li.menu-link:has(.sub-children-menu) {
+    grid-column: 3;
+  }
+  .mega-menu .subchildmenu > li.menu-link:has(.sub-children-menu) ~ li.menu-link:has(.sub-children-menu) ~ li.menu-link:has(.sub-children-menu) {
+    grid-column: 4;
   }
 }
 

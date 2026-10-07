@@ -48,8 +48,48 @@
           "settings": {
             "item_label": "unset"
           }
+        },
+        "menu_promotion_masculino": {
+          "settings": {
+            "promotion_menu_column": 3
+          }
+        },
+        "menu_promotion_XUmKDC": {
+          "type": "menu_promotion",
+          "disabled": false,
+          "settings": {
+            "text": "Femininas",
+            "open-link-newtab": false,
+            "item_label": "unset",
+            "header-01436f782b8e10d6fc06023fe4aae4d1": null,
+            "promotion_menu_column": 3,
+            "mega_custom_width": 1030,
+            "center_submenu": false,
+            "full_width": false,
+            "header-1e859eb8e5e355b9f7c448eabf0bdb99": null,
+            "promotion_position": "left",
+            "promotion_image_width": 16,
+            "header-cb55a7a1af1047c177f04c769010da81": null,
+            "promotion_image_1": null,
+            "promotion_image_asset_1": "",
+            "promotion_link_1": "",
+            "promotion_link_newtab_1": false,
+            "header-1d0837b929e23640acc5f9c18779462c": null,
+            "promotion_image_2": null,
+            "promotion_link_2": "",
+            "promotion_link_newtab_2": false
+          }
         }
-      }
+      },
+      "block_order": [
+        "menu_collection_JbLDyz",
+        "menu_promotion_EeqGGC",
+        "menu_promotion_xJdpmk",
+        "menu_promotion_masculino",
+        "menu_promotion_XUmKDC",
+        "menu_collection_EkdGyG",
+        "menu_promotion_rWzQL6"
+      ]
     }
   }
 }

@@ -307,7 +307,7 @@
               {% endif %}
               <div class="subtotal flex gap-10 justify-between align-center" data-cart-subtotal>
                 <h5 class="heading-color my-0">{{ 'general.cart.subtotal' | t }}</h5>
-                <span  data-hulkapps-cart-total class="subtotal-price h5 my-5" data-cart-subtotal-price>
+                <span class="subtotal-price h5 my-5" data-cart-subtotal-price>
                   {% if show_currency_code %}
                     {{ cart.total_price | money_with_currency }}
                   {% else %}

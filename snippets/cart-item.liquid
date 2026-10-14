@@ -31,7 +31,7 @@
     endif
   endif
 %}
-<div data-hulkapps-lineitem 
+<div
   id="minicart__product-{{ item.key }}"
   product-handle="{{ item.product.handle }}"
   class="cart-item flex mb-12 pb-12 gap-10 border-bottom-dashed"
@@ -70,7 +70,7 @@
           </div>
         {%- endfor -%}
       {%- endunless -%}
-      {%- if item.properties.size != 0 -%}<div  data-hulkapps-line-properties class="product-option-property">{%- endif -%}
+      {%- if item.properties.size != 0 -%}<div class="product-option-property">{%- endif -%}
       {%- for property in item.properties -%}
         {%- assign property_first_char = property.first | slice: 0 -%}
         {%- if property.last == blank or property_first_char == '_' -%}{%- continue -%}{%- endif -%}
@@ -91,7 +91,6 @@
         </div>
       {%- endfor -%}
       {%- if item.properties.size != 0 -%}</div>{%- endif -%}
-<button type='button' style='display: none;' class='edit_cart_option btn btn--primary button' data-product_id='{{item.product_id}}' data-key='{{item.key}}' data-variant_id='{{item.variant_id}}' data-quantity='{{item.quantity}}'>Edit Options</button>
     </div>
     <ul
       class="discounts list-unstyled fs-small light-dark-grey"
@@ -119,14 +118,14 @@
         {%- assign current_variant = item.variant -%}
         {%- if item.original_price != item.final_price -%}
           <div class="minicart__discounted-prices">
-            <span  data-hulkapps-ci-price data-key='{{item.key}}' class="minicart__item-price minicart__item-regular-price text-color-regular-price heading_weight primary-color">
+            <span class="minicart__item-price minicart__item-regular-price text-color-regular-price heading_weight primary-color">
               {% if show_currency_code %}
                 {{ item.final_price | money_with_currency }}
               {% else %}
                 {{ item.final_price | money }}
               {% endif %}
             </span>
-            <s  data-hulkapps-ci-price data-key='{{item.key}}' class="minicart__item-original-price">
+            <s class="minicart__item-original-price">
               {% if show_currency_code %}
                 {{ item.original_price | money_with_currency }}
               {% else %}
@@ -150,7 +149,7 @@
             {% endif %}
           </s>
         {%- else -%}
-          <span  data-hulkapps-ci-price data-key='{{item.key}}' class="minicart__item-price text-color-original-price heading-style">
+          <span class="minicart__item-price text-color-original-price heading-style">
             {% if show_currency_code %}
               {{ item.original_price | money_with_currency }}
             {% else %}
@@ -182,7 +181,7 @@
           <span class="cart-item__error-text cart-item__error-text-{{ item.id }}"></span>
           {%- render 'icon-error' -%}
         </div>
-        {% if show_add_cart == true and theme_st.enable_catalog_mode == false and show_quantity %}
+        {% if theme_st.enable_catalog_mode == false %}
           <div class="minicart__actions mt-6 flex grow-1 bottom-left w-full">
             <quantity-input class="quantity quantity--compact rounded-3 border inline-flex text-center grey-bg">
               <button

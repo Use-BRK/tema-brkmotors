@@ -52,6 +52,7 @@ class CartItems extends HTMLElement {
   }
 
   onChange(event) {
+    if (this.splitBrkAddon(event.target)) return;
     this.updateQuantity(
       event.target.dataset.index,
       event.target.dataset.key,
@@ -59,6 +60,32 @@ class CartItems extends HTMLElement {
       document.activeElement.getAttribute("name"),
       event.target
     );
+  }
+
+  // BRK Bundles: a linha do add-on (data-brk-max) não passa do limite do bundle.
+  // O excedente vai para uma linha nova, sem as properties do bundle, a preço cheio.
+  // A linha nova muda a numeração das linhas, então a página é recarregada no fim.
+  splitBrkAddon(target) {
+    const row = target.closest("[data-brk-max]");
+    if (!row || target.getAttribute("name") !== "updates[]") return false;
+    const max = Number(row.dataset.brkMax) || 0;
+    const quantity = Number(target.value) || 0;
+    const previous = Number(target.dataset.value) || 0;
+    // só quando aumenta além do que o bundle ainda aceita (data-brk-max)
+    if (quantity <= previous || quantity <= max) return false;
+
+    const keep = Math.max(max, Math.min(previous, quantity));
+    const extra = quantity - keep;
+    const variantId = Number(row.dataset.brkVariant);
+    row.classList.add("loading");
+    fetch(`${routes?.cart_change_url || "/cart/change"}.js`, {
+      ...fetchConfig(),
+      body: JSON.stringify({ line: Number(target.dataset.index), quantity: keep }),
+    })
+      .then(() => window.brkAddUnbundled(variantId, extra))
+      .catch((e) => console.error(e))
+      .finally(() => window.location.reload());
+    return true;
   }
 
   getSectionsToRender() {

@@ -77,6 +77,13 @@
       "scheme-d69edefb-38da-47d9-9431-87f591681493": {
         "settings": {}
       }
+    },
+    "blocks": {
+      "3479617378183997004": {
+        "type": "shopify://apps/brk-apps-motors/blocks/bundle-embed/019f0515-3a58-77d6-9c12-636d7d9204d6",
+        "disabled": false,
+        "settings": {}
+      }
     }
   }
 }

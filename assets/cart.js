@@ -1250,6 +1250,10 @@ function refreshMinicartUIFromCart(cart){
 // Quantidade (no minicart)
 document.addEventListener('change', debounceMinicart(function(e){
   if (!e.target.matches('.quantity-input')) return;
+  // BRK Bundles: linhas de add-on (data-brk-max) são tratadas pelo CartItems /
+  // CartNotification (que mandam o excedente para uma linha sem o bundle). Atualizar
+  // aqui também gravaria a quantidade cheia na linha do bundle.
+  if (e.target.closest('[data-brk-max]')) return;
   const input = e.target;
   const key = input.dataset.id;
   const newQty = parseInt(input.value || '0', 10);

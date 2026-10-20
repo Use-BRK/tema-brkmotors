@@ -12,6 +12,36 @@
     "slideshow_mWxPRH": {
       "type": "slideshow",
       "blocks": {
+        "slider_item_NtHV3n": {
+          "type": "slider_item",
+          "name": "Rotativo",
+          "settings": {
+            "image": "shopify://shop_images/DeskMotors.png",
+            "image_mobile": "shopify://shop_images/MobMotors.png",
+            "image_link": "shopify://collections/halloween-2026",
+            "overlay_opacity": 0,
+            "slider_effect": "effect_fadeindown",
+            "subheading": "Subheading",
+            "heading": "Image slide",
+            "description": "<p>Tell your brand's story through images</p>",
+            "first_button_label": "Button label",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
+            "content_alignment": "left",
+            "content_position": "bottom-left",
+            "content_width": "container",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 30,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "content_alignment_mobile": "left"
+          }
+        },
         "slider_item_NB9EFB": {
           "type": "slider_item",
           "name": "Big Trail",
@@ -134,6 +164,7 @@
         }
       },
       "block_order": [
+        "slider_item_NtHV3n",
         "slider_item_NB9EFB",
         "slider_item_fRERbb",
         "slider_item_cAfj3G",

@@ -14,15 +14,18 @@
   "parent": "header-group.json",
   "sections": {
     "top_bar_CbXNYj": {
-      "disabled": true,
+      "disabled": false,
       "settings": {
+        "color_scheme": "scheme-e6eb46f3-2f9c-4508-b6fd-d7b50d025920",
         "padding_top": 3,
-        "padding_bottom": 3
+        "padding_bottom": 3,
+        "uppercase": false,
+        "font_weight": "body_weight"
       },
       "blocks": {
         "text_slider_LFaC38": {
           "settings": {
-            "text1": "<strong>FRETE FIXO R$9,90 — PARA TODO BRASIL</strong>",
+            "text1": "<strong>FRETE GRÁTIS</strong> à partir de <strong>R$299</strong>",
             "coupon1": "",
             "coupon1_enabled": false,
             "text2": "",
@@ -63,20 +66,20 @@
             "text": "Femininas",
             "open-link-newtab": false,
             "item_label": "unset",
-            "header-3755b16c5b6fca0039871aac3fc4eafd": null,
+            "header-40248318389af6f68d0027c83d1c09fb": null,
             "promotion_menu_column": 3,
             "mega_custom_width": 1030,
             "center_submenu": false,
             "full_width": false,
-            "header-448bf23b2e7bbad3b9517bec12968871": null,
+            "header-f75ec47e8cb42f55c0bc87fff6952a4a": null,
             "promotion_position": "left",
             "promotion_image_width": 16,
-            "header-7a187f6770776bc59e3f6cf058ed56e6": null,
+            "header-b66c5223cefefa300b2f6262cb7ef3d0": null,
             "promotion_image_1": null,
             "promotion_image_asset_1": "",
             "promotion_link_1": "",
             "promotion_link_newtab_1": false,
-            "header-48742c31ee880e83a90c2309d7b1e52b": null,
+            "header-f2952139ef5bfecac923aa820651599a": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": false

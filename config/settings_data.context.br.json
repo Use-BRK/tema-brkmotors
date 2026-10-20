@@ -45,7 +45,14 @@
         "settings": {}
       },
       "scheme-e6eb46f3-2f9c-4508-b6fd-d7b50d025920": {
-        "settings": {}
+        "settings": {
+          "background": "#FF5E22",
+          "text_color": "#000000",
+          "heading_color": "#000000",
+          "btn_primary_color": "#000000",
+          "btn_primary_background": "#000000",
+          "btn_primary_hover_color": "#000000"
+        }
       },
       "scheme-c4fa9b2e-e94e-477a-a1f0-ab1da4f2a676": {
         "settings": {}

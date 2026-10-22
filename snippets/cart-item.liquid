@@ -297,6 +297,7 @@
       {%- endfor -%}
       {%- if item.properties.size != 0 -%}</div>{%- endif -%}
     </div>
+    {%- render 'cnm-cart-link', item: item -%}
     <ul
       class="discounts list-unstyled fs-small light-dark-grey"
       role="list"

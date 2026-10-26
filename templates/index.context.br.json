@@ -26,7 +26,7 @@
         "badge": "CAVEIRA MILITAR",
         "title_accent": "Linha­­ ",
         "title_solid": "Tática",
-        "subtitle": "Estilo bruto para quem não abre mão de força. Explore a seleção Tático e prepare-se para qualquer missão. Confira a coleção completa.",
+        "subtitle": "Estilo bruto para quem não abre mão de força. Explore a linha Tática e prepare-se para qualquer missão.",
         "header-c5c04467061166f5dc51b6997a512d60": null,
         "collection": "caveira-e-militar",
         "items_to_show": 12,
@@ -273,7 +273,7 @@
         },
         "slider_item_H4fHR": {
           "type": "slider_item",
-          "name": "Kit Casal",
+          "name": "Tático",
           "disabled": false,
           "settings": {
             "header-e739aae1415d4974b7de335e44c24c4a": null,

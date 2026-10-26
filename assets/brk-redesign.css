@@ -1062,3 +1062,15 @@ body.collection .banner .heading-title { margin-bottom: 0; }
 /* Desktop mantém o botão fora do fluxo caso a barra apareça em algum estado */
 .brk-choose-options { display: none; }
 @media (max-width: 767.98px) { .brk-choose-options { display: block; } }
+
+/* ================================================================
+   BRK MOTORS — Ícones de categoria no menu (PNG/SVG em silhueta)
+   Pintados com currentColor via máscara: seguem a cor do texto do item
+   (laranja no hover desktop, escuro no drawer mobile de fundo branco).
+   ================================================================ */
+.menu-category-icon--glyph {
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask: var(--menu-icon) center / contain no-repeat;
+  mask: var(--menu-icon) center / contain no-repeat;
+}

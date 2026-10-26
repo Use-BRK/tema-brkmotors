@@ -5,14 +5,32 @@
     assign collection_handle = menu_link.url | split: '/collections/' | last | split: '?' | first | split: '#' | first | split: '/' | first
     assign category_icon = collections[collection_handle].metafields.custom.categories_menu_icon.value
   endif
+
+  assign icon_src = category_icon.src | default: category_icon | append: '' | split: '?' | first | downcase
+  assign is_glyph = false
+  if icon_src contains '.png' or icon_src contains '.svg'
+    assign is_glyph = true
+  endif
 -%}
 
 {%- if category_icon != blank -%}
-  <span class="menu-category-icon icon-list-menu inline-flex w-30 h-30 rounded-50 overflow-hidden me-10">
-    {{-
-      category_icon
-      | image_url: width: 80
-      | image_tag: loading: 'lazy', class: 'w-full h-full object-fit-cover'
-    -}}
-  </span>
+  {%- if is_glyph -%}
+    {%- comment -%}
+      PNG/SVG (silhueta com fundo transparente): desenhado como máscara pintada com currentColor,
+      para acompanhar a cor do texto do item (branco no header escuro, laranja no hover, escuro no drawer mobile).
+    {%- endcomment -%}
+    <span
+      class="menu-category-icon menu-category-icon--glyph icon-list-menu inline-flex w-30 h-30 me-10"
+      style="--menu-icon: url('{{ category_icon | image_url: width: 80 }}');"
+      aria-hidden="true"
+    ></span>
+  {%- else -%}
+    <span class="menu-category-icon icon-list-menu inline-flex w-30 h-30 rounded-50 overflow-hidden me-10">
+      {{-
+        category_icon
+        | image_url: width: 80
+        | image_tag: loading: 'lazy', class: 'w-full h-full object-fit-cover'
+      -}}
+    </span>
+  {%- endif -%}
 {%- endif -%}

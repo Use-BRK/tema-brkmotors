@@ -22,6 +22,39 @@
     <div class="brk-bbspecs__card brk-bbspecs__rte rte">{{ mf_full }}</div>
   {%- else -%}
     <dl class="brk-bbspecs__card">
+      {%- if block.settings.show_prazo -%}
+        {%- comment -%}
+          Prazo: 1) tag prazo_imediato -> Pronta entrega;
+          2) senão (inclui tag prazo_producao) -> metafield custom.disponibilidade,
+          com default 9 dias úteis quando vazio.
+        {%- endcomment -%}
+        {%- liquid
+          assign dispo = product.metafields.custom.disponibilidade
+          assign prazo_dias = 9
+          if product.tags contains 'prazo_imediato'
+            assign prazo_dias = 0
+          elsif dispo != blank
+            assign prazo_dias = dispo.value | plus: 0
+          endif
+        -%}
+        <div class="brk-bbspecs__row">
+          <dt class="brk-bbspecs__label"><span class="brk-bbspecs__icon">{% render 'brk-icon', name: 'truck' %}</span><span>{{ block.settings.prazo_label | default: 'Prazo de produção' }}</span>
+            {%- render 'brk-prazo-help', dias: prazo_dias, uid: block.id, button_only: true, class: 'brk-prazo-q--mobile' -%}
+          </dt>
+          <dd class="brk-bbspecs__value">
+            {%- render 'brk-prazo-help', dias: prazo_dias, uid: block.id, class: 'brk-prazo-q--desktop' -%}
+            {%- if product.tags contains 'prazo_imediato' -%}Pronta entrega
+            {%- else -%}
+              {%- case dispo -%}
+                {%- when blank -%}9 dias úteis
+                {%- when 0 -%}Pronta entrega
+                {%- when 1 -%}1 dia útil
+                {%- else -%}{{ dispo }} dias úteis
+              {%- endcase -%}
+            {%- endif -%}
+          </dd>
+        </div>
+      {%- endif -%}
       {%- assign labels = 'Tecido,Tecnologia,Modelagem,Manga,Proteção,Gênero,Cuidados' | split: ',' -%}
       {%- assign icons = 'feather,dry,ruler,shield,sun,medal,refresh' | split: ',' -%}
       {%- assign mfkeys = 'tecido,tecnologia,modelagem,manga,protecao,genero,cuidados' | split: ',' -%}
@@ -59,28 +92,6 @@
         </div>
       {%- endif -%}
 
-      {%- if block.settings.show_prazo -%}
-        {%- comment -%}
-          Prazo: 1) tag prazo_imediato -> Pronta entrega;
-          2) senão (inclui tag prazo_producao) -> metafield custom.disponibilidade,
-          com default 9 dias úteis quando vazio.
-        {%- endcomment -%}
-        {%- assign dispo = product.metafields.custom.disponibilidade -%}
-        <div class="brk-bbspecs__row">
-          <dt class="brk-bbspecs__label"><span class="brk-bbspecs__icon">{% render 'brk-icon', name: 'truck' %}</span><span>{{ block.settings.prazo_label | default: 'Prazo de produção' }}</span></dt>
-          <dd class="brk-bbspecs__value">
-            {%- if product.tags contains 'prazo_imediato' -%}Pronta entrega
-            {%- else -%}
-              {%- case dispo -%}
-                {%- when blank -%}9 dias úteis
-                {%- when 0 -%}Pronta entrega
-                {%- when 1 -%}1 dia útil
-                {%- else -%}{{ dispo }} dias úteis
-              {%- endcase -%}
-            {%- endif -%}
-          </dd>
-        </div>
-      {%- endif -%}
     </dl>
   {%- endif -%}
 </div>
@@ -116,8 +127,13 @@
     font-size: 1.35rem; color: var(--color-text, #4e4e4e); line-height: 1.3;
   }
   .brk-bbspecs__rte { padding: 1.8rem; }
+  /* "?" do prazo (snippet brk-prazo-help): desktop antes do prazo, mobile ao lado do rótulo */
+  .brk-bbspecs__label .brk-prazo-q { margin: 0; }
+  .brk-bbspecs__row .brk-prazo-q--mobile { display: none; }
   @media (max-width: 480px) {
     .brk-bbspecs__row { padding: 1.15rem 1.3rem; gap: 1rem; }
     .brk-bbspecs__label, .brk-bbspecs__value { font-size: 1.28rem; }
+    .brk-bbspecs__row .brk-prazo-q--mobile { display: inline-flex; }
+    .brk-bbspecs__row .brk-prazo-q--desktop { display: none; }
   }
 </style>

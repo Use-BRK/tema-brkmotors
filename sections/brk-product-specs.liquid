@@ -6,7 +6,7 @@
       MODO METAFIELD: mostra só as linhas cujo metafield está preenchido.
       (ex.: produto sem UV50 = não seta custom.protecao -> a linha some.)
    3) Senão -> mostra os valores default (boilerplate de camisa).
-  Sempre pode anexar SKU e Prazo de Produção (custom.disponibilidade) no fim.
+  Prazo de Produção (custom.disponibilidade) vem primeiro, com o "?" que abre o modal (snippet brk-prazo-help); SKU no fim.
 {%- endcomment -%}
 {%- liquid
   assign st = section.settings
@@ -27,6 +27,30 @@
     {%- else -%}
       <div class="brk-specs__card">
         <dl class="brk-specs__grid">
+          {%- if st.show_prazo -%}
+            {%- liquid
+              assign dispo = product.metafields.custom.disponibilidade
+              assign prazo_dias = 9
+              if dispo != blank
+                assign prazo_dias = dispo.value | plus: 0
+              endif
+            -%}
+            <div class="brk-specs__row">
+              <dt class="brk-specs__label">
+                <span class="brk-specs__icon">{% render 'brk-icon', name: 'truck' %}</span><span>{{ st.prazo_label | default: 'Prazo de produção' }}</span>
+                {%- render 'brk-prazo-help', dias: prazo_dias, uid: section.id, button_only: true, class: 'brk-prazo-q--mobile' -%}
+              </dt>
+              <dd class="brk-specs__value">
+                {%- render 'brk-prazo-help', dias: prazo_dias, uid: section.id, class: 'brk-prazo-q--desktop' -%}
+                {%- case dispo -%}
+                  {%- when blank -%}9 dias úteis
+                  {%- when 0 -%}Pronta entrega
+                  {%- when 1 -%}1 dia útil
+                  {%- else -%}{{ dispo }} dias úteis
+                {%- endcase -%}
+              </dd>
+            </div>
+          {%- endif -%}
           {%- for i in (1..8) -%}
             {%- liquid
               assign klabel = 's' | append: i | append: '_label'
@@ -69,20 +93,6 @@
             </div>
           {%- endif -%}
 
-          {%- if st.show_prazo -%}
-            {%- assign dispo = product.metafields.custom.disponibilidade -%}
-            <div class="brk-specs__row">
-              <dt class="brk-specs__label"><span class="brk-specs__icon">{% render 'brk-icon', name: 'truck' %}</span><span>{{ st.prazo_label | default: 'Prazo de produção' }}</span></dt>
-              <dd class="brk-specs__value">
-                {%- case dispo -%}
-                  {%- when blank -%}9 dias úteis
-                  {%- when 0 -%}Pronta entrega
-                  {%- when 1 -%}1 dia útil
-                  {%- else -%}{{ dispo }} dias úteis
-                {%- endcase -%}
-              </dd>
-            </div>
-          {%- endif -%}
         </dl>
       </div>
     {%- endif -%}
@@ -131,6 +141,9 @@
   color: var(--color-text, #4e4e4e); line-height: 1.3;
 }
 .brk-specs__rte { padding: 2.4rem; }
+/* "?" do prazo (snippet brk-prazo-help): desktop antes do prazo, mobile ao lado do rótulo */
+.brk-specs__label .brk-prazo-q { margin: 0; }
+.brk-specs__row .brk-prazo-q--mobile { display: none; }
 
 @media (max-width: 768px) {
   .brk-specs { padding-block: 3rem; }
@@ -139,6 +152,8 @@
   .brk-specs__grid .brk-specs__row { border-right: 0 !important; }
   .brk-specs__row { padding: 1.5rem 1.6rem; gap: 1.2rem; }
   .brk-specs__label, .brk-specs__value { font-size: 1.35rem; }
+  .brk-specs__row .brk-prazo-q--mobile { display: inline-flex; }
+  .brk-specs__row .brk-prazo-q--desktop { display: none; }
 }
 {% endstylesheet %}
 

@@ -72,7 +72,7 @@
           style="--btn-padding-x: 1.4rem;"
         >
           <span class="btn-label hidden-on-load inline-flex align-center content-center gap-10 custom-name-button__label">
-            <img class="custom-name-button__icon" src="https://cdn.shopify.com/s/files/1/0887/2083/4857/files/customize.svg" alt="" width="16" height="16" loading="lazy">
+            <span class="custom-name-button__icon" aria-hidden="true"></span>
             <span>{{ button_label }}</span>
           </span>
         </a>
@@ -116,7 +116,7 @@
         style="--btn-padding-x: 1.4rem;"
       >
         <span class="btn-label inline-flex align-center content-center gap-10 custom-name-button__label">
-          <img class="custom-name-button__icon" src="https://cdn.shopify.com/s/files/1/0887/2083/4857/files/customize.svg" alt="" width="16" height="16" loading="lazy">
+          <span class="custom-name-button__icon" aria-hidden="true"></span>
           <span>{{ button_label }}</span>
         </span>
       </button>
@@ -241,9 +241,14 @@
 {% endif %}
 
 <style>
-  .custom-name-button__link { min-height: 4.4rem; line-height: 1.15; white-space: normal; }
+  .custom-name-button__link { min-height: 4.4rem; line-height: 1.15; white-space: normal; display: flex; align-items: center; justify-content: center; }
   .custom-name-button__label { max-width: 100%; text-align: center; }
-  .custom-name-button__icon { flex: 0 0 auto; }
+  /* ícone (svg branco) usado como máscara: pinta com a cor do texto do botão, aparece em botão claro ou escuro */
+  .custom-name-button__icon {
+    flex: 0 0 auto; width: 16px; height: 16px; background-color: currentColor;
+    -webkit-mask: url('https://cdn.shopify.com/s/files/1/0887/2083/4857/files/customize.svg') center / contain no-repeat;
+    mask: url('https://cdn.shopify.com/s/files/1/0887/2083/4857/files/customize.svg') center / contain no-repeat;
+  }
 
   /* ---------- Modal ---------- */
   custom-name-modal[hidden] { display: none; }

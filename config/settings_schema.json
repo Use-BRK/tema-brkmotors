@@ -1802,7 +1802,7 @@
       { "type": "paragraph", "content": "Ícone \"?\" ao lado do prazo nos Detalhes do produto da página de produto. Some em produtos de pronta entrega." },
       { "type": "checkbox", "id": "prazo_modal_enable", "label": "Mostrar ícone e modal", "default": true },
       { "type": "color", "id": "prazo_modal_color", "label": "Cor do modal", "default": "#fc5106" },
-      { "type": "color", "id": "prazo_modal_text_color", "label": "Cor dos textos do modal", "info": "Vazio = mesma cor do modal.", "default": "#b33f00" },
+      { "type": "color", "id": "prazo_modal_text_color", "label": "Cor dos textos do modal", "info": "Vazio = mesma cor do modal.", "default": "#1c1c1c" },
       { "type": "color", "id": "prazo_modal_icon_color", "label": "Cor do ícone \"?\"", "default": "#8a8d88" },
       { "type": "inline_richtext", "id": "prazo_modal_title", "label": "Título", "info": "[dias] vira o prazo do produto (ex.: 10 dias úteis).", "default": "Por que nossos produtos precisam de <strong>[dias]</strong> para serem produzidos?" },
       { "type": "inline_richtext", "id": "prazo_modal_sub", "label": "Subtítulo", "default": "Cada etapa é feita <strong>com muito carinho</strong> para entregar a melhor experiência até você!" },

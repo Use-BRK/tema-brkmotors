@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-35a3a213462331942c67574ae2f356c3": null,
+        "header-34475f3dfc20db1fffc0c48bea2e7044": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 45,
-        "header-4208f64fa79a69eb2392d1e5e388364c": null,
+        "header-d462afb393afb4830635b3adfafddb6d": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-372073f0c02b089529ad7451abdc627e": null,
+        "header-77238a810404ba696bb0a96b494f04e8": null,
         "padding_top": 10,
         "padding_bottom": 10,
         "reset_spacing": false
@@ -90,7 +90,8 @@
               "custom",
               "lancamentos",
               "expedicao-manga-longa",
-              "1ª-oferta-brkmotors"
+              "1ª-oferta-brkmotors",
+              "motociclismo"
             ]
           }
         }

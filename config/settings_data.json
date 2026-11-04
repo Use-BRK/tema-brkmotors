@@ -345,14 +345,6 @@
         "type": "shopify://apps/microsoft-clarity/blocks/brandAgents_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
         "disabled": true,
         "settings": {}
-      },
-      "18228966181090706294": {
-        "type": "shopify://apps/selleasy/blocks/app-embed/790c1a03-a71f-4bc1-9869-00dad526d3c2",
-        "disabled": true,
-        "settings": {
-          "storefrontAccessToken": "",
-          "scriptInitMode": "immediate"
-        }
       }
     },
     "color_schemes": {

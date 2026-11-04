@@ -69,9 +69,19 @@
     <div class="collection-spotlight__header">
       {%- if s.badge != blank -%}<span class="collection-spotlight__badge">{{ s.badge }}</span>{%- endif -%}
       <h2 class="collection-spotlight__title">
-        {%- if s.title_accent != blank -%}<span class="accent">{{ s.title_accent }}</span>{%- endif -%}{%- if s.title_solid != blank -%}<span>{{ s.title_solid }}</span>{%- endif -%}
+        {%- if s.title_accent != blank -%}<span class="accent">{{ s.title_accent | strip }}</span>{%- endif -%}{%- if s.title_space and s.title_accent != blank and s.title_solid != blank %} {% endif -%}{%- if s.title_solid != blank -%}<span>{{ s.title_solid | strip }}</span>{%- endif -%}
       </h2>
-      {%- if s.subtitle != blank -%}<p class="collection-spotlight__subtitle">{{ s.subtitle }}</p>{%- endif -%}
+      {%- if s.subtitle != blank -%}
+        {%- liquid
+          assign sub_style = ''
+          if s.subtitle_shadow
+            assign sh_a = s.subtitle_shadow_strength | divided_by: 100.0
+            assign sh_blur = s.subtitle_shadow_strength | divided_by: 8.0 | plus: 2
+            assign sub_style = ' style="text-shadow: 0 1px 2px rgba(0,0,0,' | append: sh_a | append: '), 0 2px ' | append: sh_blur | append: 'px rgba(0,0,0,' | append: sh_a | append: ');"'
+          endif
+        -%}
+        <p class="collection-spotlight__subtitle"{{ sub_style }}>{{ s.subtitle }}</p>
+      {%- endif -%}
     </div>
     {%- if s.collection.products.size > 0 -%}
       <slide-section
@@ -172,7 +182,10 @@
     { "type": "text", "id": "badge", "label": "Selo (badge)", "default": "NOVA COLEÇÃO" },
     { "type": "text", "id": "title_accent", "label": "Título (destaque)", "default": "AUTO" },
     { "type": "text", "id": "title_solid", "label": "Título (sólido)", "default": "MOBILISMO" },
+    { "type": "checkbox", "id": "title_space", "label": "Espaço entre destaque e sólido", "info": "Ligado: \"VAI VIAJAR?\". Desligado: palavra única, ex. \"AUTOMOBILISMO\".", "default": false },
     { "type": "textarea", "id": "subtitle", "label": "Subtítulo", "default": "Velocidade, estilo e tecnologia UV50+. Vista sua paixão pelo automobilismo com máxima proteção." },
+    { "type": "checkbox", "id": "subtitle_shadow", "label": "Sombra no subtítulo", "info": "Ajuda a ler o subtítulo em cima da imagem.", "default": false },
+    { "type": "range", "id": "subtitle_shadow_strength", "label": "Força da sombra", "min": 10, "max": 100, "step": 5, "unit": "%", "default": 60, "visible_if": "{{ section.settings.subtitle_shadow }}" },
     { "type": "header", "content": "Carrossel de produtos" },
     { "type": "collection", "id": "collection", "label": "Coleção" },
     { "type": "range", "id": "items_to_show", "min": 2, "max": 25, "step": 1, "label": "Produtos a exibir", "default": 12 },

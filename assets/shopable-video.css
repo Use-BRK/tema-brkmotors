@@ -22,6 +22,31 @@
   --color-primary: var(--color-white);
 }
 
+/* nome + preço + parcelado centralizados no card (antes vazavam pela borda de baixo) */
+.video-item__product .product-item__information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0 !important; /* tema aplicava 14px e empurrava o texto pra fora do card */
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.video-item__product .product-item__information > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.video-item__product .product-item__price {
+  margin-top: 2px !important;
+}
+.video-item__product .product-item__installment {
+  margin-top: 0 !important;
+}
+/* preço e parcelado na mesma cor do nome (eram cinza --color-text e sumiam no vidro) */
+.video-item__product :is(.product-item__price, .product-item__installment),
+.video-item__product :is(.product-item__price, .product-item__installment) * {
+  color: var(--color-heading) !important;
+}
+
 .video-item__product .product-item__name {
   display: -webkit-box;
   -webkit-line-clamp: 1;

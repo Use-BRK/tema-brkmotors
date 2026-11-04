@@ -564,6 +564,26 @@ body.product .breadcrumbs :is(.breadcrumb__current, [aria-current], .current) {
   .product-detail__information .product-form__input:not([class*="_color"]) .product__item-option {
     min-width: 4.2rem; width: 4.2rem; height: 4.2rem; font-size: 1.3rem;
   }
+  .product-detail__information .product-form__input:not([class*="_color"]) {
+    gap: 8px;
+  }
+}
+/* 7 tamanhos (PP→G2) numa linha só, sem encolher demais (legibilidade) */
+@media (max-width: 379.98px) {
+  .product-detail__information .product-form__input:not([class*="_color"]) .product__item-option {
+    min-width: 4rem; width: 4rem; height: 4rem;
+  }
+  .product-detail__information .product-form__input:not([class*="_color"]) {
+    gap: 6px;
+  }
+}
+@media (max-width: 339.98px) {
+  .product-detail__information .product-form__input:not([class*="_color"]) .product__item-option {
+    min-width: 3.6rem; width: 3.6rem; height: 3.6rem; font-size: 1.2rem;
+  }
+  .product-detail__information .product-form__input:not([class*="_color"]) {
+    gap: 5px;
+  }
 }
 
 /* --- Botão ADICIONAR AO CARRINHO (charcoal -> laranja) ----------- */

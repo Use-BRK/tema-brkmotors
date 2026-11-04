@@ -69,7 +69,7 @@
     <div class="collection-spotlight__header">
       {%- if s.badge != blank -%}<span class="collection-spotlight__badge">{{ s.badge }}</span>{%- endif -%}
       <h2 class="collection-spotlight__title">
-        {%- if s.title_accent != blank -%}<span class="accent">{{ s.title_accent | strip }}</span>{%- endif -%}{%- if s.title_space and s.title_accent != blank and s.title_solid != blank %} {% endif -%}{%- if s.title_solid != blank -%}<span>{{ s.title_solid | strip }}</span>{%- endif -%}
+        {%- if s.title_accent != blank -%}<span class="accent">{{ s.title_accent | strip }}</span>{%- endif -%}{%- if s.title_space and s.title_accent != blank and s.title_solid != blank -%}{{ ' ' }}{%- endif -%}{%- if s.title_solid != blank -%}<span>{{ s.title_solid | strip }}</span>{%- endif -%}
       </h2>
       {%- if s.subtitle != blank -%}
         {%- liquid

@@ -267,13 +267,13 @@
 
 <div class="brk-hs{% if s.pulse %} brk-hs--pulse{% endif %}{% if s.animations %} brk-hs--anim{% endif %}{% if s.float %} brk-hs--float{% endif %}" style="{{ css_vars | strip | strip_newlines }}" data-brk-hs data-zoom-x="{{ s.zoom_focus_x }}" data-cycle="{% if use_cycle and s.cycle_enable and shirt_count > 1 %}1{% endif %}" data-seconds="{{ s.cycle_seconds | replace: ',', '.' | strip }}" data-auto-tint="{% if s.tint_enable and s.tint_auto %}1{% endif %}" data-eyebrow-auto="{% if s.eyebrow_auto %}1{% endif %}">
   <div class="brk-hs__backdrop" aria-hidden="true">
-  {%- if s.tint_enable -%}<div class="brk-hs__tint" data-hs-tint aria-hidden="true"></div>{%- endif -%}
   {%- if s.bg_image != blank -%}
     <div class="brk-hs__bg brk-hs__bg--d" aria-hidden="true">{{ s.bg_image | image_url: width: 2400 | image_tag: widths: '800, 1200, 1600, 2000, 2400', sizes: '100vw', loading: 'lazy', alt: '' }}</div>
   {%- endif -%}
   {%- if s.bg_image_mobile != blank -%}
     <div class="brk-hs__bg brk-hs__bg--m" aria-hidden="true">{{ s.bg_image_mobile | image_url: width: 1200 | image_tag: widths: '600, 900, 1200', sizes: '100vw', loading: 'lazy', alt: '' }}</div>
   {%- endif -%}
+  {%- if s.tint_enable -%}<div class="brk-hs__tint" data-hs-tint aria-hidden="true"></div>{%- endif -%}
   </div>
   {%- if s.watermark != blank -%}
     <div class="brk-hs__wm brk-hs__wm--d" aria-hidden="true">{{ wm_joined }}</div>

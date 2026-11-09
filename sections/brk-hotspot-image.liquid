@@ -28,8 +28,6 @@
     endif
   endif
   assign total = section.blocks.size
-  assign wm_parts = s.watermark | split: '|'
-  assign wm_joined = s.watermark | remove: '|'
 -%}
 {%- capture css_vars -%}
 --hs-bg1: {{ s.bg_top }}; --hs-bg2: {{ s.bg_bottom }};
@@ -39,8 +37,6 @@
 --hs-card-bg: {{ s.card_bg }}; --hs-card-text: {{ s.card_text }};
 --hs-h: {{ s.stage_height }}vh; --hs-h-m: {{ s.stage_height_mobile }}vh;
 --hs-scale: {{ s.image_scale | divided_by: 100.0 }}; --hs-scale-m: {{ s.image_scale_mobile | divided_by: 100.0 }};
---hs-title: {{ s.heading_size }}px; --hs-title-m: {{ s.heading_size_mobile }}px;
---hs-wm: {{ s.watermark_color }}; --hs-wm-size: {{ s.watermark_size }}vw; --hs-wm-size-m: {{ s.watermark_size_mobile }}vw;
 --hs-speed: {{ s.zoom_speed }}ms;
 --hs-ov-d: {% if s.top_fade %}{{ s.top_overlap }}{% else %}0{% endif %}px; --hs-ov-m: {% if s.top_fade %}{{ s.top_overlap_mobile }}{% else %}0{% endif %}px;
 --hs-pt: {{ s.padding_top }}px; --hs-pb: {{ s.padding_bottom }}px;
@@ -73,7 +69,6 @@
     #shopify-section-{{ sid }} .brk-hs__head > div { max-width: none; width: auto; margin: 0; padding: 0; }
   }
   #shopify-section-{{ sid }} .brk-hs__eyebrow { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--hs-eyebrow, var(--hs-accent)); transition: color 1.4s ease; }
-  #shopify-section-{{ sid }} .brk-hs__heading { margin: 0 0 12px; font-family: var(--heading-font); font-size: var(--hs-title); font-weight: 700; font-style: {{ s.heading_style }}; text-transform: uppercase; line-height: .92; letter-spacing: -0.02em; color: inherit; white-space: nowrap; }
   #shopify-section-{{ sid }} .brk-hs__logo { margin: 0 0 14px; line-height: 0; }
   #shopify-section-{{ sid }} .brk-hs__logo img { display: block; width: {{ s.logo_width_mobile }}px; max-width: 100%; height: auto; }
   @media screen and (min-width: 1025px) {
@@ -85,13 +80,6 @@
   #shopify-section-{{ sid }} .brk-hs__btn { pointer-events: auto; display: inline-flex; align-items: center; justify-content: center; margin-top: 20px; min-height: 46px; padding: 0 28px; border-radius: {{ s.button_radius }}px; background: var(--hs-accent); color: {{ s.button_text_color }}; font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: transform .3s var(--ease-out), opacity .3s ease; }
   #shopify-section-{{ sid }} .brk-hs__btn:hover { transform: translateY(-2px); }
   #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__head { opacity: {% if s.keep_logo_zoom %}1{% else %}0{% endif %}; transform: {% if s.keep_logo_zoom %}none{% else %}translateY(-12px){% endif %}; }
-
-  /* Texto gigante do fundo */
-  #shopify-section-{{ sid }} .brk-hs__wm { position: absolute; z-index: 0; left: 50%; top: 50%; translate: -50% -50%; pointer-events: none; user-select: none; text-align: center; font-family: var(--heading-font); font-weight: 800; font-style: italic; text-transform: uppercase; line-height: .82; letter-spacing: -0.03em; color: var(--hs-wm); transition: opacity .6s ease, transform .9s var(--ease-out); }
-  #shopify-section-{{ sid }} .brk-hs__wm--d { white-space: nowrap; font-size: var(--hs-wm-size); }
-  #shopify-section-{{ sid }} .brk-hs__wm--m { display: none; font-size: var(--hs-wm-size-m); }
-  #shopify-section-{{ sid }} .brk-hs__wm--m span { display: block; white-space: nowrap; }
-  #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__wm { opacity: 0; transform: scale(1.06); }
 
   /* Palco */
   #shopify-section-{{ sid }} .brk-hs__body { position: relative; z-index: 1; }
@@ -187,10 +175,6 @@
   /* Entrada ao rolar até a seção */
   #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__float { opacity: 0; transform: translateY(50px) scale(.96); }
   #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__float { transition: opacity 1.1s ease, transform 1.3s var(--ease-out); }
-  #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__wm--d { opacity: 0; transform: translateX(8%); }
-  #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__wm--m span:nth-child(odd) { opacity: 0; transform: translateX(-12%); }
-  #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__wm--m span:nth-child(even) { opacity: 0; transform: translateX(12%); }
-  #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__wm, #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__wm span { transition: opacity 1.2s ease, transform 1.6s var(--ease-out); }
   #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__head-inner > * { opacity: 0; transform: translateY(18px); }
   #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__head-inner > * { transition: opacity .8s ease, transform .9s var(--ease-out); }
   #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__head-inner > *:nth-child(2) { transition-delay: .08s; }
@@ -213,23 +197,17 @@
     #shopify-section-{{ sid }} .brk-hs { --hs-ov: var(--hs-ov-m); padding-top: calc(var(--hs-pt-m) + var(--hs-ov-m)); padding-bottom: var(--hs-pb-m); }
     #shopify-section-{{ sid }} .brk-hs__head { position: relative; top: auto; margin-bottom: 4px; }
     #shopify-section-{{ sid }} .brk-hs__head-inner { max-width: none; text-align: {{ s.text_align_mobile }}; }
-    #shopify-section-{{ sid }} .brk-hs__heading { font-size: var(--hs-title-m); }
     {%- if s.text_align_mobile == 'center' -%}#shopify-section-{{ sid }} .brk-hs__logo img { margin: 0 auto; }{%- endif -%}
     #shopify-section-{{ sid }} .brk-hs__logo { margin: {{ s.logo_gap_top_mobile }}px 0 {{ s.logo_gap_mobile }}px; }
     #shopify-section-{{ sid }} .brk-hs__eyebrow { font-size: {{ s.eyebrow_size_mobile }}px; margin-bottom: 6px; }
     #shopify-section-{{ sid }} .brk-hs__sub { font-size: {{ s.subheading_size_mobile }}px; }
     #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__head { opacity: 1; transform: none; }
-    #shopify-section-{{ sid }} .brk-hs__wm--d { display: none; }
     {%- if s.bg_image_mobile != blank -%}
     #shopify-section-{{ sid }} .brk-hs__bg--d { display: none; }
     #shopify-section-{{ sid }} .brk-hs__bg--m { display: block; }
     {%- endif -%}
-    #shopify-section-{{ sid }} .brk-hs__wm--m { display: block; top: calc(var(--hs-pt-m) + {{ s.watermark_offset_mobile }}px); translate: -50% 0; }
     #shopify-section-{{ sid }} .brk-hs__stage { height: var(--hs-h-m); transition: height var(--hs-speed) var(--ease-io); }
     #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__stage { height: {{ s.stage_height_zoom_mobile }}vh; }
-    {%- if s.watermark_outline_mobile -%}
-    #shopify-section-{{ sid }} .brk-hs__wm--m { z-index: 2; color: transparent; -webkit-text-stroke: 1.5px color-mix(in srgb, {{ s.watermark_outline_color }} 35%, transparent); }
-    {%- endif -%}
     #shopify-section-{{ sid }} .brk-hs__canvas { width: calc(min(100cqw, 100cqh * var(--hs-ar-m, 1)) * var(--hs-scale-m, .9)); aspect-ratio: var(--hs-ar-m, 1); }
     {%- if s.image_mobile != blank -%}
     #shopify-section-{{ sid }} .brk-hs__img--d { display: none; }
@@ -275,19 +253,14 @@
   {%- endif -%}
   {%- if s.tint_enable -%}<div class="brk-hs__tint" data-hs-tint aria-hidden="true"></div>{%- endif -%}
   </div>
-  {%- if s.watermark != blank -%}
-    <div class="brk-hs__wm brk-hs__wm--d" aria-hidden="true">{{ wm_joined }}</div>
-    <div class="brk-hs__wm brk-hs__wm--m" aria-hidden="true">{%- for part in wm_parts -%}<span>{{ part }}</span>{%- endfor -%}</div>
-  {%- endif -%}
-
-  {%- if s.eyebrow != blank or s.heading != blank or s.subheading != blank or s.button_label != blank -%}
+  {%- if s.eyebrow != blank or s.logo != blank or s.subheading != blank or s.button_label != blank -%}
     <div class="brk-hs__head">
       <div class="{{ s.section_width }}">
         <div class="brk-hs__head-inner">
           {%- if s.eyebrow != blank -%}<span class="brk-hs__eyebrow">{{ s.eyebrow }}</span>{%- endif -%}
           {%- if s.logo != blank -%}
-            <h2 class="brk-hs__logo">{{ s.logo | image_url: width: 1200 | image_tag: widths: '300, 600, 900, 1200', sizes: '(min-width: 1025px) 500px, 80vw', alt: s.heading | default: s.logo.alt, loading: 'lazy' }}</h2>
-          {%- elsif s.heading != blank -%}<h2 class="brk-hs__heading">{{ s.heading }}</h2>{%- endif -%}
+            <h2 class="brk-hs__logo">{{ s.logo | image_url: width: 1200 | image_tag: widths: '300, 600, 900, 1200', sizes: '(min-width: 1025px) 500px, 80vw', alt: s.logo.alt, loading: 'lazy' }}</h2>
+          {%- endif -%}
           {%- if s.subheading != blank -%}<p class="brk-hs__sub">{{ s.subheading }}</p>{%- endif -%}
           {%- if s.button_label != blank -%}<a class="brk-hs__btn" href="{{ s.button_link | default: '#' }}">{{ s.button_label }}</a>{%- endif -%}
         </div>
@@ -315,9 +288,9 @@
               {%- endfor -%}
             {%- elsif img_d != blank -%}
               {%- assign sample = img_d | image_url: width: 80 -%}
-              {{ img_d | image_url: width: 2400 | image_tag: class: 'brk-hs__img brk-hs__img--d', data-hs-shirt: '', data-sample: sample, widths: '800, 1200, 1600, 2000, 2400', sizes: '(min-width: 1025px) 90vw, 250vw', loading: 'lazy', alt: img_d.alt | default: s.heading }}
+              {{ img_d | image_url: width: 2400 | image_tag: class: 'brk-hs__img brk-hs__img--d', data-hs-shirt: '', data-sample: sample, widths: '800, 1200, 1600, 2000, 2400', sizes: '(min-width: 1025px) 90vw, 250vw', loading: 'lazy', alt: img_d.alt }}
               {%- if s.image_mobile != blank -%}
-                {{ s.image_mobile | image_url: width: 2000 | image_tag: class: 'brk-hs__img brk-hs__img--m', widths: '800, 1200, 1600, 2000', sizes: '250vw', loading: 'lazy', alt: s.image_mobile.alt | default: s.heading }}
+                {{ s.image_mobile | image_url: width: 2000 | image_tag: class: 'brk-hs__img brk-hs__img--m', widths: '800, 1200, 1600, 2000', sizes: '250vw', loading: 'lazy', alt: s.image_mobile.alt }}
               {%- endif -%}
             {%- else -%}
               <div class="brk-hs__placeholder">{{ 'lifestyle-1' | placeholder_svg_tag }}</div>
@@ -728,7 +701,7 @@
     { "type": "range", "id": "eyebrow_size", "min": 10, "max": 28, "step": 1, "unit": "px", "label": "Tamanho do texto acima do título (desktop)", "default": 16 },
     { "type": "checkbox", "id": "eyebrow_auto", "label": "Texto acima do título acompanha a cor da camisa", "default": true, "info": "Usa a cor automática da máscara em versão clara. Desligado, usa a cor de destaque." },
     { "type": "range", "id": "eyebrow_size_mobile", "min": 10, "max": 24, "step": 1, "unit": "px", "label": "Tamanho do texto acima do título (mobile)", "default": 15 },
-    { "type": "image_picker", "id": "logo", "label": "Logo no lugar do título", "info": "Se escolher uma logo, ela aparece no lugar do título (o título vira o texto alternativo da imagem)." },
+    { "type": "image_picker", "id": "logo", "label": "Logo no lugar do título", "info": "Se escolher uma logo, ela aparece no lugar do título ." },
     { "type": "range", "id": "logo_width", "min": 120, "max": 900, "step": 10, "unit": "px", "label": "Largura da logo (desktop)", "default": 540 },
     { "type": "range", "id": "logo_gap_top", "min": -60, "max": 30, "step": 1, "unit": "px", "label": "Espaço acima da logo (desktop)", "default": -18, "info": "Negativo aproxima o texto de cima." },
     { "type": "range", "id": "logo_gap", "min": -40, "max": 30, "step": 1, "unit": "px", "label": "Espaço abaixo da logo (desktop)", "default": -14, "info": "Negativo aproxima o subtítulo." },
@@ -736,7 +709,6 @@
     { "type": "range", "id": "logo_width_mobile", "min": 100, "max": 420, "step": 10, "unit": "px", "label": "Largura da logo (mobile)", "default": 340 },
     { "type": "range", "id": "logo_gap_top_mobile", "min": -40, "max": 30, "step": 1, "unit": "px", "label": "Espaço acima da logo (mobile)", "default": -16 },
     { "type": "range", "id": "logo_gap_mobile", "min": -40, "max": 30, "step": 1, "unit": "px", "label": "Espaço abaixo da logo (mobile)", "default": -8 },
-    { "type": "text", "id": "heading", "label": "Título", "default": "BRK Explorer" },
     { "type": "textarea", "id": "subheading", "label": "Subtítulo" },
     { "type": "range", "id": "subheading_size", "min": 11, "max": 24, "step": 1, "unit": "px", "label": "Tamanho do subtítulo (desktop)", "default": 15 },
     { "type": "range", "id": "subheading_size_mobile", "min": 10, "max": 20, "step": 1, "unit": "px", "label": "Tamanho do subtítulo (mobile)", "default": 13 },
@@ -748,8 +720,6 @@
     { "type": "text", "id": "cta_label", "label": "Botão abaixo da dica", "default": "Quero acesso antecipado", "info": "Mesmo visual dos pontos. Deixe vazio para esconder." },
     { "type": "url", "id": "cta_link", "label": "Link do botão abaixo da dica" },
     { "type": "checkbox", "id": "cta_new_tab", "label": "Abrir o link em nova aba", "default": false },
-    { "type": "range", "id": "heading_size", "min": 24, "max": 110, "step": 2, "unit": "px", "label": "Tamanho do título (desktop)", "default": 72 },
-    { "type": "range", "id": "heading_size_mobile", "min": 20, "max": 64, "step": 2, "unit": "px", "label": "Tamanho do título (mobile)", "default": 40 },
     { "type": "select", "id": "heading_style", "label": "Estilo dos títulos",
       "options": [ { "value": "italic", "label": "Itálico" }, { "value": "normal", "label": "Normal" } ],
       "default": "italic"
@@ -758,14 +728,6 @@
       "options": [ { "value": "left", "label": "Esquerda" }, { "value": "center", "label": "Centro" } ],
       "default": "center"
     },
-
-    { "type": "header", "content": "Texto gigante do fundo" },
-    { "type": "text", "id": "watermark", "label": "Texto", "info": "Use | para quebrar a linha no mobile (no desktop fica numa linha só). Deixe vazio para esconder." },
-    { "type": "range", "id": "watermark_size", "min": 8, "max": 30, "step": 1, "unit": "vw", "label": "Tamanho (desktop)", "default": 20 },
-    { "type": "range", "id": "watermark_size_mobile", "min": 20, "max": 60, "step": 1, "unit": "vw", "label": "Tamanho (mobile)", "default": 30 },
-    { "type": "checkbox", "id": "watermark_outline_mobile", "label": "Mobile: texto na frente do produto, só com contorno", "default": true, "info": "Assim as duas linhas aparecem inteiras sem esconder a peça." },
-    { "type": "color", "id": "watermark_outline_color", "label": "Cor do contorno (mobile)", "default": "#ffffff" },
-    { "type": "range", "id": "watermark_offset_mobile", "min": 0, "max": 400, "step": 10, "unit": "px", "label": "Distância do topo (mobile)", "default": 110 },
 
     { "type": "header", "content": "Pontos" },
     { "type": "checkbox", "id": "show_labels", "label": "Mostrar nome ao lado do ponto", "default": true },
@@ -814,7 +776,6 @@
     { "type": "range", "id": "bg_opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "label": "Opacidade da imagem de fundo", "default": 100 },
     { "type": "color", "id": "bg_top", "label": "Fundo (topo)", "default": "#1b231d" },
     { "type": "color", "id": "bg_bottom", "label": "Fundo (base)", "default": "#0d0d0d" },
-    { "type": "color", "id": "watermark_color", "label": "Texto gigante do fundo", "default": "#223026" },
     { "type": "color", "id": "text_color", "label": "Texto", "default": "#ffffff" },
     { "type": "color", "id": "accent_color", "label": "Destaque", "default": "#f7ddae" },
     { "type": "color", "id": "button_text_color", "label": "Texto do botão", "default": "#0d0d0d" },

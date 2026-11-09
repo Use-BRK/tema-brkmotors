@@ -11,7 +11,7 @@
   "sections": {
     "brk_hotspot_explorer": {
       "type": "brk-hotspot-image",
-      "disabled": false,
+      "disabled": true,
       "settings": {
         "header-29c7208cf9bedf5a3350edb23b37c5ae": null,
         "image": "shopify://shop_images/brk-explorer-hotspot-sem-fundo.png",
@@ -111,7 +111,7 @@
         "card_text": "#111111",
         "header-c4665b776e21eba304875a0ff5aad2ac": null,
         "top_fade": true,
-        "top_overlap": 110,
+        "top_overlap": 220,
         "top_overlap_mobile": 40,
         "header-8b10517542bdf96ff2ae56a94a1b5221": null,
         "padding_top": 24,

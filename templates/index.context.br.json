@@ -598,6 +598,87 @@
         "icon_box_RLNr9a",
         "icon_box_tj4DJd"
       ]
+    },
+    "brk_hotspot_explorer": {
+      "type": "brk-hotspot-image",
+      "blocks": {
+        "hs_bandana": {
+          "type": "hotspot",
+          "settings": {
+            "title": "Bandana",
+            "text": "<p>Bandana integrada que protege rosto e pescoço do sol, vento e poeira.</p>",
+            "link_label": "",
+            "zoom": 200,
+            "zoom_mobile": 240,
+            "anchor_x": 55,
+            "anchor_y": 20,
+            "pos_x": 90,
+            "pos_y": 17,
+            "same_position_mobile": false,
+            "anchor_x_mobile": 55,
+            "anchor_y_mobile": 20,
+            "pos_x_mobile": 88,
+            "pos_y_mobile": 16
+          }
+        },
+        "hs_capuz": {
+          "type": "hotspot",
+          "settings": {
+            "title": "Capuz",
+            "text": "<p>Capuz que veste junto com a bandana para cobrir a cabeça.</p>",
+            "link_label": "",
+            "zoom": 200,
+            "zoom_mobile": 240,
+            "anchor_x": 38,
+            "anchor_y": 11,
+            "pos_x": 14,
+            "pos_y": 7,
+            "same_position_mobile": false,
+            "anchor_x_mobile": 38,
+            "anchor_y_mobile": 11,
+            "pos_x_mobile": 14,
+            "pos_y_mobile": 6
+          }
+        },
+        "hs_luva": {
+          "type": "hotspot",
+          "settings": {
+            "title": "Luva",
+            "text": "<p>Punho com abertura para o polegar, que protege o dorso da mão.</p>",
+            "link_label": "",
+            "zoom": 200,
+            "zoom_mobile": 240,
+            "anchor_x": 93,
+            "anchor_y": 88,
+            "pos_x": 110,
+            "pos_y": 76,
+            "same_position_mobile": false,
+            "anchor_x_mobile": 93,
+            "anchor_y_mobile": 88,
+            "pos_x_mobile": 102,
+            "pos_y_mobile": 72
+          }
+        }
+      },
+      "block_order": [
+        "hs_capuz",
+        "hs_bandana",
+        "hs_luva"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/brk-explorer-hotspot-sem-fundo.png",
+        "eyebrow": "Lançamento",
+        "heading": "BRK Explorer",
+        "subheading": "",
+        "hint": "Toque nos pontos para ver os detalhes",
+        "watermark": "",
+        "padding_top": 24,
+        "padding_bottom": 132,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 80,
+        "logo": "shopify://shop_images/LOGO_EXPLORER_X.svg",
+        "cycle_seconds": "4"
+      }
     }
   },
   "context": {
@@ -606,6 +687,7 @@
   "parent": "index.json",
   "order": [
     "slideshow_mWxPRH",
+    "brk_hotspot_explorer",
     "category_cards_brk",
     "automobilismo_banner_pnpbkV",
     "automobilismo_banner_dk4nb",
@@ -624,7 +706,6 @@
     "collection_list_HPrebt",
     "shopable_video_8bAdnX",
     "collection_packery_UfTpHJ",
-    "outfit_idea_wGzkBi",
     "divider_xPQYgr",
     "faq_TtQE4",
     "divider_4De4th",

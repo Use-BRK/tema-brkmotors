@@ -351,6 +351,7 @@
                 class="brk-hs__dot brk-hs__dot--{{ side }}"
                 style="--i: {{ forloop.index0 }}; --x: {{ b.pos_x }}%; --y: {{ b.pos_y }}%; --xm: {{ xm }}%; --ym: {{ ym }}%;"
                 data-hs-dot="{{ forloop.index0 }}"
+              data-title="{{ b.title | escape }}"
                 data-ax="{{ b.anchor_x }}" data-ay="{{ b.anchor_y }}" data-axm="{{ axm }}" data-aym="{{ aym }}"
                 data-zoom="{{ b.zoom }}" data-zoom-m="{{ b.zoom_mobile }}"
                 aria-label="Ver detalhe: {{ b.title | escape }}"
@@ -406,7 +407,7 @@
   {%- if s.hint != blank and total > 0 -%}<p class="brk-hs__hint">{{ s.hint }}</p>{%- endif -%}
   {%- if s.cta_label != blank -%}
     <div class="brk-hs__cta-wrap">
-      <a class="brk-hs__cta" href="{{ s.cta_link | default: '#' }}"{% if s.cta_new_tab %} target="_blank" rel="noopener"{% endif %}>
+      <a class="brk-hs__cta" data-hs-cta href="{{ s.cta_link | default: '#' }}"{% if s.cta_new_tab %} target="_blank" rel="noopener"{% endif %}>
         <span class="brk-hs__cta-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         {{ s.cta_label }}
       </a>
@@ -419,6 +420,23 @@
     var root = document.querySelector('#shopify-section-{{ sid }} [data-brk-hs]');
     if (!root || root.dataset.ready) return;
     root.dataset.ready = '1';
+
+    /* ---------- Tracking (Microsoft Clarity + Shopify analytics) ---------- */
+    function track(name, tags) {
+      try {
+        if (typeof window.clarity === 'function') {
+          window.clarity('event', name);
+          if (tags) Object.keys(tags).forEach(function (k) { if (tags[k]) window.clarity('set', k, String(tags[k])); });
+        }
+        if (window.Shopify && Shopify.analytics && typeof Shopify.analytics.publish === 'function') {
+          Shopify.analytics.publish('brkmotors:' + name, tags || {});
+        }
+      } catch (err) { /* nunca quebra a seção por causa do tracking */ }
+    }
+    function shirtName() {
+      var a = root.querySelector('[data-hs-shirt].is-active') || root.querySelector('[data-hs-shirt]');
+      return a ? a.getAttribute('alt') : '';
+    }
     var stage = root.querySelector('[data-hs-stage]');
     var canvas = root.querySelector('[data-hs-canvas]');
     var card = root.querySelector('[data-hs-card]');
@@ -623,12 +641,30 @@
       stage.addEventListener('mouseleave', function () { hovering = false; scheduleCycle(); });
     }
 
-    dots.forEach(function (d, i) { d.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); zoomTo(i); }); });
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function (e) {
+        e.preventDefault(); e.stopPropagation(); zoomTo(i);
+        track('hotspot_click', { hotspot_detalhe: d.dataset.title, hotspot_camisa: shirtName() });
+      });
+    });
+    var viewed = false;
+    if ('IntersectionObserver' in window) {
+      var vio = new IntersectionObserver(function (en) {
+        if (en[0].isIntersecting && !viewed) { viewed = true; vio.disconnect(); track('hotspot_view', { hotspot_camisa: shirtName() }); }
+      }, { threshold: 0.5 });
+      vio.observe(stage);
+    }
+    var cta = root.querySelector('[data-hs-cta]');
+    if (cta) cta.addEventListener('click', function () { track('hotspot_cta_click', { hotspot_camisa: shirtName() }); });
+    card.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('.brk-hs__card-product, .brk-hs__card-link');
+      if (a) track('hotspot_product_click', { hotspot_detalhe: current > -1 ? dots[current].dataset.title : '', hotspot_camisa: shirtName() });
+    });
     stage.addEventListener('click', function () { if (current > -1) reset(); });
-    root.querySelector('[data-hs-close]').addEventListener('click', function (e) { e.stopPropagation(); reset(); });
+    root.querySelector('[data-hs-close]').addEventListener('click', function (e) { e.stopPropagation(); track('hotspot_close'); reset(); });
     var prev = root.querySelector('[data-hs-prev]'), next = root.querySelector('[data-hs-next]');
-    if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
-    if (next) next.addEventListener('click', function (e) { e.stopPropagation(); step(1); });
+    if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); step(-1); track('hotspot_nav', { hotspot_detalhe: dots[current] && dots[current].dataset.title }); });
+    if (next) next.addEventListener('click', function (e) { e.stopPropagation(); step(1); track('hotspot_nav', { hotspot_detalhe: dots[current] && dots[current].dataset.title }); });
     document.addEventListener('keydown', function (e) {
       if (current < 0) return;
       if (e.key === 'Escape') reset();

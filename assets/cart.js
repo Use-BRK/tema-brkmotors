@@ -210,6 +210,9 @@ class CartItems extends HTMLElement {
         // let gift_card_product = this.querySelector(`cart-remove-button#${gift_form_minicart.dataset.variantId}`);
         // gift_form_minicart
         this.disableLoading();
+        // BRK Bundles: add-on órfão sai junto (ver brkOrphanBundleLine).
+        const brkOrphan = window.brkOrphanBundleLine?.(parsedState);
+        if (brkOrphan) this.updateQuantity(brkOrphan.line, brkOrphan.key, 0);
       })
       .catch((e) => {
         console.error(e);

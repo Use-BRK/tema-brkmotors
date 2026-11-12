@@ -30,8 +30,10 @@
           {%- if st.show_prazo -%}
             {%- liquid
               assign dispo = product.metafields.custom.disponibilidade
-              assign prazo_dias = 9
-              if dispo != blank
+              assign prazo_dias = 10
+              if product.tags contains 'prazo_imediato'
+                assign prazo_dias = 0
+              elsif dispo != blank
                 assign prazo_dias = dispo.value | plus: 0
               endif
             -%}
@@ -42,12 +44,15 @@
               </dt>
               <dd class="brk-specs__value">
                 {%- render 'brk-prazo-help', dias: prazo_dias, uid: section.id, class: 'brk-prazo-q--desktop' -%}
-                {%- case dispo -%}
-                  {%- when blank -%}9 dias úteis
-                  {%- when 0 -%}Pronta entrega
-                  {%- when 1 -%}1 dia útil
-                  {%- else -%}{{ dispo }} dias úteis
-                {%- endcase -%}
+                {%- if product.tags contains 'prazo_imediato' -%}Pronta entrega
+                {%- else -%}
+                  {%- case dispo -%}
+                    {%- when blank -%}10 dias úteis
+                    {%- when 0 -%}Pronta entrega
+                    {%- when 1 -%}1 dia útil
+                    {%- else -%}{{ dispo }} dias úteis
+                  {%- endcase -%}
+                {%- endif -%}
               </dd>
             </div>
           {%- endif -%}

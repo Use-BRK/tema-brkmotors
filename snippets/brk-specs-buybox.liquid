@@ -26,11 +26,11 @@
         {%- comment -%}
           Prazo: 1) tag prazo_imediato -> Pronta entrega;
           2) senão (inclui tag prazo_producao) -> metafield custom.disponibilidade,
-          com default 9 dias úteis quando vazio.
+          com default 10 dias úteis quando vazio.
         {%- endcomment -%}
         {%- liquid
           assign dispo = product.metafields.custom.disponibilidade
-          assign prazo_dias = 9
+          assign prazo_dias = 10
           if product.tags contains 'prazo_imediato'
             assign prazo_dias = 0
           elsif dispo != blank
@@ -46,7 +46,7 @@
             {%- if product.tags contains 'prazo_imediato' -%}Pronta entrega
             {%- else -%}
               {%- case dispo -%}
-                {%- when blank -%}9 dias úteis
+                {%- when blank -%}10 dias úteis
                 {%- when 0 -%}Pronta entrega
                 {%- when 1 -%}1 dia útil
                 {%- else -%}{{ dispo }} dias úteis

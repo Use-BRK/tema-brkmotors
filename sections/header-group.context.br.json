@@ -16,16 +16,16 @@
     "top_bar_CbXNYj": {
       "disabled": false,
       "settings": {
-        "color_scheme": "scheme-e6eb46f3-2f9c-4508-b6fd-d7b50d025920",
-        "padding_top": 3,
-        "padding_bottom": 3,
+        "color_scheme": "scheme-c4fa9b2e-e94e-477a-a1f0-ab1da4f2a676",
         "uppercase": false,
-        "font_weight": "body_weight"
+        "font_weight": "body_weight",
+        "padding_top": 3,
+        "padding_bottom": 3
       },
       "blocks": {
         "text_slider_LFaC38": {
           "settings": {
-            "text1": "<strong>FRETE GRÁTIS</strong> à partir de <strong>R$299</strong>",
+            "text1": "<strong>FRETE FIXO - R$9,90&nbsp;</strong>",
             "coupon1": "",
             "coupon1_enabled": false,
             "text2": "",
@@ -66,20 +66,20 @@
             "text": "Femininas",
             "open-link-newtab": false,
             "item_label": "unset",
-            "header-40248318389af6f68d0027c83d1c09fb": null,
+            "header-7f5619d10f05945b9db042aa45413d73": null,
             "promotion_menu_column": 3,
             "mega_custom_width": 1030,
             "center_submenu": false,
             "full_width": false,
-            "header-f75ec47e8cb42f55c0bc87fff6952a4a": null,
+            "header-305a96e1b263e244bb2d28f9ea78dc04": null,
             "promotion_position": "left",
             "promotion_image_width": 16,
-            "header-b66c5223cefefa300b2f6262cb7ef3d0": null,
+            "header-ae6b0ae41c1f5cfb70e2926cd05dfe6f": null,
             "promotion_image_1": null,
             "promotion_image_asset_1": "",
             "promotion_link_1": "",
             "promotion_link_newtab_1": false,
-            "header-f2952139ef5bfecac923aa820651599a": null,
+            "header-4d01d72036a977ecba4ea33449d15103": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": false

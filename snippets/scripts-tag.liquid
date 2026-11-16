@@ -11,6 +11,8 @@
 {%- endif %}
 <script src="{{ 'tingle.min.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'theme.js' | asset_url }}"  defer="defer"></script>
+{%- comment -%} BRK Upsell (minicart e carrinho): global porque a seção chega por HTML re-renderizado {%- endcomment -%}
+<script src="{{ 'brk-upsell.js' | asset_url }}" defer="defer"></script>
 {%- case t -%}
   {%- when 'collection' -%}
     <script src="{{ 'collection.js' | asset_url }}" defer="defer"></script>

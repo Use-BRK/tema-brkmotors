@@ -46,6 +46,7 @@
     {{ content_for_header }}
     {{ 'critical.css' | asset_url | stylesheet_tag }}
     {{ 'custom.css' | asset_url | stylesheet_tag }}
+    {{ 'brk-upsell.css' | asset_url | stylesheet_tag }}
     {% if settings.scroll_animation != 'none' %}
       {{ 'animation.css' | asset_url | stylesheet_tag }}
     {%- endif %}

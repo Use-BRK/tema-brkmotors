@@ -26,7 +26,7 @@
     "enable_color_swatches": true,
     "limit_color": "3",
     "swatch_item_type": "variant_images",
-    "show_on_minicart_cart_page": true,
+    "show_on_minicart_cart_page": false,
     "free_shipping_unavailable_text": "Falta {{ amount }} para ganhar <strong>FRETE GRÁTIS!</strong>",
     "free_shipping_available_text": "Você ganhou <strong>FRETE GRÁTIS! </strong>prossiga para o checkout e aproveite",
     "show_gift_bar": false,
@@ -46,7 +46,7 @@
       },
       "scheme-e6eb46f3-2f9c-4508-b6fd-d7b50d025920": {
         "settings": {
-          "background": "#FF5E22",
+          "background": "#ff5e22",
           "text_color": "#000000",
           "heading_color": "#000000",
           "btn_primary_color": "#000000",

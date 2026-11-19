@@ -25,18 +25,19 @@
           "type": "collection_card",
           "settings": {
             "collection": "segunda-pele-masculino",
-            "title": "Raglan Masculina",
+            "title": "Segunda Pele Masculina",
             "photo_index": 1,
-            "photo_product": "camisa-segunda-pele-brk-formula-1-willians-fw14b-com-uv50"
+            "photo_product": "camisa-uv50-segunda-pele-brk-gs-make-life-a-ride"
           }
         },
         "card_raglan_fem": {
           "type": "collection_card",
           "settings": {
             "collection": "segunda-pele-femininas",
-            "title": "Raglan Feminina",
+            "title": "Segunda Pele Feminina",
             "photo_index": 1,
-            "photo_product": "camisa-motociclismo-feminina-brk-big-trail-adventure-explorer-azul-petroleo-com-protecao-uv50"
+            "photo_product": "camisa-motociclismo-feminina-brk-big-trail-adventure-explorer-azul-petroleo-com-protecao-uv50",
+            "image": "shopify://shop_images/BLACK_MOTORS_SEGUNDA_PELE_FEM.jpg"
           }
         }
       },
@@ -65,7 +66,7 @@
         "height_mobile": 52,
         "anchor": "",
         "head_style": "hero",
-        "subtitle": "Escolha 2 camisas ou raglans e a segunda sai com desconto.",
+        "subtitle": "Escolha 2 camisas ou segundas peles e a segunda sai com desconto.",
         "chips": "",
         "layout": "mobile_grid",
         "height_desktop": 64,

@@ -114,7 +114,8 @@
     "header": {
       "settings": {
         "hot": "25% OFF",
-        "label_background_hot": "#e00e0e"
+        "label_background_hot": "#e00e0e",
+        "transparent_header": false
       },
       "blocks": {
         "menu_collection_JbLDyz": {

@@ -848,18 +848,19 @@
           "type": "collection_card",
           "settings": {
             "collection": "segunda-pele-masculino",
-            "title": "Raglan Masculina",
+            "title": "Segunda Pele Masculina",
             "photo_index": 1,
-            "photo_product": "camisa-segunda-pele-brk-formula-1-willians-fw14b-com-uv50"
+            "photo_product": "camisa-uv50-segunda-pele-brk-gs-make-life-a-ride"
           }
         },
         "card_raglan_fem": {
           "type": "collection_card",
           "settings": {
             "collection": "segunda-pele-femininas",
-            "title": "Raglan Feminina",
+            "title": "Segunda Pele Feminina",
             "photo_index": 1,
-            "photo_product": "camisa-motociclismo-feminina-brk-big-trail-adventure-explorer-azul-petroleo-com-protecao-uv50"
+            "photo_product": "camisa-motociclismo-feminina-brk-big-trail-adventure-explorer-azul-petroleo-com-protecao-uv50",
+            "image": "shopify://shop_images/BLACK_MOTORS_SEGUNDA_PELE_FEM.jpg"
           }
         }
       },
@@ -870,32 +871,34 @@
         "card_raglan_fem"
       ],
       "settings": {
-        "bg_color": "#ffffff",
-        "text_color": "#111214",
+        "bg_color": "#0d0d0d",
+        "text_color": "#ffffff",
         "accent_color": "#111214",
         "cream_color": "#f6cb27",
         "eyebrow": "Black November",
         "title": "2ª peça com <em>[percent] OFF</em>",
-        "cta": "Ver coleção",
-        "note": "Válido para camisas e raglans.",
+        "cta": "Confira a coleção",
+        "note": "Válido para camisas e segundas peles.",
         "default_tag": "",
         "columns_desktop": 4,
         "columns_mobile": "2",
-        "full_width": true,
-        "radius": 0,
-        "gap": 4,
+        "full_width": false,
+        "radius": 20,
+        "gap": 18,
         "mobile_card_width": 80,
         "height_mobile": 52,
         "anchor": "black",
         "head_style": "simple",
-        "subtitle": "Escolha a categoria e monte o seu par.",
+        "subtitle": "Leve 2 camisas ou segundas peles e a segunda sai com 40% OFF. Escolha a categoria e monte o seu par.",
         "chips": "",
         "layout": "carousel",
         "height_desktop": 64,
         "height_mobile_grid": 34,
-        "padding_top": 48,
-        "padding_bottom": 48,
-        "fill_bg": "#111214"
+        "padding_top": 56,
+        "padding_bottom": 40,
+        "fill_bg": "#111214",
+        "design": "motors",
+        "label_color": "#f7ddae"
       }
     }
   },

@@ -1,0 +1,82 @@
+{
+  "sections": {
+    "brk_black_grid": {
+      "type": "brk-collection-cards",
+      "blocks": {
+        "card_camisas_masc": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "masculino",
+            "title": "Camisas Masculinas",
+            "photo_index": 1,
+            "photo_product": "camisa-de-motociclismo-brk-atacama-chile-azul-e-dourado-com-protecao-solar-uv50"
+          }
+        },
+        "card_camisas_fem": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "feminino",
+            "title": "Camisas Femininas",
+            "photo_index": 1,
+            "photo_product": "camisa-de-motociclismo-feminina-brk-preta-bandeira-do-brasil-com-protecao-solar-uv50"
+          }
+        },
+        "card_raglan_masc": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "segunda-pele-masculino",
+            "title": "Raglan Masculina",
+            "photo_index": 1,
+            "photo_product": "camisa-segunda-pele-brk-formula-1-willians-fw14b-com-uv50"
+          }
+        },
+        "card_raglan_fem": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "segunda-pele-femininas",
+            "title": "Raglan Feminina",
+            "photo_index": 1,
+            "photo_product": "camisa-motociclismo-feminina-brk-big-trail-adventure-explorer-azul-petroleo-com-protecao-uv50"
+          }
+        }
+      },
+      "block_order": [
+        "card_camisas_masc",
+        "card_camisas_fem",
+        "card_raglan_masc",
+        "card_raglan_fem"
+      ],
+      "settings": {
+        "bg_color": "#101113",
+        "text_color": "#ffffff",
+        "accent_color": "#111214",
+        "cream_color": "#f6cb27",
+        "eyebrow": "Black November",
+        "title": "2ª peça com <em>[percent] OFF</em>",
+        "cta": "Ver coleção",
+        "note": "",
+        "default_tag": "",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "full_width": true,
+        "radius": 0,
+        "gap": 4,
+        "mobile_card_width": 80,
+        "height_mobile": 52,
+        "anchor": "",
+        "head_style": "hero",
+        "subtitle": "Escolha 2 camisas ou raglans e a segunda sai com desconto.",
+        "chips": "",
+        "layout": "mobile_grid",
+        "height_desktop": 64,
+        "height_mobile_grid": 34,
+        "padding_top": 32,
+        "padding_bottom": 56,
+        "fill_bg": "#101113"
+      }
+    }
+  },
+  "order": [
+    "brk_black_grid"
+  ]
+}

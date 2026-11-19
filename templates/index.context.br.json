@@ -426,10 +426,47 @@
         "content_below_image": false
       },
       "blocks": {
+        "slider_item_black": {
+          "type": "slider_item",
+          "name": "BLACK WEEK",
+          "disabled": false,
+          "settings": {
+            "header-15c506c6d9c4a65df70266cc702644b5": null,
+            "image": "shopify://shop_images/BLACK_WEEK_MOTORS_DESKTOP.gif",
+            "image_mobile": "shopify://shop_images/BLACK_WEEK_MOTORS_MOBILE.gif",
+            "local_video": null,
+            "image_link": "shopify://pages/black-week",
+            "overlay_opacity": 0,
+            "header-d4653059dabd42294c9c921c0550b0f5": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
+            "header-4a56f26b3968324061c5767a78470b78": null,
+            "content_alignment": "center",
+            "content_position": "bottom-left",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "header-457f54ade5b2d6982772f90aa9fbde95": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-0df7196b4c3548813c84ee6219d68dd6": null,
+            "content_alignment_mobile": "center"
+          }
+        },
         "slider_item_H4fHR": {
           "type": "slider_item",
           "name": "Tático",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "header-6f48cc2aec5c01c079983fa4815aa4e5": null,
             "image": "shopify://shop_images/Banner_Tatico_desktop.webp",
@@ -466,7 +503,7 @@
         "slider_item_bigtrail": {
           "type": "slider_item",
           "name": "Big Trail",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "header-15c506c6d9c4a65df70266cc702644b5": null,
             "image": "shopify://shop_images/FULLBANNER_DESKTOP_BIGTRAIL.webp",
@@ -540,7 +577,7 @@
         "slider_item_ecKeq9": {
           "type": "slider_item",
           "name": "Kit Casal",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "header-f70a2a011bac1eac2129d67380d49bdc": null,
             "image": "shopify://shop_images/FULLBANNER_DESKTOP_KITCASAL2.webp",
@@ -576,6 +613,7 @@
         }
       },
       "block_order": [
+        "slider_item_black",
         "slider_item_H4fHR",
         "slider_item_bigtrail",
         "slider_item_fKGLy",
@@ -784,6 +822,81 @@
         "icon_box_RLNr9a",
         "icon_box_tj4DJd"
       ]
+    },
+    "brk_collection_cards": {
+      "type": "brk-collection-cards",
+      "blocks": {
+        "card_camisas_masc": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "masculino",
+            "title": "Camisas Masculinas",
+            "photo_index": 1,
+            "photo_product": "camisa-de-motociclismo-brk-atacama-chile-azul-e-dourado-com-protecao-solar-uv50"
+          }
+        },
+        "card_camisas_fem": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "feminino",
+            "title": "Camisas Femininas",
+            "photo_index": 1,
+            "photo_product": "camisa-de-motociclismo-feminina-brk-preta-bandeira-do-brasil-com-protecao-solar-uv50"
+          }
+        },
+        "card_raglan_masc": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "segunda-pele-masculino",
+            "title": "Raglan Masculina",
+            "photo_index": 1,
+            "photo_product": "camisa-segunda-pele-brk-formula-1-willians-fw14b-com-uv50"
+          }
+        },
+        "card_raglan_fem": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "segunda-pele-femininas",
+            "title": "Raglan Feminina",
+            "photo_index": 1,
+            "photo_product": "camisa-motociclismo-feminina-brk-big-trail-adventure-explorer-azul-petroleo-com-protecao-uv50"
+          }
+        }
+      },
+      "block_order": [
+        "card_camisas_masc",
+        "card_camisas_fem",
+        "card_raglan_masc",
+        "card_raglan_fem"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111214",
+        "accent_color": "#111214",
+        "cream_color": "#f6cb27",
+        "eyebrow": "Black November",
+        "title": "2ª peça com <em>[percent] OFF</em>",
+        "cta": "Ver coleção",
+        "note": "Válido para camisas e raglans.",
+        "default_tag": "",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "full_width": true,
+        "radius": 0,
+        "gap": 4,
+        "mobile_card_width": 80,
+        "height_mobile": 52,
+        "anchor": "black",
+        "head_style": "simple",
+        "subtitle": "Escolha a categoria e monte o seu par.",
+        "chips": "",
+        "layout": "carousel",
+        "height_desktop": 64,
+        "height_mobile_grid": 34,
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "fill_bg": "#111214"
+      }
     }
   },
   "context": {
@@ -792,6 +905,7 @@
   "parent": "index.json",
   "order": [
     "slideshow_mWxPRH",
+    "brk_collection_cards",
     "brk_hotspot_explorer",
     "category_cards_brk",
     "automobilismo_banner_pnpbkV",
@@ -810,7 +924,6 @@
     "collection_tab_hFcGJN",
     "collection_list_HPrebt",
     "shopable_video_8bAdnX",
-    "collection_packery_UfTpHJ",
     "divider_xPQYgr",
     "faq_TtQE4",
     "divider_4De4th",

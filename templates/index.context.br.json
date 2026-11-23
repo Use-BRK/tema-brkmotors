@@ -11,7 +11,7 @@
   "sections": {
     "brk_collection_cards": {
       "type": "brk-collection-cards",
-      "disabled": false,
+      "disabled": true,
       "settings": {
         "paragraph-76cbe35a8171b4cdfeb2b36e50703a97": null,
         "anchor": "black",

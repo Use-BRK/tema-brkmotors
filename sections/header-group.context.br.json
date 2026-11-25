@@ -39,7 +39,7 @@
           "disabled": true,
           "settings": {
             "badge_hidden_on_mobile": false,
-            "paragraph-cdd430c21226ca03714cc01b27b6011a": null,
+            "paragraph-6a80c17c3999914a073653f51bf36c6d": null,
             "layout": "badge_stacked",
             "highlight_color": "#f6cb27",
             "extra_tag": "",
@@ -49,8 +49,8 @@
             "highlight": "40% OFF",
             "line_1": "2ª peça com",
             "line_2": "",
-            "header-6d3738866e6919e912b37202a0fa7046": null,
-            "paragraph-ccd317c805e9000ccde638eeee90106e": null,
+            "header-dce830f23f958cecc8b595b572479ace": null,
+            "paragraph-af41e09f0d155b899456a173f68cfd9a": null,
             "badge_top": "Black",
             "badge_bottom": "November",
             "badge_style": "outline",
@@ -70,7 +70,7 @@
           "name": "Timer",
           "settings": {
             "mobile_style": "boxed",
-            "paragraph-80c1d2d4afca8d6032a2a8b7ae30a7e8": null,
+            "paragraph-e7c0ec77403949378e92dcaaba68d10d": null,
             "timer_font_size": 36,
             "label_font_size": 12,
             "timer_font_size_mobile": 17,
@@ -85,7 +85,7 @@
             "end_time": "23:59",
             "expired_message": "",
             "switch_to_slider": true,
-            "header-7a35c5bddb91cc14289f2f47438e3a1e": null,
+            "header-53c00f0dec74661f1d03261fa34c606d": null,
             "custom_colors": true,
             "bg_color": "#111214",
             "text_color": "#ffffff",
@@ -114,13 +114,13 @@
     "header": {
       "settings": {
         "transparent_header": true,
-        "hot": "25% OFF",
+        "hot": "13% OFF",
         "label_background_hot": "#e00e0e"
       },
       "blocks": {
         "menu_collection_JbLDyz": {
           "settings": {
-            "text": "🔥 Camisas em Oferta",
+            "text": "Segunda Pele",
             "item_label": "hot"
           }
         },
@@ -143,20 +143,20 @@
             "text": "Femininas",
             "open-link-newtab": false,
             "item_label": "unset",
-            "header-c33a3a68d87073675ebe003e6cb48a13": null,
+            "header-4a366ff7dee989bd0f71368708e3bbe5": null,
             "promotion_menu_column": 3,
             "mega_custom_width": 1030,
             "center_submenu": false,
             "full_width": false,
-            "header-f4e664d83f7110f88339df55fc11c43f": null,
+            "header-20c7f776b1499792bd986afdf1115434": null,
             "promotion_position": "left",
             "promotion_image_width": 16,
-            "header-1bbb9cbb3f8a7340b9688a5a2f92da8e": null,
+            "header-d02135c7340afe32d7b3f8f75be4f423": null,
             "promotion_image_1": null,
             "promotion_image_asset_1": "",
             "promotion_link_1": "",
             "promotion_link_newtab_1": false,
-            "header-4fe00a42026d9163a8d15bdca056a44d": null,
+            "header-1e024965c6d3ec41b03fe7016c167b68": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": false

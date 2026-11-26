@@ -115,7 +115,10 @@
       "settings": {
         "transparent_header": true,
         "hot": "13% OFF",
-        "label_background_hot": "#e00e0e"
+        "label_background_hot": "#e00e0e",
+        "popular": "MONTE O SEU",
+        "label_color_popular": "#ffffff",
+        "label_background_popular": "#fc5106"
       },
       "blocks": {
         "menu_collection_JbLDyz": {
@@ -161,9 +164,17 @@
             "promotion_link_2": "",
             "promotion_link_newtab_2": false
           }
+        },
+        "menu_promotion_kitcasal": {
+          "type": "menu_promotion",
+          "settings": {
+            "text": "Kit Casal 🔥",
+            "item_label": "popular"
+          }
         }
       },
       "block_order": [
+        "menu_promotion_kitcasal",
         "menu_collection_JbLDyz",
         "menu_promotion_EeqGGC",
         "menu_promotion_xJdpmk",

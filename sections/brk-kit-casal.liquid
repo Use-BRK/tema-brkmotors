@@ -1,0 +1,347 @@
+{%- comment -%}
+  BRK Motors — Kit Casal (camisa dele + camisa dela + extras opcionais), guiado por etapas.
+  Port do "Monte seu Kit" do Agro (sections/brk-monte-kit.liquid) com a identidade da Motors.
+  - Camisas: carregadas via /collections/<handle>/products.json (paginado) — coleções nas
+    configurações da seção (Todas) e nos blocos "Filtro de camisas" (chips).
+  - Na etapa dela, o chip "Combina com a dele" mostra a versão feminina da mesma estampa.
+  - Extras: renderizados aqui em JSON (blocos "Categoria de extras").
+  - Preço do kit = dele + dela − desconto do kit (configuração "Desconto do kit").
+    O desconto de verdade vem do cupom (configuração "Cupom do kit"), aplicado pela página
+    ao adicionar; o valor aqui só exibe — mantenha os dois iguais.
+  - No carrinho, as duas camisas levam a property `_kit` (mesmo id); extras `_kit_extra`.
+{%- endcomment -%}
+{{ 'brk-kit-casal.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'brk-kit-casal.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign st = section.settings
+  assign accent = st.accent_color
+  if accent == blank or accent.alpha == 0.0
+    assign accent = '#fc5106'
+  endif
+-%}
+
+<brk-kit-casal
+  class="bmk"
+  id="bmk-{{ section.id }}"
+  style="--bmk-accent: {{ accent }}; --bmk-pad-top: {{ st.padding_top }}px; --bmk-pad-bottom: {{ st.padding_bottom }}px; --bmk-overlay: {{ st.header_overlay | divided_by: 100.0 }};"
+>
+  <script type="application/json" data-bmk-config>
+    {
+      "sectionId": {{ section.id | json }},
+      "perPage": {{ st.per_page | default: 24 }},
+      "afterAdd": {{ st.after_add | json }},
+      "discount": {{ st.discount | default: 0 | times: 100 | round }},
+      "code": {{ st.code | strip | json }},
+      "match": {
+        "enabled": {{ st.match_enable | json }}
+      },
+      "shirtCollections": {
+        "masculino": {{ st.shirts_masc.handle | json }},
+        "feminino": {{ st.shirts_fem.handle | json }}
+      },
+      "allLabel": {{ st.filter_all_label | json }},
+      "filters": [
+        {%- assign first = true -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'filter' and block.settings.collection != blank -%}
+            {%- unless first %},{% endunless -%}{%- assign first = false -%}
+            {"gender": {{ block.settings.gender | json }}, "label": {{ block.settings.label | default: block.settings.collection.title | json }}, "handle": {{ block.settings.collection.handle | json }}}
+          {%- endif -%}
+        {%- endfor -%}
+      ],
+      "upsell": {
+        "enabled": {{ st.upsell_enable | json }},
+        "extras": [
+          {%- assign first = true -%}
+          {%- if st.upsell_enable -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'extra' and block.settings.collection != blank -%}
+                {%- unless first %},{% endunless -%}{%- assign first = false -%}
+                {
+                  "id": {{ block.id | json }},
+                  "title": {{ block.settings.title | json }},
+                  "text": {{ block.settings.text | json }},
+                  {%- liquid
+                    assign cover = block.settings.image
+                    if cover == blank and block.settings.cover_product != blank
+                      assign cover_idx = block.settings.cover_index | default: 1 | minus: 1
+                      assign cover = block.settings.cover_product.images[cover_idx] | default: block.settings.cover_product.featured_image
+                    endif
+                  -%}
+                  "image": {% if cover %}{{ cover | image_url: width: 700 | json }}{% else %}null{% endif %},
+                  "focus": {{ block.settings.focus | json }},
+                  "zoom": {{ block.settings.zoom | default: 112 }},
+                  "products": [
+                    {%- assign up_first = true -%}
+                    {%- for product in block.settings.collection.products limit: 40 -%}
+                      {%- if product.available -%}
+                        {%- unless up_first %},{% endunless -%}{%- assign up_first = false -%}
+                        {%- render 'brk-kit-casal-product-json', product: product -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  ]
+                }
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        ]
+      },
+      "text": {
+        "kitPrice": {{ st.kit_price_label | json }},
+        "kitOut": {{ st.kit_out_label | json }},
+        "offBadge": {{ st.off_badge_label | json }},
+        "withDiscount": {{ st.with_discount_label | json }},
+        "saved": {{ st.saved_label | json }},
+        "matchBadge": {{ st.match_badge | json }},
+        "tagMasc": {{ st.step1_short | json }},
+        "tagFem": {{ st.step2_short | json }},
+        "lineMasc": {{ st.line_masc_label | json }},
+        "lineFem": {{ st.line_fem_label | json }},
+        "size": {{ st.size_label | json }},
+        "soldOut": {{ st.sold_out_label | json }},
+        "confirmMasc": {{ st.confirm_masc_label | json }},
+        "confirmFem": {{ st.confirm_fem_label | json }},
+        "confirmUpsell": {{ st.confirm_upsell_label | json }},
+        "skip": {{ st.skip_label | json }},
+        "empty": {{ st.empty_label | json }},
+        "error": {{ st.error_label | json }}
+      }
+    }
+  </script>
+
+  <div class="bmk__container container">
+    {%- if st.heading != blank or st.subheading != blank -%}
+      <header class="bmk__header{% if st.header_dark %} is-dark{% endif %}">
+        {%- if st.header_dark and st.header_image != blank -%}
+          <span class="bmk__header-bg">
+            {{ st.header_image | image_url: width: 1800 | image_tag: loading: 'eager', widths: '600,900,1200,1800', sizes: '100vw', alt: '' }}
+          </span>
+        {%- endif -%}
+        {%- if st.eyebrow != blank -%}<p class="bmk__eyebrow">{{ st.eyebrow }}</p>{%- endif -%}
+        {%- if st.heading != blank -%}
+          <h1 class="bmk__title">{{ st.heading }}{% if st.heading_em != blank %} <em>{{ st.heading_em }}</em>{% endif %}</h1>
+        {%- endif -%}
+        {%- if st.subheading != blank -%}<div class="bmk__subtitle">{{ st.subheading }}</div>{%- endif -%}
+      </header>
+    {%- endif -%}
+
+    {%- comment -%} Barra de progresso {%- endcomment -%}
+    <nav class="bmk__progress" aria-label="Etapas do kit">
+      <div class="bmk__progress-track"><div class="bmk__progress-fill" data-bmk-fill></div></div>
+      <ol class="bmk__steps">
+        <li class="bmk__step" data-bmk-step-dot="1"><button type="button" data-bmk-goto="1"><span class="bmk__step-num">1</span><span class="bmk__step-label">{{ st.step1_short }}</span></button></li>
+        <li class="bmk__step" data-bmk-step-dot="2"><button type="button" data-bmk-goto="2"><span class="bmk__step-num">2</span><span class="bmk__step-label">{{ st.step2_short }}</span></button></li>
+        {%- if st.upsell_enable -%}
+          <li class="bmk__step" data-bmk-step-dot="3"><button type="button" data-bmk-goto="3"><span class="bmk__step-num">3</span><span class="bmk__step-label">{{ st.step3_short }}</span></button></li>
+        {%- endif -%}
+        <li class="bmk__step" data-bmk-step-dot="4"><button type="button" data-bmk-goto="4"><span class="bmk__step-num">{% if st.upsell_enable %}4{% else %}3{% endif %}</span><span class="bmk__step-label">{{ st.step4_short }}</span></button></li>
+      </ol>
+    </nav>
+
+    {%- comment -%} Etapas 1 e 2 — camisa dele / camisa dela {%- endcomment -%}
+    {%- for n in (1..2) -%}
+      {%- liquid
+        if n == 1
+          assign p_title = st.step1_title
+          assign p_text = st.step1_text
+        else
+          assign p_title = st.step2_title
+          assign p_text = st.step2_text
+        endif
+      -%}
+      <section class="bmk__panel" data-bmk-panel="{{ n }}"{% if n > 1 %} hidden{% endif %}>
+        <h2 class="bmk__panel-title">{{ p_title }}</h2>
+        {%- if p_text != blank -%}<p class="bmk__panel-text">{{ p_text }}</p>{%- endif -%}
+        <div class="bmk__chips" data-bmk-chips role="tablist"></div>
+        <div class="bmk__grid" data-bmk-shirts></div>
+        <div class="bmk__more">
+          <button type="button" class="bmk__btn bmk__btn--ghost" data-bmk-more hidden>{{ st.load_more_label }}</button>
+        </div>
+      </section>
+    {%- endfor -%}
+
+    {%- comment -%} Etapa 3 — extras {%- endcomment -%}
+    {%- if st.upsell_enable -%}
+      <section class="bmk__panel" data-bmk-panel="3" hidden>
+        <h2 class="bmk__panel-title">{{ st.step3_title }}</h2>
+        {%- if st.step3_text != blank -%}<p class="bmk__panel-text">{{ st.step3_text }}</p>{%- endif -%}
+        <div class="bmk__extras" data-bmk-upsell></div>
+      </section>
+    {%- endif -%}
+
+    {%- comment -%} Etapa 4 — resumo {%- endcomment -%}
+    <section class="bmk__panel" data-bmk-panel="4" hidden>
+      <h2 class="bmk__panel-title">{{ st.step4_title }}</h2>
+      {%- if st.step4_text != blank -%}<p class="bmk__panel-text">{{ st.step4_text }}</p>{%- endif -%}
+      <div class="bmk__summary" data-bmk-summary></div>
+      <button type="button" class="bmk__btn bmk__btn--primary bmk__btn--block" data-bmk-add>
+        <span>{{ st.add_label }}</span>
+      </button>
+      <p class="bmk__error" data-bmk-error hidden></p>
+      {%- if st.summary_note != blank -%}<div class="bmk__note">{{ st.summary_note }}</div>{%- endif -%}
+    </section>
+  </div>
+
+  {%- comment -%} Barra fixa: escolhas + total + navegação {%- endcomment -%}
+  <div class="bmk__bar" data-bmk-bar>
+    <div class="bmk__bar-inner container">
+      <div class="bmk__bar-picks" data-bmk-bar-picks></div>
+      <div class="bmk__bar-price" data-bmk-bar-price></div>
+      <div class="bmk__bar-actions">
+        <button type="button" class="bmk__btn bmk__btn--ghost bmk__btn--back" data-bmk-back aria-label="{{ st.back_label }}"><span class="bmk__back-ico" aria-hidden="true">‹</span><span class="bmk__back-txt">{{ st.back_label }}</span></button>
+        <button type="button" class="bmk__btn bmk__btn--primary" data-bmk-next>{{ st.next_label }}</button>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} Galeria (abre ao tocar na foto do popup) {%- endcomment -%}
+  <div class="bmk__viewer" data-bmk-viewer data-bmk-viewer-close hidden role="dialog" aria-modal="true" aria-label="Fotos do produto">
+    <div class="bmk__viewer-box">
+      <div class="bmk__viewer-track" data-bmk-viewer-track></div>
+    </div>
+  </div>
+
+  {%- comment -%} Gaveta de tamanho {%- endcomment -%}
+  <div class="bmk__sheet" data-bmk-sheet hidden>
+    <div class="bmk__sheet-backdrop" data-bmk-sheet-close></div>
+    <div class="bmk__sheet-box" role="dialog" aria-modal="true" aria-labelledby="bmk-sheet-title-{{ section.id }}">
+      <button type="button" class="bmk__sheet-x" data-bmk-sheet-close aria-label="Fechar">×</button>
+      <div class="bmk__sheet-media" data-bmk-sheet-media></div>
+      <div class="bmk__sheet-body">
+        <h3 class="bmk__sheet-title" id="bmk-sheet-title-{{ section.id }}" data-bmk-sheet-title></h3>
+        <div class="bmk__sheet-price" data-bmk-sheet-price></div>
+        <p class="bmk__sheet-label" data-bmk-sheet-label></p>
+        <div class="bmk__sizes" data-bmk-sheet-sizes></div>
+        {%- if st.size_guide_url != blank -%}
+          <a class="bmk__sheet-guide" href="{{ st.size_guide_url }}" target="_blank" rel="noopener">{{ st.size_guide_label }}</a>
+        {%- endif -%}
+        <button type="button" class="bmk__btn bmk__btn--primary bmk__btn--block" data-bmk-sheet-confirm disabled></button>
+      </div>
+    </div>
+  </div>
+</brk-kit-casal>
+
+{% schema %}
+{
+  "name": "BRK Kit Casal",
+  "tag": "section",
+  "class": "brk-kit-casal-section",
+  "settings": [
+    { "type": "header", "content": "Topo" },
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeno acima do título", "default": "Kit Casal" },
+    { "type": "text", "id": "heading", "label": "Título", "default": "Monte o kit" },
+    { "type": "text", "id": "heading_em", "label": "Título — parte em destaque (creme)", "default": "casal" },
+    { "type": "richtext", "id": "subheading", "label": "Subtítulo", "default": "<p>Escolha a camisa dele, depois a dela.</p>" },
+    { "type": "checkbox", "id": "header_dark", "label": "Topo em faixa preta (visual Motors)", "default": true },
+    { "type": "image_picker", "id": "header_image", "label": "Imagem de fundo do topo (opcional)" },
+    { "type": "range", "id": "header_overlay", "label": "Escurecer a imagem do topo", "min": 0, "max": 90, "step": 5, "unit": "%", "default": 55 },
+    { "type": "color", "id": "accent_color", "label": "Cor de destaque (vazio = laranja Motors)" },
+
+    { "type": "header", "content": "Desconto do kit" },
+    { "type": "number", "id": "discount", "label": "Desconto do kit casal (R$)", "info": "Só exibe. Tem que ser igual ao valor do cupom abaixo. Kits casal antigos: R$ 319,80 → R$ 286,80 (−R$ 33).", "default": 33 },
+    { "type": "text", "id": "code", "label": "Cupom do kit", "info": "Cupom da Shopify. A página aplica sozinha no carrinho ao adicionar o kit (o desconto só acontece por aqui)." },
+
+    { "type": "header", "content": "Etapa 1 — Camisa dele" },
+    { "type": "text", "id": "step1_short", "label": "Nome curto na barra", "default": "Ele" },
+    { "type": "text", "id": "step1_title", "label": "Título", "default": "Escolha a camisa dele" },
+    { "type": "text", "id": "step1_text", "label": "Texto", "default": "Toque na camisa para escolher o tamanho." },
+    { "type": "collection", "id": "shirts_masc", "label": "Todas as camisas masculinas" },
+
+    { "type": "header", "content": "Etapa 2 — Camisa dela" },
+    { "type": "text", "id": "step2_short", "label": "Nome curto na barra", "default": "Ela" },
+    { "type": "text", "id": "step2_title", "label": "Título", "default": "Agora a camisa dela" },
+    { "type": "text", "id": "step2_text", "label": "Texto", "default": "Pode ser a mesma estampa ou outra. O preço já mostra o valor do kit." },
+    { "type": "collection", "id": "shirts_fem", "label": "Todas as camisas femininas" },
+    { "type": "checkbox", "id": "match_enable", "label": "Mostrar em 1º a versão dela da mesma estampa", "info": "Procura a versão feminina da estampa escolhida para ele (uma só, com selo). Se não achar, a lista fica normal.", "default": true },
+    { "type": "text", "id": "match_badge", "label": "Selo da mesma estampa", "default": "Mesma estampa" },
+
+    { "type": "header", "content": "Camisas (as duas etapas)" },
+    { "type": "text", "id": "filter_all_label", "label": "Nome do filtro com todas", "default": "Todas" },
+    { "type": "range", "id": "per_page", "label": "Camisas por carregamento", "min": 12, "max": 48, "step": 4, "default": 24 },
+    { "type": "text", "id": "load_more_label", "label": "Botão carregar mais", "default": "Ver mais camisas" },
+    { "type": "text", "id": "size_label", "label": "Rótulo do tamanho", "default": "Tamanho" },
+    { "type": "text", "id": "confirm_masc_label", "label": "Botão confirmar camisa dele", "default": "Escolher a dele" },
+    { "type": "text", "id": "confirm_fem_label", "label": "Botão confirmar camisa dela", "default": "Escolher a dela" },
+    { "type": "text", "id": "off_badge_label", "label": "Selo nos cards dele", "info": "{valor} = desconto do kit em reais", "default": "R${valor} OFF" },
+    { "type": "url", "id": "size_guide_url", "label": "Link da tabela de medidas" },
+    { "type": "text", "id": "size_guide_label", "label": "Texto do link da tabela", "default": "Ver tabela de medidas" },
+
+    { "type": "header", "content": "Etapa 3 — Extras (opcional)" },
+    { "type": "checkbox", "id": "upsell_enable", "label": "Mostrar etapa de extras", "default": true },
+    { "type": "paragraph", "content": "As categorias (bandanas, manguitos, óculos, bonés...) vêm dos blocos \"Categoria de extras\"." },
+    { "type": "text", "id": "step3_short", "label": "Nome curto na barra", "default": "Extras" },
+    { "type": "text", "id": "step3_title", "label": "Título", "default": "Completa a viagem?" },
+    { "type": "text", "id": "step3_text", "label": "Texto", "default": "Opcional. Pode pular se quiser." },
+    { "type": "text", "id": "confirm_upsell_label", "label": "Botão adicionar extra", "default": "Adicionar ao kit" },
+    { "type": "text", "id": "skip_label", "label": "Botão pular", "default": "Pular" },
+
+    { "type": "header", "content": "Etapa 4 — Resumo" },
+    { "type": "text", "id": "step4_short", "label": "Nome curto na barra", "default": "Resumo" },
+    { "type": "text", "id": "step4_title", "label": "Título", "default": "Kit do casal pronto" },
+    { "type": "text", "id": "step4_text", "label": "Texto" },
+    { "type": "text", "id": "line_masc_label", "label": "Rótulo da camisa dele", "default": "Camisa dele" },
+    { "type": "text", "id": "line_fem_label", "label": "Rótulo da camisa dela", "default": "Camisa dela" },
+    { "type": "text", "id": "saved_label", "label": "Rótulo da economia", "default": "Desconto do kit casal" },
+    { "type": "text", "id": "add_label", "label": "Botão adicionar ao carrinho", "default": "Adicionar kit ao carrinho" },
+    { "type": "richtext", "id": "summary_note", "label": "Observação abaixo do botão", "default": "<p>O desconto do kit é aplicado automaticamente no carrinho.</p>" },
+    {
+      "type": "select", "id": "after_add", "label": "Depois de adicionar",
+      "options": [
+        { "value": "drawer", "label": "Abrir o carrinho lateral" },
+        { "value": "cart", "label": "Ir para a página do carrinho" },
+        { "value": "checkout", "label": "Ir direto para o checkout" }
+      ],
+      "default": "drawer"
+    },
+
+    { "type": "header", "content": "Textos gerais" },
+    { "type": "text", "id": "kit_price_label", "label": "Rótulo preço do kit (popup dela)", "default": "Kit casal por" },
+    { "type": "text", "id": "kit_out_label", "label": "Rótulo nos cards dela", "default": "O kit casal sai por:" },
+    { "type": "text", "id": "with_discount_label", "label": "Rótulo na barra", "default": "kit com desconto" },
+    { "type": "text", "id": "sold_out_label", "label": "Esgotado", "default": "Esgotado" },
+    { "type": "text", "id": "next_label", "label": "Botão avançar", "default": "Continuar" },
+    { "type": "text", "id": "back_label", "label": "Botão voltar", "default": "Voltar" },
+    { "type": "text", "id": "empty_label", "label": "Nenhum produto", "default": "Nenhuma camisa disponível aqui." },
+    { "type": "text", "id": "error_label", "label": "Erro ao adicionar", "default": "Não foi possível adicionar o kit. Tente de novo." },
+
+    { "type": "header", "content": "Espaçamento" },
+    { "type": "range", "id": "padding_top", "label": "Espaço acima", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 24 },
+    { "type": "range", "id": "padding_bottom", "label": "Espaço abaixo", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 40 }
+  ],
+  "blocks": [
+    {
+      "type": "filter",
+      "name": "Filtro de camisas",
+      "settings": [
+        { "type": "select", "id": "gender", "label": "Etapa", "options": [{ "value": "masculino", "label": "Dele (masculino)" }, { "value": "feminino", "label": "Dela (feminino)" }], "default": "masculino" },
+        { "type": "text", "id": "label", "label": "Nome do filtro" },
+        { "type": "collection", "id": "collection", "label": "Coleção" }
+      ]
+    },
+    {
+      "type": "extra",
+      "name": "Categoria de extras",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Título", "default": "Bandanas" },
+        { "type": "text", "id": "text", "label": "Texto" },
+        { "type": "image_picker", "id": "image", "label": "Imagem do card", "info": "Vazio = foto do produto abaixo; sem produto = foto do 1º produto da coleção." },
+        { "type": "product", "id": "cover_product", "label": "Ou: usar a foto de um produto" },
+        { "type": "range", "id": "cover_index", "label": "Qual foto do produto (1 = a primeira)", "min": 1, "max": 10, "step": 1, "default": 1 },
+        {
+          "type": "select", "id": "focus", "label": "Foco da foto",
+          "options": [
+            { "value": "top", "label": "Topo (rosto, boné, óculos)" },
+            { "value": "center", "label": "Centro" },
+            { "value": "bottom", "label": "Baixo" }
+          ],
+          "default": "center"
+        },
+        { "type": "range", "id": "zoom", "label": "Zoom da foto", "min": 100, "max": 180, "step": 5, "unit": "%", "default": 110 },
+        { "type": "collection", "id": "collection", "label": "Coleção" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "BRK Kit Casal" }]
+}
+{% endschema %}

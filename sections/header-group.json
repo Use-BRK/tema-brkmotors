@@ -271,9 +271,17 @@
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
           }
+        },
+        "menu_promotion_kitcasal": {
+          "type": "menu_promotion",
+          "settings": {
+            "text": "Kit Casal 🔥",
+            "item_label": "popular"
+          }
         }
       },
       "block_order": [
+        "menu_promotion_kitcasal",
         "menu_collection_JbLDyz",
         "menu_promotion_EeqGGC",
         "menu_promotion_xJdpmk",
@@ -304,9 +312,9 @@
         "sale": "Sale",
         "label_color_sale": "#ffffff",
         "label_background_sale": "#fc5106",
-        "popular": "+ BRINDE",
+        "popular": "MONTE O SEU",
         "label_color_popular": "#ffffff",
-        "label_background_popular": "#14854e",
+        "label_background_popular": "#fc5106",
         "redirect_to_link": false,
         "menu_tab": "custom-collections",
         "collection_list": [

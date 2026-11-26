@@ -1,0 +1,36 @@
+{%- comment -%}
+  Produto em JSON para o Kit Casal (sections/brk-kit-casal.liquid).
+  Mesmo formato que o JS monta a partir do /products.json.
+{%- endcomment -%}
+{%- liquid
+  assign img = product.featured_image
+  assign img2 = product.images[1]
+  comment
+    Foto "com cenário": a 1ª foto com proporção diferente da 1ª (packshot). Nas botinas/acessórios, o packshot
+    é quadrado e a foto de cenário tem outro tamanho.
+  endcomment
+  assign scene = nil
+  for im in product.images offset: 1 limit: 6
+    if im.width != img.width or im.height != img.height
+      assign scene = im
+      break
+    endif
+  endfor
+-%}
+{
+  "id": {{ product.id }},
+  "handle": {{ product.handle | json }},
+  "title": {{ product.title | json }},
+  "url": {{ product.url | json }},
+  "image": {% if img %}{{ img | image_url: width: 600 | json }}{% else %}null{% endif %},
+  "images": [{%- for im in product.images limit: 10 -%}{{ im | image_url: width: 1400 | json }}{%- unless forloop.last %},{% endunless -%}{%- endfor -%}],
+  "ratio": {% if img %}{{ img.aspect_ratio | default: 1 }}{% else %}1{% endif %},
+  "image2": {% if img2 %}{{ img2 | image_url: width: 600 | json }}{% else %}null{% endif %},
+  "scene": {% if scene %}{{ scene | image_url: width: 600 | json }}{% else %}null{% endif %},
+  "options": {{ product.options | json }},
+  "variants": [
+    {%- for v in product.variants -%}
+      {"id": {{ v.id }}, "title": {{ v.title | json }}, "sku": {{ v.sku | json }}, "available": {{ v.available | json }}, "options": {{ v.options | json }}, "image": {% if v.featured_image %}{{ v.featured_image | image_url: width: 700 | json }}{% else %}null{% endif %}, "price": {{ v.price }}, "compare": {{ v.compare_at_price | default: 0 }}}{%- unless forloop.last %},{% endunless -%}
+    {%- endfor -%}
+  ]
+}

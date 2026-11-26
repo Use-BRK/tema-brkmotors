@@ -1,0 +1,210 @@
+{
+  "sections": {
+    "main": {
+      "type": "brk-kit-casal",
+      "blocks": {
+        "filtro_m1": {
+          "type": "filter",
+          "settings": {
+            "gender": "masculino",
+            "label": "Mais vendidas",
+            "collection": "mais-vendidos"
+          }
+        },
+        "filtro_m2": {
+          "type": "filter",
+          "settings": {
+            "gender": "masculino",
+            "label": "Big Trail 2026",
+            "collection": "big-trail-2026-masculinas"
+          }
+        },
+        "filtro_m3": {
+          "type": "filter",
+          "settings": {
+            "gender": "masculino",
+            "label": "Motociclismo",
+            "collection": "motociclismo"
+          }
+        },
+        "filtro_m4": {
+          "type": "filter",
+          "settings": {
+            "gender": "masculino",
+            "label": "Viagens e Expedições",
+            "collection": "viagens"
+          }
+        },
+        "filtro_m5": {
+          "type": "filter",
+          "settings": {
+            "gender": "masculino",
+            "label": "Brasil",
+            "collection": "camisas-do-brasil"
+          }
+        },
+        "filtro_m6": {
+          "type": "filter",
+          "settings": {
+            "gender": "masculino",
+            "label": "Jipe e Off Road",
+            "collection": "jipe-e-off-road"
+          }
+        },
+        "filtro_m7": {
+          "type": "filter",
+          "settings": {
+            "gender": "masculino",
+            "label": "Automobilismo",
+            "collection": "automobilismo-masculino"
+          }
+        },
+        "filtro_m8": {
+          "type": "filter",
+          "settings": {
+            "gender": "masculino",
+            "label": "Segunda Pele",
+            "collection": "segunda-pele-masculino"
+          }
+        },
+        "filtro_f1": {
+          "type": "filter",
+          "settings": {
+            "gender": "feminino",
+            "label": "Big Trail 2026",
+            "collection": "big-trail-2026-femininas"
+          }
+        },
+        "filtro_f2": {
+          "type": "filter",
+          "settings": {
+            "gender": "feminino",
+            "label": "Motociclismo",
+            "collection": "motociclismo-fem"
+          }
+        },
+        "filtro_f3": {
+          "type": "filter",
+          "settings": {
+            "gender": "feminino",
+            "label": "Viagens e Expedições",
+            "collection": "viagens-fem"
+          }
+        },
+        "filtro_f4": {
+          "type": "filter",
+          "settings": {
+            "gender": "feminino",
+            "label": "Brasil",
+            "collection": "camisas-do-brasil-femininas"
+          }
+        },
+        "filtro_f5": {
+          "type": "filter",
+          "settings": {
+            "gender": "feminino",
+            "label": "Jipe e Off Road",
+            "collection": "jipe-e-off-road-femininas"
+          }
+        },
+        "filtro_f6": {
+          "type": "filter",
+          "settings": {
+            "gender": "feminino",
+            "label": "Segunda Pele",
+            "collection": "segunda-pele-femininas"
+          }
+        },
+        "extra_bandanas": {
+          "type": "extra",
+          "settings": {
+            "title": "Bandanas",
+            "text": "Proteção para o pescoço e o rosto na estrada",
+            "collection": "bandana-tubeneck",
+            "focus": "center",
+            "zoom": 100,
+            "cover_product": "bandana-para-pescoco-brk-azul-gs-performance-com-protecao-uv50",
+            "cover_index": 3,
+            "image": "shopify://shop_images/kit-casal-extra-bandana.jpg"
+          }
+        },
+        "extra_manguitos": {
+          "type": "extra",
+          "settings": {
+            "title": "Manguitos",
+            "text": "UV50 nos braços para a pilotagem",
+            "collection": "manguitos",
+            "focus": "center",
+            "zoom": 100,
+            "image": "shopify://shop_images/kit-casal-extra-manguito.jpg"
+          }
+        },
+        "extra_oculos": {
+          "type": "extra",
+          "settings": {
+            "title": "Óculos",
+            "text": "Proteção para o sol da viagem",
+            "collection": "oculos-de-sol",
+            "focus": "center",
+            "zoom": 100,
+            "cover_product": "oculos-de-sol-aviador-polarizado-maverick",
+            "cover_index": 2,
+            "image": "shopify://shop_images/kit-casal-extra-oculos.jpg"
+          }
+        },
+        "extra_bones": {
+          "type": "extra",
+          "settings": {
+            "title": "Bonés",
+            "text": "Para fechar o visual na parada",
+            "collection": "bones",
+            "focus": "center",
+            "zoom": 100,
+            "cover_product": "bone-trucker-brk-motors-rastro-da-serpente",
+            "cover_index": 2,
+            "image": "shopify://shop_images/kit-casal-extra-bone.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "filtro_m1",
+        "filtro_m2",
+        "filtro_m3",
+        "filtro_m4",
+        "filtro_m5",
+        "filtro_m6",
+        "filtro_m7",
+        "filtro_m8",
+        "filtro_f1",
+        "filtro_f2",
+        "filtro_f3",
+        "filtro_f4",
+        "filtro_f5",
+        "filtro_f6",
+        "extra_bandanas",
+        "extra_manguitos",
+        "extra_oculos",
+        "extra_bones"
+      ],
+      "settings": {
+        "shirts_masc": "masculino",
+        "shirts_fem": "feminino",
+        "accent_color": "#fc5106",
+        "discount": 33,
+        "code": "KITCASAL",
+        "upsell_enable": true,
+        "match_enable": true,
+        "after_add": "drawer",
+        "header_dark": true,
+        "eyebrow": "",
+        "heading": "Monte o kit",
+        "heading_em": "casal",
+        "subheading": "<p>Escolha a camisa dele, depois a dela.</p>",
+        "off_badge_label": "R${valor} OFF"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

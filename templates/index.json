@@ -108,7 +108,7 @@
           "settings": {
             "image": "shopify://shop_images/Prancheta_2.png",
             "image_mobile": "shopify://shop_images/Mobv3.png",
-            "image_link": "shopify://collections/kits-casal",
+            "image_link": "/pages/kit-casal",
             "overlay_opacity": 0,
             "slider_effect": "effect_fadeinup",
             "subheading": "",

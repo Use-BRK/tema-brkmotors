@@ -621,7 +621,7 @@
             "image": "shopify://shop_images/FULLBANNER_DESKTOP_KITCASAL2.webp",
             "image_mobile": "shopify://shop_images/FULLBANNER_MOBILE_KITCASAL.webp",
             "local_video": null,
-            "image_link": "/pages/kit-casal",
+            "image_link": "shopify://collections/kits-casal",
             "overlay_opacity": 0,
             "header-00c6527120eaad090ecd117db4a5e93a": null,
             "slider_effect": "effect_fadeinup",
@@ -743,6 +743,13 @@
           "disabled": true,
           "settings": {}
         },
+        "card_custom": {
+          "settings": {
+            "image": "shopify://shop_images/ushuaia.png",
+            "title": "USHUAIA",
+            "link": "https://www.brkmotors.com.br/collections/viagens?filter.p.m.custom.destinos_internacionais=Ushuaia"
+          }
+        },
         "card_estrada": {
           "settings": {
             "image": "shopify://shop_images/patagonia_b9f113df-2020-45bb-bd41-1e89c0ded2a4.png",
@@ -758,20 +765,13 @@
             "title": "ATACAMA",
             "link": "https://www.brkmotors.com.br/collections/viagens?filter.p.m.custom.destinos_internacionais=Atacama"
           }
-        },
-        "card_custom": {
-          "settings": {
-            "image": "shopify://shop_images/ushuaia.png",
-            "title": "USHUAIA",
-            "link": "https://www.brkmotors.com.br/collections/viagens?filter.p.m.custom.destinos_internacionais=Ushuaia"
-          }
         }
       },
       "block_order": [
         "card_esportivo",
         "card_custom",
-        "card_estrada",
-        "card_urbano"
+        "card_urbano",
+        "card_estrada"
       ]
     },
     "automobilismo_banner_brk": {

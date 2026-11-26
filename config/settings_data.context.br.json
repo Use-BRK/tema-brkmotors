@@ -38,6 +38,7 @@
     "hover_effect": "hover_zoom",
     "store_email": "sacbrk@usebrk.com.br",
     "promo2_enable": false,
+    "promo2_cart_enable": false,
     "color_schemes": {
       "default": {
         "settings": {}
